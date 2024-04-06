@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+    <meta name="theme-color" content="#F7F7F7" />
+    <meta name="description" content="Dashboard Mahasiswa" />
+    <link rel="icon" href="./assets/icon.png" />
+    <title>Dashboard Mahasiswa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="max-w-screen-2xl h-screen flex flex-row">
+      <!-- START SIDEBAR -->
+      <aside
+        class="w-1/3 max-w-[325px] h-full py-12 static z-50"
+        id="sidebar-menu"
+      ></aside>
+      <!-- END SIDEBAR -->
+
+      <!-- START MAIN SECTION -->
+      <main class="w-full h-full overflow-y-auto bg-[#F7F7F7]">
+        <!-- START ALERT -->
+        <div class="absolute top-10 right-12 w-full max-w-[1110px]">
+          <div
+            class="flex gap-2 items-center w-full bg-[#FFF9F2] border border-[#EECEB0] text-[#CD7B2E] text-lg px-4 py-2 rounded-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <p>
+              Mohon lakukan pembayaran UKT sebelum tanggal
+              <span class="font-bold">25 Desember 2023! </span
+              ><button class="underline">
+                Klik untuk lihat cara pembayaran
+              </button>
+            </p>
+          </div>
+        </div>
+        <!-- END ALERT -->
+        <section class="p-10 flex flex-col space-y-5">
+          <!-- START PENGUMUMAN -->
+          <div
+            class="w-full flex flex-col space-y-3 p-4 bg-[#FFFFFF] rounded-xl shadow-md"
+          >
+            <div class="flex justify-between items-center">
+              <p class="text-md font-semibold text-[#252525]">Pengumuman</p>
+              <p class="text-sm text-[#57AF81] font-medium">Lihat Semua</p>
+            </div>
+            <div class="flex flex-col space-y-2">
+              <h1 class="text-lg text-[#57AF81] font-semibold">
+                Bagi angkatan 2017 kebawah silahkan mengisi survey lama studi
+              </h1>
+              <p class="text-sm text-[#6F7072]">
+                Batas pengisian survey akan berlangsung sampai dengan tanggal
+                <span class="font-bold">27 Desember 2023</span>. Mohon segera
+                isi survey sekarang juga. Batas pengisian survey akan
+                berlangsung sampai dengan tanggal
+                <span class="font-bold">27 Desember 2023</span>. Mohon segera
+                isi survey sekarang juga.
+              </p>
+            </div>
+          </div>
+          <!-- END PENGUMUMAN -->
+
+          <!-- START GRID CARD -->
+          <div class="w-full grid lg:grid-cols-3 grid-cols-1 gap-5">
+            <!-- START PROFIL -->
+            <div
+              class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md w-full"
+            >
+              <img
+                src="./assets/profil.png"
+                class="w-20 h-20 rounded-lg"
+                alt="profil-image"
+              />
+              <div class="flex flex-col space-y-2">
+                <h1 class="text-xl font-semibold text-[#57AF81] truncate">
+                  Roland Cronin
+                </h1>
+                <div
+                  class="flex items-center border px-2.5 py-0.5 text-xs w-fit border-[#57AF81] font-medium rounded-lg text-[#57AF81] bg-[#F7F7F7]"
+                >
+                  Mahasiswa
+                </div>
+                <p class="text-sm text-[#6F7072] truncate">
+                  Teknik Informatika
+                </p>
+              </div>
+            </div>
+            <!-- END PROFIL -->
+
+            <!-- START STATUS PEMBAYARAN -->
+            <div
+              class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md w-full"
+            >
+              <div class="p-2 bg-[#F7F7F7] rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-10 h-10 text-[#43936C]"
+                >
+                  <path
+                    d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="flex flex-col space-y-2">
+                <h1 class="text-md font-medium">Status Pembayaran</h1>
+                <div
+                  class="flex items-center border px-2.5 py-0.5 text-md font-semibold w-fit border-[#57AF81] rounded-lg text-[#57AF81] bg-[#F7F7F7]"
+                >
+                  Terbayar
+                </div>
+              </div>
+            </div>
+            <!-- END STATUS PEMBAYARAN -->
+
+            <!-- START JUMLAH SKS -->
+            <div
+              class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md w-full"
+            >
+              <div class="p-2 bg-[#FFF2EA] rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-10 h-10 text-[#FF9456]"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 5.625c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v12.75c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 18.375V5.625ZM21 9.375A.375.375 0 0 0 20.625 9h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5Zm0 3.75a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5Zm0 3.75a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5ZM10.875 18.75a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5ZM3.375 15h7.5a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375Zm0-3.75h7.5a.375.375 0 0 0 .375-.375v-1.5A.375.375 0 0 0 10.875 9h-7.5A.375.375 0 0 0 3 9.375v1.5c0 .207.168.375.375.375Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-md font-medium">Jumlah SKS</p>
+                <h1 class="text-[32px] font-bold text-[#FE9456]">19</h1>
+              </div>
+            </div>
+            <!-- END JUMLAH SKS -->
+          </div>
+          <!-- END GRID CARD -->
+
+          <!-- START TABEL JADWAL -->
+          <div
+            class="w-full flex flex-col space-y-3 p-4 bg-white rounded-xl shadow-md"
+          >
+            <!-- START TITLE JADWAL -->
+            <div class="flex justify-between items-center">
+              <h1 class="text-[#252525] text-md font-semibold">
+                Jadwal Perkuliahan Hari Ini
+              </h1>
+              <div class="flex gap-4 items-center text-[#808284] font-medium">
+                <div class="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M16 2a1 1 0 0 1 1 1h3a1 1 0 0 1 1 1v14a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V4a1 1 0 0 1 1-1h3a1 1 0 0 1 2 0h6a1 1 0 0 1 1-1M7 5a1 1 0 0 0 2 0h6a1 1 0 1 0 2 0h2v2H5V5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p class="text-sm">Rabu, 13 Desember 2023</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p class="text-sm">12.55</p>
+                </div>
+              </div>
+            </div>
+            <!-- END TITLE JADWAL -->
+
+            <!-- START BADGE JADWAL -->
+            <div
+              class="flex items-center gap-2 border px-2 py-1 text-xs w-fit border-[#EECEB0] rounded-lg text-[#CD7B2E] bg-[#FFF9F2]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 20 20"
+                class="w-5 h-5"
+              >
+                <g fill="currentColor">
+                  <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                    clip-rule="evenodd"
+                  />
+                </g>
+              </svg>
+              <p>Ada <span class="font-bold">5</span> mata kuliah hari ini!</p>
+            </div>
+            <!-- END BADGE JADWAL -->
+
+            <!-- START TABEL -->
+            <table class="min-w-full">
+              <thead class="bg-[#57AF81] text-white text-sm">
+                <tr>
+                  <th class="px-6 py-3 rounded-tl-lg">Waktu</th>
+                  <th class="px-6 py-3">Kode MK</th>
+                  <th class="px-6 py-3">Nama MK*</th>
+                  <th class="px-6 py-3">Kelas</th>
+                  <th class="px-6 py-3">Ruangan</th>
+                  <th class="px-6 py-3">Status</th>
+                  <th class="px-6 py-3 rounded-tr-lg">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white text-sm border">
+                <!-- START JADWAL 1 -->
+                <tr class="bg-[#F7F7F7]">
+                  <td class="px-6 py-4 text-black">13.00-14.40</td>
+                  <td class="px-6 py-4 text-black">IF01104</td>
+                  <td class="px-6 py-4 underline text-black">
+                    Desain Interaksi
+                  </td>
+                  <td class="px-6 py-4 text-black">IF23C Reguler</td>
+                  <td class="px-6 py-4 text-black">R.4.03</td>
+                  <td class="px-6 py-4">
+                    <div
+                      class="flex items-center border truncate px-2.5 py-0.5 text-xs w-fit border-[#57AF81] font-medium rounded-lg text-[#57AF81] bg-[#F7F7F7]"
+                    >
+                      Akan Dimulai
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 20 20"
+                        class="w-5 h-5"
+                      >
+                        <g fill="currentColor">
+                          <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                            clip-rule="evenodd"
+                          />
+                        </g>
+                      </svg>
+                      Presensi
+                    </button>
+                  </td>
+                </tr>
+                <!-- END JADWAL 1 -->
+
+                <!-- START JADWAL 2 -->
+                <tr class="bg-[#F7F7F7]">
+                  <td class="px-6 py-4 text-black">14.50-16.30</td>
+                  <td class="px-6 py-4 text-black">IF01104</td>
+                  <td class="px-6 py-4 underline text-black">Data Analitik</td>
+                  <td class="px-6 py-4 text-black">IF23C Reguler</td>
+                  <td class="px-6 py-4 text-black">R.4.03</td>
+                  <td class="px-6 py-4">
+                    <div
+                      class="flex items-center border truncate px-2.5 py-0.5 text-xs w-fit border-[#EECEB0] font-medium rounded-lg text-[#CD7B2E] bg-[#FFF9F2]"
+                    >
+                      Jadwal Berikutnya
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      class="bg-[#CACACA] text-[#909090] font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 20 20"
+                        class="w-5 h-5"
+                      >
+                        <g fill="currentColor">
+                          <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                            clip-rule="evenodd"
+                          />
+                        </g>
+                      </svg>
+                      Presensi
+                    </button>
+                  </td>
+                </tr>
+                <!-- END JADWAL 2 -->
+
+                <!-- START JADWAL 3 -->
+                <tr class="bg-white">
+                  <td class="px-6 py-4 text-[#A3A6A8]">07.00 - 08.40</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">IF00137</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">Digital Marketing</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">IF20A Reguler</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">Ruang Besar</td>
+                  <td class="px-6 py-4">
+                    <div
+                      class="flex items-center border truncate px-2.5 py-0.5 text-xs w-fit border-[#DBDFE3] font-medium rounded-lg text-[#A3A6A8] bg-[#E6EAEE]"
+                    >
+                      Selesai
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      class="bg-[#CACACA] text-[#909090] font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 20 20"
+                        class="w-5 h-5"
+                      >
+                        <g fill="currentColor">
+                          <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                            clip-rule="evenodd"
+                          />
+                        </g>
+                      </svg>
+                      Presensi
+                    </button>
+                  </td>
+                </tr>
+                <!-- END JADWAL 3 -->
+
+                <!-- START JADWAL 4 -->
+                <tr class="bg-white">
+                  <td class="px-6 py-4 text-[#A3A6A8]">07.00 - 08.40</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">IF00137</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">Digital Marketing</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">IF20A Reguler</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">Ruang Besar</td>
+                  <td class="px-6 py-4">
+                    <div
+                      class="flex items-center border truncate px-2.5 py-0.5 text-xs w-fit border-[#DBDFE3] font-medium rounded-lg text-[#A3A6A8] bg-[#E6EAEE]"
+                    >
+                      Selesai
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      class="bg-[#CACACA] text-[#909090] font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 20 20"
+                        class="w-5 h-5"
+                      >
+                        <g fill="currentColor">
+                          <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                            clip-rule="evenodd"
+                          />
+                        </g>
+                      </svg>
+                      Presensi
+                    </button>
+                  </td>
+                </tr>
+                <!-- END JADWAL 4 -->
+
+                <!-- START JADWAL 5 -->
+                <tr class="bg-white">
+                  <td class="px-6 py-4 text-[#A3A6A8]">07.00 - 08.40</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">IF00137</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">Digital Marketing</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">IF20A Reguler</td>
+                  <td class="px-6 py-4 text-[#A3A6A8]">Ruang Besar</td>
+                  <td class="px-6 py-4">
+                    <div
+                      class="flex items-center border truncate px-2.5 py-0.5 text-xs w-fit border-[#DBDFE3] font-medium rounded-lg text-[#A3A6A8] bg-[#E6EAEE]"
+                    >
+                      Selesai
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      class="bg-[#CACACA] text-[#909090] font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 20 20"
+                        class="w-5 h-5"
+                      >
+                        <g fill="currentColor">
+                          <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                            clip-rule="evenodd"
+                          />
+                        </g>
+                      </svg>
+                      Presensi
+                    </button>
+                  </td>
+                </tr>
+                <!-- END JADWAL 5 -->
+              </tbody>
+            </table>
+
+            <!-- END TABEL -->
+          </div>
+          <!-- END TABEL JADWAL -->
+
+          <!-- START AKADEMIK -->
+          <div class="w-full flex flex-row gap-5">
+            <!-- START KALENDER -->
+            <div
+              class="flex flex-col space-y-3 p-4 bg-white rounded-xl shadow-md w-full max-w-[345px]"
+            >
+              <div class="flex justify-between items-center w-full">
+                <h1 class="text-lg font-semibold text-[#252525] truncate">
+                  Kalender Akademik
+                </h1>
+                <button class="text-md font-medium text-[#57AF81] truncate">
+                  Lihat Semua
+                </button>
+              </div>
+              <div class="flex gap-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="w-5 h-5 text-[#808284]"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M16 2a1 1 0 0 1 1 1h3a1 1 0 0 1 1 1v14a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V4a1 1 0 0 1 1-1h3a1 1 0 0 1 2 0h6a1 1 0 0 1 1-1M7 5a1 1 0 0 0 2 0h6a1 1 0 1 0 2 0h2v2H5V5z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="text-sm text-[#333333]">Hari Ini</p>
+              </div>
+
+              <!-- START EVENT 1 -->
+              <div
+                class="flex flex-col gap-2 w-full border border-[#B8DBCA] rounded-md bg-[#F7F7F7] p-2"
+              >
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex gap-2 items-center">
+                    <span class="p-1 bg-[#57AF81] rounded-full"></span>
+                    <h2 class="text-xs text-[#57AF81] font-semibold">
+                      Event Name
+                    </h2>
+                  </div>
+                  <p class="text-[#2C5A41] font-medium text-xs">08.00</p>
+                </div>
+                <p class="font-medium text-xs text-[#6F7072]">Description</p>
+              </div>
+              <!-- END EVENT 1 -->
+
+              <!-- START EVENT 2 -->
+              <div
+                class="flex flex-col gap-2 w-full border border-[#B1C5F6] rounded-md bg-[#F0F3FF] p-2"
+              >
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex gap-2 items-center">
+                    <span class="p-1 bg-[#3267E3] rounded-full"></span>
+                    <h2 class="text-xs text-[#3267E3] font-semibold">
+                      Event Name
+                    </h2>
+                  </div>
+                  <p class="text-[#2C5A41] font-medium text-xs">08.00</p>
+                </div>
+                <p class="font-medium text-xs text-[#6F7072]">Description</p>
+              </div>
+              <!-- END EVENT 2 -->
+
+              <!-- START EVENT 3 -->
+              <div
+                class="flex flex-col gap-2 w-full border border-[#EECEB0] rounded-md bg-[#FFF9F2] p-2"
+              >
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex gap-2 items-center">
+                    <span class="p-1 bg-[#CD7B2E] rounded-full"></span>
+                    <h2 class="text-xs text-[#CD7B2E] font-semibold">
+                      Event Name
+                    </h2>
+                  </div>
+                  <p class="text-[#2C5A41] font-medium text-xs">08.00</p>
+                </div>
+                <p class="font-medium text-xs text-[#6F7072]">Description</p>
+              </div>
+              <!-- END EVENT 3 -->
+            </div>
+            <!-- END KALENDER -->
+
+            <!-- START NILAI -->
+            <div
+              class="flex flex-col space-y-3 p-4 bg-white rounded-xl shadow-md w-full"
+            >
+              <div class="flex justify-between items-center w-full">
+                <h1 class="text-lg font-semibold text-[#252525] truncate">
+                  Akumulasi Nilai
+                </h1>
+                <button class="text-md font-medium text-[#57AF81] truncate">
+                  Lihat Semua
+                </button>
+              </div>
+              <div class="mx-auto w-full max-w-[500px]">
+                <canvas id="roundedBarChart"></canvas>
+              </div>
+            </div>
+            <!-- END NILAI -->
+          </div>
+          <!-- END AKADEMIK -->
+        </section>
+      </main>
+      <!-- END MAIN SECTION -->
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
