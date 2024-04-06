@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+    <link rel="icon" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="max-w-screen-2xl min-h-screen flex flex-row">
+      <!-- START LEFT SIDE -->
+      <div class="w-full max-w-[640px] h-full">
+        <img
+          src="./assets/login.png"
+          alt="login-image"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!-- END LEFT SIDE -->
+
+      <!-- START RIGHT SIDE -->
+      <div class="w-full h-full py-20 px-10">
+        <img src="./assets/logo.png" alt="logo-image" class="w-40 pb-20" />
+        <div class="flex flex-col space-y-6">
+          <div class="space-y-3">
+            <h1
+              class="text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-[#65B675] to-[#138FC2]"
+            >
+              Selamat Datang
+            </h1>
+            <p class="text-md text-[#636363]">
+              Kelola kebutuhan perkuliahan Anda melalui Sistem Informasi
+              Manajemen Terpadu Akademik, Riset, dan Inovasi.
+            </p>
+          </div>
+          <form class="space-y-4">
+            <div>
+              <label for="email" class="text-xs text-[#4B4B4B] font-medium"
+                >Email
+                <span
+                  id="emailRequiredIndicator"
+                  class="hidden required"
+                ></span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Masukkan username/email anda..."
+                required
+                class="w-full py-2 px-4 border border-[#C0C0C0] rounded-lg"
+              />
+            </div>
+            <div class="relative">
+              <label for="password" class="text-xs text-[#4B4B4B] font-medium"
+                >Kata Sandi
+                <span
+                  id="passwordRequiredIndicator"
+                  class="hidden required"
+                ></span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                required
+                class="w-full py-2 px-4 border border-[#C0C0C0] rounded-lg"
+              />
+              <!-- Show/Hide password button -->
+              <button
+                id="togglePassword"
+                type="button"
+                class="absolute inset-y-0 right-0 top-6 flex items-center px-3 bg-transparent border-none focus:outline-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5 text-[#636363]"
+                  id="eyeIcon"
+                >
+                  <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              type="submit"
+              class="flex items-center justify-center gap-2 w-full py-2 bg-gradient-to-r from-[#65B675] to-[#138FC2] rounded-lg text-white text-xl font-semibold"
+            >
+              <span>Masuk</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </button>
+          </form>
+          <div class="flex justify-between items-center pb-20">
+            <a href="#" class="text-md text-[#636363] font-medium underline">
+              Lupa Kata Sandi?
+            </a>
+            <div class="flex items-center">
+              <input
+                type="checkbox"
+                name="remember"
+                id="remember"
+                class="h-5 w-5 rounded-lg"
+              />
+              <label
+                for="remember"
+                class="ml-2 text-md text-[#636363] font-medium"
+                >Ingat Saya</label
+              >
+            </div>
+          </div>
+          <div class="flex flex-col items-center space-y-3 text-[#727272]">
+            <p class="text-md font-medium">Butuh bantuan?</p>
+            <div class="flex gap-6 items-center">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="w-10 h-10"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="w-10 h-10"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="w-10 h-10"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="w-10 h-10"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="w-10 h-10"
+                >
+                  <path
+                    fill="currentColor"
+                    d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"
+                  />
+                </svg>
+              </a>
+            </div>
+            <p class="text-xs">
+              Copyright&copy; 2023 Universitas Muhammadiyah Bandung. All Rights
+              Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- END RIGHT SIDE -->
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+</html>
