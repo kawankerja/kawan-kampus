@@ -104,9 +104,41 @@ const config = {
         },
       },
     },
+    elements: {
+      point: {
+        radius: 0, // Hide the points
+      },
+    },
+    interaction: {
+      mode: "nearest",
+      axis: "x",
+      intersect: false,
+    },
     borderRadius: 100, // Set the corner radius for all bars
   },
+  // Function to handle events when chart is updated
+  plugins: [
+    {
+      beforeUpdate: function (chart) {
+        // Add average value to the end of the line dataset
+        chart.data.datasets[1].data[chart.data.datasets[1].data.length - 1] =
+          averageValue;
+      },
+    },
+  ],
 };
 
 // Initialize the chart
-const myChart = new Chart(document.getElementById("roundedBarChart"), config);
+const chartCanvas = document.getElementById("roundedBarChart");
+const myChart = new Chart(chartCanvas, config);
+
+// Get chart instance
+const chartInstance = myChart;
+
+// Get the coordinate of the end point of the line chart
+const meta = chartInstance.getDatasetMeta(1); // assuming the line chart is the second dataset
+const endCoordinate = meta.data[meta.data.length - 1].getCenterPoint();
+
+// Set position of the average value element
+const averageValueElement = document.getElementById("averageValue");
+averageValueElement.innerText = "IPK: " + averageValue.toFixed(2);

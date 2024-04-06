@@ -29,34 +29,34 @@
 
       <!-- START MAIN SECTION -->
       <main class="w-full h-full overflow-y-auto bg-[#F7F7F7]">
-        <!-- START ALERT -->
-        <div class="absolute top-10 right-12 w-full max-w-[1110px]">
-          <div
-            class="flex gap-2 items-center w-full bg-[#FFF9F2] border border-[#EECEB0] text-[#CD7B2E] text-lg px-4 py-2 rounded-lg"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-6 h-6"
+        <section class="p-10 flex flex-col space-y-5 relative">
+          <!-- START ALERT -->
+          <div class="absolute top-10 right-10 z-50 w-full max-w-[950px]">
+            <div
+              class="flex gap-2 items-center w-full bg-[#FFF9F2] border border-[#EECEB0] text-[#CD7B2E] text-md px-4 py-2 rounded-lg shadow-md"
             >
-              <path
-                fill-rule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <p>
-              Mohon lakukan pembayaran UKT sebelum tanggal
-              <span class="font-bold">25 Desember 2023! </span
-              ><button class="underline">
-                Klik untuk lihat cara pembayaran
-              </button>
-            </p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <p>
+                Mohon lakukan pembayaran UKT sebelum tanggal
+                <span class="font-bold">25 Desember 2023! </span
+                ><button class="underline">
+                  Klik untuk lihat cara pembayaran
+                </button>
+              </p>
+            </div>
           </div>
-        </div>
-        <!-- END ALERT -->
-        <section class="p-10 flex flex-col space-y-5">
+          <!-- END ALERT -->
           <!-- START PENGUMUMAN -->
           <div
             class="w-full flex flex-col space-y-3 p-4 bg-[#FFFFFF] rounded-xl shadow-md"
@@ -556,8 +556,12 @@
                   Lihat Semua
                 </button>
               </div>
-              <div class="mx-auto w-full max-w-[500px]">
+              <div class="mx-auto w-full max-w-[500px] relative">
                 <canvas id="roundedBarChart"></canvas>
+                <div
+                  id="averageValue"
+                  class="text-[#4B4B4B] font-medium absolute top-12 -right-9 text-sm"
+                ></div>
               </div>
             </div>
             <!-- END NILAI -->
