@@ -7,10 +7,6 @@
   color: red;
 }
 
-input[type="checkbox"]:checked {
-  accent-color: green; /* Change to your desired color */
-}
-
 @layer utilities {
   @layer responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
