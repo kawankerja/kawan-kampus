@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link type="text/tailwindcss" rel="stylesheet" href="src/css/profile.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="src/js/tailwindcss.js"></script>
+		<title>Profile</title>
+
+		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
+
+		<style type="text/tailwindcss">
+			.active {
+				@apply bg-primary-main text-white; /* Applying Tailwind CSS utility classes */
+			}
+		</style>
+	</head>
+	<body class="bg-success-surface flex gap-8 box-border">
+		<!-- Navbar -->
+		<aside class="w-1/4 h-full py-14 bg-white flex flex-col gap-12 text-sm">
+			<img class="px-12 w-3/4" src="src/img/logo.svg" alt="" />
+			<div class="menu pl-12 flex flex-col gap-5">
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">AKUN SAYA</p>
+						<hr class="border-gray-400" />
+					</div>
+					<button class="flex justify-between w-full items-center">
+						<span class="flex pl-3 py-3 gap-3 items-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="#57af81"
+								class="w-6 h-6">
+								<path
+									fill-rule="evenodd"
+									d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+									clip-rule="evenodd" />
+							</svg>
+							<p class="text-primary-main">Profile</p>
+						</span>
+						<div
+							class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
+					</button>
+				</div>
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">MANAJEMEN AKUN</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="#808284"
+									class="w-6 h-6">
+									<path
+										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
+								</svg>
+								<p class="text-gray-600">Dosen</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="#808284"
+									class="w-6 h-6">
+									<path
+										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
+								</svg>
+								<p class="text-gray-600">Mahasiswa</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">KONTEN</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									viewBox="0 0 20 20"
+									class="w-6 h-6"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M18 3C18 2.65342 17.8205 2.33156 17.5257 2.14935C17.2309 1.96714 16.8628 1.95058 16.5528 2.10557L8.76393 6H5C3.34315 6 2 7.34315 2 9C2 10.6569 3.34315 12 5 12H5.27925L7.05132 17.3162C7.18744 17.7246 7.56958 18 8.00001 18H9.00001C9.55229 18 10 17.5523 10 17V12.618L16.5528 15.8944C16.8628 16.0494 17.2309 16.0329 17.5257 15.8507C17.8205 15.6684 18 15.3466 18 15V3Z"
+										fill="#808284" />
+								</svg>
+								<p class="text-gray-600">Pengumuman</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									class="w-6 h-6"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Kalender Akademik</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">ADMININTRASI</p>
+						<hr class="border-gray-400" />
+					</div>
+					<button class="flex justify-between w-full items-center">
+						<span class="flex pl-3 py-3 gap-3 items-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="#808284"
+								class="w-6 h-6">
+								<path
+									d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z" />
+								<path
+									fill-rule="evenodd"
+									d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z"
+									clip-rule="evenodd" />
+							</svg>
+							<p class="text-gray-600">Verifikasi Pembayaran</p>
+						</span>
+						<div
+							class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+					</button>
+				</div>
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">KEMAHASISWAAN</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="#808284"
+									class="w-6 h-6">
+									<path
+										fill-rule="evenodd"
+										d="M7.502 6h7.128A3.375 3.375 0 0 1 18 9.375v9.375a3 3 0 0 0 3-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 0 0-.673-.05A3 3 0 0 0 15 1.5h-1.5a3 3 0 0 0-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6ZM13.5 3A1.5 1.5 0 0 0 12 4.5h4.5A1.5 1.5 0 0 0 15 3h-1.5Z"
+										clip-rule="evenodd" />
+									<path
+										fill-rule="evenodd"
+										d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V9.375ZM6 12a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V12Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75ZM6 15a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V15Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75ZM6 18a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V18Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z"
+										clip-rule="evenodd" />
+								</svg>
+
+								<p class="text-gray-600">Daftar Mata Kuliah</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									class="w-6 h-6"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z"
+										fill="#808284" />
+								</svg>
+								<p class="text-gray-600">Jadwal Perkuliahan</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="#808284"
+									class="w-6 h-6">
+									<path
+										fill-rule="evenodd"
+										d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+										clip-rule="evenodd" />
+								</svg>
+
+								<p class="text-gray-600">Riwayat Pengajaran</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<button
+				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="#CB3A31"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M3 3C2.44772 3 2 3.44772 2 4V16C2 16.5523 2.44772 17 3 17C3.55228 17 4 16.5523 4 16V4C4 3.44772 3.55228 3 3 3Z" />
+					<path
+						d="M13.2929 12.2929C12.9024 12.6834 12.9024 13.3166 13.2929 13.7071C13.6834 14.0976 14.3166 14.0976 14.7071 13.7071L17.7071 10.7071C17.8946 10.5196 18 10.2652 18 10C18 9.73478 17.8946 9.48043 17.7071 9.29289L14.7071 6.29289C14.3166 5.90237 13.6834 5.90237 13.2929 6.29289C12.9024 6.68342 12.9024 7.31658 13.2929 7.70711L14.5858 9L7 9C6.44771 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H14.5858L13.2929 12.2929Z" />
+				</svg>
+				Keluar
+			</button>
+		</aside>
+		<!-- Akhir Navbar -->
+
+		<!-- Content -->
+		<div class="container text-gray-600 my-12 mr-12">
+			<!-- group button -->
+			<div
+				id="group-button"
+				class="head flex w-fit rounded-t-lg border border-gray-300">
+				<button class="px-4 py-2 rounded-ss-lg bg-white active">
+					Data Diri
+				</button>
+				<button class="px-4 py-2 rounded-se-lg bg-white">Informasi Akun</button>
+			</div>
+			<!-- akhir group button -->
+
+			<hr class="border-gray-300 -translate-y-[0.5px] mb-5" />
+
+			<!-- data diri -->
+			<div id="data-diri" class="box flex flex-col gap-5">
+				<div class="flex gap-5">
+					<!-- Profile -->
+					<div
+						class="profile text-sm text-black w-1/4 p-4 rounded-xl shadow-md bg-white">
+						<div class="flex justify-between">
+							<p class="font-semibold text-base">Profile</p>
+							<button
+								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+										fill="#57AF81" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+										fill="#57AF81" />
+								</svg>
+								Edit
+							</button>
+						</div>
+
+						<div class="w-full flex justify-center my-4">
+							<img src="src/img/profile1.png" alt="" />
+						</div>
+
+						<form action="" class="flex flex-col gap-4">
+							<div>
+								<label class="block mb-1" for="">Nama</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="Roland Cronin" />
+							</div>
+							<div>
+								<label class="block mb-1" for="">NIP</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300 disabled:bg-gray-200 disabled:text-gray-500"
+									type="text"
+									value="07653253"
+									disabled />
+							</div>
+							<div>
+								<label class="block mb-1" for="">Divisi</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300 disabled:bg-gray-200 disabled:text-gray-500"
+									type="text"
+									value="Akademik"
+									disabled />
+							</div>
+							<div>
+								<label class="block mb-1" for="gender">Jenis Kelamin</label>
+								<select
+									name="cars"
+									id="gender"
+									class="w-full px-3 py-2 rounded-lg border border-gray-300">
+									<option value="laki laki">Laki - Laki</option>
+									<option value="Perempuan">Perempuan</option>
+								</select>
+							</div>
+							<div>
+								<label class="block mb-1" for="">Tempat Lahir</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="Bandung" />
+							</div>
+							<div>
+								<label class="block mb-1" for="">Tanggal Lahir</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="10 Mei 2005" />
+							</div>
+						</form>
+					</div>
+					<!-- Akhir Profile -->
+
+					<!-- Alamat -->
+					<div
+						class="alamat text-sm text-black w-3/4 p-4 rounded-xl shadow-md bg-white">
+						<div class="flex justify-between mb-4">
+							<p class="font-semibold text-base">Alamat & Kontak</p>
+							<button
+								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+										fill="#57AF81" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+										fill="#57AF81" />
+								</svg>
+								Edit
+							</button>
+						</div>
+
+						<form action="" class="flex flex-col gap-4">
+							<div>
+								<label class="block mb-1" for="">Email Kampus</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="rolandcronin@umb.admin.ac.id" />
+							</div>
+							<div>
+								<label class="block mb-1" for="">Email Pribadi</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="roland@youmail.com" />
+							</div>
+							<div>
+								<label class="block mb-1" for="">Alamat Kos</label>
+								<textarea
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									name=""
+									id=""
+									rows="5">
+91459 Zemlak Knoll
+									</textarea
+								>
+							</div>
+							<div>
+								<label class="block mb-1" for="gender">Alamat Rumah</label>
+								<textarea
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									name=""
+									id=""
+									rows="5">
+91459 Zemlak Knoll
+								</textarea
+								>
+							</div>
+							<div>
+								<label class="block mb-1" for="">No HP</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="719-466-9612" />
+							</div>
+						</form>
+					</div>
+					<!-- Akhir Alamat -->
+				</div>
+
+				<!-- Kependudukan -->
+				<div
+					class="kependudukan text-sm text-black p-4 rounded-xl shadow-md bg-white">
+					<div class="flex justify-between mb-4">
+						<p class="font-semibold text-base">Kependudukan</p>
+						<button
+							class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+									fill="#57AF81" />
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+									fill="#57AF81" />
+							</svg>
+							Edit
+						</button>
+					</div>
+
+					<form action="" class="flex flex-col gap-4">
+						<div>
+							<label class="block mb-1" for="">Nomor Induk Kependudukan</label>
+							<input
+								class="w-full px-3 py-2 rounded-lg border border-gray-300"
+								type="text"
+								value="Roland Cronin" />
+						</div>
+
+						<div class="flex *:w-full gap-4">
+							<div>
+								<label class="block mb-1" for="">Kartu Tanda Penduduk</label>
+								<button
+									class="w-full px-3 py-2 rounded-lg border border-primary-main text-primary-main font-bold flex justify-center items-center gap-2">
+									<svg
+										width="21"
+										height="20"
+										viewBox="0 0 21 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M4.75 4C4.75 2.89543 5.64543 2 6.75 2H11.3358C11.8662 2 12.3749 2.21071 12.75 2.58579L16.1642 6C16.5393 6.37507 16.75 6.88378 16.75 7.41421V16C16.75 17.1046 15.8546 18 14.75 18H6.75C5.64543 18 4.75 17.1046 4.75 16V4ZM6.75 10C6.75 9.44772 7.19772 9 7.75 9H13.75C14.3023 9 14.75 9.44772 14.75 10C14.75 10.5523 14.3023 11 13.75 11H7.75C7.19772 11 6.75 10.5523 6.75 10ZM7.75 13C7.19772 13 6.75 13.4477 6.75 14C6.75 14.5523 7.19772 15 7.75 15H13.75C14.3023 15 14.75 14.5523 14.75 14C14.75 13.4477 14.3023 13 13.75 13H7.75Z"
+											fill="#57AF81" />
+									</svg>
+									Lihat Dokumen
+								</button>
+							</div>
+							<div>
+								<label class="block mb-1" for="">Kartu Keluarga</label>
+								<button
+									class="w-full px-3 py-2 rounded-lg border border-primary-main text-primary-main font-bold flex justify-center items-center gap-2">
+									<svg
+										width="21"
+										height="20"
+										viewBox="0 0 21 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M4.75 4C4.75 2.89543 5.64543 2 6.75 2H11.3358C11.8662 2 12.3749 2.21071 12.75 2.58579L16.1642 6C16.5393 6.37507 16.75 6.88378 16.75 7.41421V16C16.75 17.1046 15.8546 18 14.75 18H6.75C5.64543 18 4.75 17.1046 4.75 16V4ZM6.75 10C6.75 9.44772 7.19772 9 7.75 9H13.75C14.3023 9 14.75 9.44772 14.75 10C14.75 10.5523 14.3023 11 13.75 11H7.75C7.19772 11 6.75 10.5523 6.75 10ZM7.75 13C7.19772 13 6.75 13.4477 6.75 14C6.75 14.5523 7.19772 15 7.75 15H13.75C14.3023 15 14.75 14.5523 14.75 14C14.75 13.4477 14.3023 13 13.75 13H7.75Z"
+											fill="#57AF81" />
+									</svg>
+									Lihat Dokumen
+								</button>
+							</div>
+						</div>
+
+						<div>
+							<label class="block mb-1" for="gender">Agama</label>
+							<input
+								class="w-full px-3 py-2 rounded-lg border border-gray-300"
+								type="text"
+								value="Islam" />
+						</div>
+
+						<div>
+							<label class="block mb-1" for="">Kwarganegaraan</label>
+							<input
+								class="w-full px-3 py-2 rounded-lg border border-gray-300"
+								type="text"
+								value="Indonesia" />
+						</div>
+					</form>
+				</div>
+				<!-- Akhir Kependudukan -->
+
+				<!-- keluarga -->
+				<div
+					class="keluarga text-sm text-black p-4 rounded-xl shadow-md bg-white">
+					<div class="flex justify-between mb-4">
+						<p class="font-semibold text-base">Kependudukan</p>
+						<button
+							class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+									fill="#57AF81" />
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+									fill="#57AF81" />
+							</svg>
+							Edit
+						</button>
+					</div>
+
+					<table
+						class="w-full border border-separate border-spacing-0 rounded-xl">
+						<thead class="bg-gray-400 text-white">
+							<th class="p-4 rounded-ss-xl">No</th>
+							<th class="p-4">Nama Lengkap</th>
+							<th class="p-4">Status Perkawinan</th>
+							<th class="p-4">Pekerjaan</th>
+							<th class="p-4 rounded-se-xl">Kontak</th>
+						</thead>
+						<tbody>
+							<tr class="*:p-4 *:font-bold">
+								<td class="text-center">1</td>
+								<td>Darla Bailey</td>
+								<td>Kawin</td>
+								<td>PNS</td>
+								<td>504-887-3208</td>
+							</tr>
+							<tr class="*:p-4 *:font-bold">
+								<td class="text-center">2</td>
+								<td>Edwin Hessel</td>
+								<td>Belum Kawin</td>
+								<td>Pelajar/Mahasiswa</td>
+								<td>777-386-9005</td>
+							</tr>
+							<tr class="*:p-4 *:font-bold">
+								<td class="rounded-es-xl text-center">3</td>
+								<td>Leigh Veum</td>
+								<td>Belum Kawin</td>
+								<td>Pelajar/Mahasiswa</td>
+								<td class="rounded-ee-xl">438-504-3398</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- Akhir keluarga -->
+			</div>
+			<!-- akhir data diri -->
+
+			<!-- informasi akun -->
+			<div id="informasi-akun" class="box hidden">
+				<div class="flex">
+					<div
+						class="profile text-sm text-black w-full p-4 rounded-xl shadow-md bg-white">
+						<div class="flex justify-between mb-4">
+							<p class="font-semibold text-base">Informasi Akun</p>
+							<button
+								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+										fill="#57AF81" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+										fill="#57AF81" />
+								</svg>
+								Edit
+							</button>
+						</div>
+
+						<form action="" class="flex flex-col gap-4">
+							<div>
+								<label class="block mb-1" for="">Email</label>
+								<input
+									class="w-full px-3 py-2 rounded-lg border border-gray-300 disabled:bg-gray-200 disabled:text-gray-500"
+									type="email"
+									value="adipaticahya@umb.teacher.ac.id"
+									disabled />
+							</div>
+
+							<div>
+								<label class="block mb-1" for="password-new"
+									>Kata Sandi Lama<span class="text-danger-main">*</span>
+								</label>
+
+								<div class="relative">
+									<input
+										id="password-new"
+										class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
+										type="password" />
+									<img
+										id="eye-new"
+										class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
+										src="src/img/eye.svg" />
+								</div>
+							</div>
+
+							<div>
+								<label class="block mb-1" for="password-old"
+									>Kata Sandi<span class="text-danger-main">*</span>
+								</label>
+
+								<div class="relative">
+									<input
+										id="password-old"
+										class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
+										type="password"
+										required />
+									<img
+										id="eye-old"
+										class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
+										src="src/img/eye.svg" />
+
+									<p
+										id="error-old"
+										class="flex items-center gap-1 mt-1 text-gray-600 font-medium">
+										<svg
+											width="14"
+											height="14"
+											viewBox="0 0 14 14"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M13.4 7.0001C13.4 10.5347 10.5346 13.4001 7.00001 13.4001C3.46538 13.4001 0.600006 10.5347 0.600006 7.0001C0.600006 3.46548 3.46538 0.600098 7.00001 0.600098C10.5346 0.600098 13.4 3.46548 13.4 7.0001ZM7.80001 3.8001C7.80001 4.24193 7.44183 4.6001 7.00001 4.6001C6.55818 4.6001 6.20001 4.24193 6.20001 3.8001C6.20001 3.35827 6.55818 3.0001 7.00001 3.0001C7.44183 3.0001 7.80001 3.35827 7.80001 3.8001ZM6.20001 6.2001C5.75818 6.2001 5.40001 6.55827 5.40001 7.0001C5.40001 7.44193 5.75818 7.8001 6.20001 7.8001V10.2001C6.20001 10.6419 6.55818 11.0001 7.00001 11.0001H7.80001C8.24183 11.0001 8.60001 10.6419 8.60001 10.2001C8.60001 9.75827 8.24183 9.4001 7.80001 9.4001V7.0001C7.80001 6.55827 7.44183 6.2001 7.00001 6.2001H6.20001Z"
+												fill="#6F7072" />
+										</svg>
+										Harus menggunakan huruf kecil (a-z), huruf besar(A-Z), angka
+										(1234567890), dan simbol (!@#$%^&*()_+)
+									</p>
+								</div>
+							</div>
+
+							<div>
+								<label class="block mb-1" for="password-konfirmasi"
+									>Konfirmasi Kata Sandi Baru<span class="text-danger-main"
+										>*</span
+									>
+								</label>
+
+								<div class="relative">
+									<input
+										id="password-konfirmasi"
+										class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
+										type="password" />
+									<img
+										id="eye-konfirmasi"
+										class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
+										src="src/img/eye.svg" />
+								</div>
+							</div>
+
+							<div class="group-btn *:px-4 *:py-2 flex justify-end gap-4">
+								<button
+									class="rounded-lg border border-danger-main text-danger-main">
+									Batalkan
+								</button>
+								<button class="rounded-lg bg-primary-main text-white">
+									Ubah Kata Sandi
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- akhir informasi aku -->
+		</div>
+		<!-- Akhir Content -->
+
+		<script src="src/js/profile.js"></script>
+	</body>
+</html>
