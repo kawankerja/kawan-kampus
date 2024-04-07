@@ -2,6 +2,32 @@
   font-family: "Inter", sans-serif;
 }
 
+.dropdown-kuliah,
+.dropdown-tugas {
+  display: none;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-kuliah.open,
+.dropdown-tugas.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Apply custom styling to active link */
+.nav-link.active {
+  color: blue; /* Example color for active link */
+  font-weight: bold; /* Example style for active link */
+}
+
+/* Show the hidden div for active link */
+.nav-link.active + .hidden {
+  display: block;
+}
+
 .required::after {
   content: " *";
   color: red;
