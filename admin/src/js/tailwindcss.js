@@ -1,8 +1,8 @@
 tailwind.config = {
 	theme: {
-		fontFamily: {
-			sans: ["inter", "sans-serif"],
-		},
+		// fontFamily: {
+		// 	sans: ["inter", "sans-serif"],
+		// },
 		extend: {
 			colors: {
 				// Primary
