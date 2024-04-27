@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Daftar Mahasiswa</title>
+		<title>Daftar Dosen</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="src/js/tailwindcss.js"></script>
 		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
@@ -58,30 +58,30 @@
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
-									fill="#808284"
+									fill="#57af81"
 									class="w-6 h-6">
 									<path
 										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
 								</svg>
-								<p class="text-gray-600">Dosen</p>
+								<p class="text-primary-main font-medium">Dosen</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
 						</button>
 						<button class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
-									fill="#57af81"
+									fill="#808284"
 									class="w-6 h-6">
 									<path
 										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
 								</svg>
-								<p class="text-primary-main font-medium">Mahasiswa</p>
+								<p class="text-gray-600">Mahasiswa</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
 					</div>
 				</div>
@@ -249,7 +249,7 @@
 				class="container p-4 text-black w-full rounded-xl shadow-md bg-white">
 				<!-- HEAD -->
 				<div class="head flex justify-between mb-4">
-					<p class="font-bold">Daftar Mahasiswa</p>
+					<p class="font-bold">Daftar Dosen</p>
 					<button
 						class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-main text-white">
 						<svg
@@ -265,7 +265,7 @@
 								fill="white" />
 						</svg>
 
-						Input Mahasiswa Baru
+						Input Dosen Baru
 					</button>
 				</div>
 				<!-- AKHIR HEAD -->
@@ -350,29 +350,18 @@
 						<thead class="bg-primary-main text-white text-sm">
 							<th class="p-4 rounded-ss-xl">No</th>
 							<th class="p-4">Nama</th>
-							<th class="p-4">NIM</th>
-							<th class="p-4">Angkatan</th>
-							<th class="p-4">Kelas</th>
-							<th class="p-4">Total SKS</th>
+							<th class="p-4">NIDN</th>
 							<th class="p-4">Status</th>
 							<th class="p-4 rounded-se-xl">Aksi</th>
 						</thead>
 						<tbody>
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>1</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dekan</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -389,7 +378,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -412,20 +401,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>2</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">2</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Kaprodi</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -442,7 +423,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -465,20 +446,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>3</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">3</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -495,7 +468,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -518,20 +491,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>4</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">4</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -548,7 +513,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -571,20 +536,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>5</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">5</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -601,7 +558,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -624,20 +581,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>6</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">6</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -654,7 +603,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -677,20 +626,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>7</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">7</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -707,7 +648,7 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"
@@ -730,20 +671,12 @@
 							</tr>
 
 							<tr
-								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface">
-								<td>8</td>
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">8</td>
 								<td class="font-bold">Janis Kuvalis</td>
 								<td>200102002</td>
-								<td>2020</td>
-								<td class="text-gray-700">Teknik Informatika - IF20A</td>
-								<td class="text-gray-700">22</td>
-								<td>
-									<span
-										class="px-2 py-1 bg-success-surface text-[12px] text-success-main border border-success-border rounded-lg font-medium"
-										>Aktif</span
-									>
-								</td>
-								<td class="flex gap-2">
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
 									<button
 										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
 										<svg
@@ -760,7 +693,52 @@
 										Kontak
 									</button>
 									<button
-										class="px-3 py-1 gap-1 bg-white border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+												fill="#57AF81" />
+										</svg>
+
+										Edit Akun
+									</button>
+								</td>
+							</tr>
+
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">9</td>
+								<td class="font-bold">Janis Kuvalis</td>
+								<td>200102002</td>
+								<td>Dosen</td>
+								<td class="flex gap-2 justify-center rounded-br-xl">
+									<button
+										class="px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										class="px-3 py-1 gap-1 border border-primary-main rounded-lg text-primary-main flex justify-center items-center">
 										<svg
 											width="20"
 											height="20"

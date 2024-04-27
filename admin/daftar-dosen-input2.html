@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Input Data Mahasiswa</title>
+		<title>Input Data Dosen</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
 
@@ -59,30 +59,30 @@
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
-									fill="#808284"
+									fill="#57af81"
 									class="w-6 h-6">
 									<path
 										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
 								</svg>
-								<p class="text-gray-600">Dosen</p>
+								<p class="text-primary-main font-medium">Dosen</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
 						</button>
 						<button class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
-									fill="#57af81"
+									fill="#808284"
 									class="w-6 h-6">
 									<path
 										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
 								</svg>
-								<p class="text-primary-main">Mahasiswa</p>
+								<p class="text-gray-600">Mahasiswa</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
 					</div>
 				</div>
@@ -250,7 +250,7 @@
 				class="container p-4 text-black w-full rounded-xl shadow-md bg-white">
 				<!-- HEAD -->
 				<div class="head flex justify-between mb-4">
-					<p class="font-bold">Input Data Mahasiswa</p>
+					<p class="font-bold">Input Data Dosen</p>
 					<button
 						class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-main text-white">
 						Lanjutkan
@@ -276,7 +276,7 @@
 					<div class="data-diri z-50 flex flex-col gap-2 text-primary-main">
 						<div
 							class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface"></div>
-						<p class="text-sm">Data Diri Mahasiswa</p>
+						<p class="text-sm">Data Diri Dosen</p>
 					</div>
 
 					<div
@@ -303,7 +303,7 @@
 					<div
 						class="h-2 w-full translate-y-[6px] absolute bg-gray-200 rounded-full z-20"></div>
 					<div
-						class="h-2 w-[430px] translate-y-[6px] absolute bg-primary-surface rounded-full z-20"></div>
+						class="h-2 w-[415px] translate-y-[6px] absolute bg-primary-surface rounded-full z-20"></div>
 					<div
 						class="h-2 w-[315px] translate-y-[6px] absolute bg-gray-200 rounded-full z-20 left-[430px]"></div>
 					<div
@@ -311,9 +311,140 @@
 				</div>
 				<!-- AKHIR TIMELINE -->
 
-				<!-- FORM DATA DIRI MAHASISWA -->
+				<!-- FORM DATA DIRI DOSEN -->
 				<div class="h-[570px] overflow-auto pr-2">
 					<form action="" class="flex flex-col gap-4">
+						<!-- DATA KELUARGA PASANGAN -->
+						<div class="data-pasangan flex flex-col gap-4">
+							<div
+								class="headerPasangan w-full rounded-lg bg-gray-100 px-4 py-2 font-bold flex justify-between items-center">
+								<p>Data Keluarga Pasangan</p>
+
+								<input
+									class="w-5 h-5 rounded-md accent-green-600 border border-primary-main bg-white outline-none appearance-none checked:bg-green-600"
+									type="checkbox"
+									name=""
+									id="checkboxPasangan" />
+							</div>
+
+							<div class="box-pasangan hidden">
+								<p class="font-semibold">Data Keluarga (Istri)</p>
+
+								<div id="dataPasangan">
+									<div class="flex flex-col gap-4">
+										<div class="nama flex flex-col gap-1">
+											<label class="text-[12px]" for="">Nama</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="Roland Cronin" />
+										</div>
+
+										<div class="nik flex flex-col gap-1">
+											<label class="text-[12px]" for="">NIK</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="67938271" />
+										</div>
+
+										<div class="peran flex flex-col gap-1">
+											<label class="text-[12px]" for="">Peran</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="Kakak" />
+										</div>
+
+										<div class="tempat-lahir flex flex-col gap-1">
+											<label class="text-[12px]" for="">Tempat Lahir</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="Bandung" />
+										</div>
+
+										<div class="tanggal-lahir flex flex-col gap-1">
+											<label class="text-[12px]" for="">Tanggal Lahir</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="10 April 1996" />
+											<div
+												class="flex gap-1 text-[12px] text-gray-500 items-center">
+												<svg
+													width="16"
+													height="16"
+													viewBox="0 0 16 16"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M14.4001 8.0001C14.4001 11.5347 11.5347 14.4001 8.0001 14.4001C4.46548 14.4001 1.6001 11.5347 1.6001 8.0001C1.6001 4.46548 4.46548 1.6001 8.0001 1.6001C11.5347 1.6001 14.4001 4.46548 14.4001 8.0001ZM8.8001 4.8001C8.8001 5.24193 8.44193 5.6001 8.0001 5.6001C7.55827 5.6001 7.2001 5.24193 7.2001 4.8001C7.2001 4.35827 7.55827 4.0001 8.0001 4.0001C8.44193 4.0001 8.8001 4.35827 8.8001 4.8001ZM7.2001 7.2001C6.75827 7.2001 6.4001 7.55827 6.4001 8.0001C6.4001 8.44193 6.75827 8.8001 7.2001 8.8001V11.2001C7.2001 11.6419 7.55827 12.0001 8.0001 12.0001H8.8001C9.24193 12.0001 9.6001 11.6419 9.6001 11.2001C9.6001 10.7583 9.24193 10.4001 8.8001 10.4001V8.0001C8.8001 7.55827 8.44193 7.2001 8.0001 7.2001H7.2001Z"
+														fill="#909090" />
+												</svg>
+												<p>
+													Anda dapat menulis menggunakan format : DD/MM/YYYY
+												</p>
+											</div>
+										</div>
+
+										<div class="pekerjaan flex flex-col gap-1">
+											<label class="text-[12px]" for="">Pekerjaan</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="Pegawai Negeri Sipil" />
+										</div>
+
+										<div class="penghasilan flex flex-col gap-1">
+											<label class="text-[12px]" for="">Penghasilan</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="1.000.000 - 5.000.000" />
+										</div>
+
+										<hr />
+
+										<p class="text-base font-semibold">
+											Alamat & Kontak (Istri)
+										</p>
+
+										<div class="email-pribadi flex flex-col gap-1">
+											<label class="text-[12px]" for="">Email Pribadi</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="email"
+												value="roland@youmail.com" />
+										</div>
+
+										<div class="alamat-rumah flex flex-col gap-1">
+											<label class="text-[12px]" for="">Alamat Rumah</label>
+											<textarea
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												name=""
+												id=""
+												rows="3">
+91459 Zemlak Knoll</textarea
+											>
+										</div>
+
+										<div class="no-hp flex flex-col gap-1">
+											<label class="text-[12px]" for="">No HP</label>
+											<input
+												class="text-sm px-3 py-2 rounded-lg border border-gray-300"
+												type="text"
+												value="719-466-9612" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- AKHIR DATA KELUARGA PASANGAN -->
+
 						<!-- DATA KELUARGA ORANG TUA -->
 						<div class="data-orang-tua flex flex-col gap-4">
 							<div class="ayah flex flex-col gap-4">
@@ -676,11 +807,12 @@
 						<!-- AKHIR DATA KELUARGA SAUDARA -->
 					</form>
 				</div>
-				<!-- AKHIR FORM DATA DIRI MAHASISWA  -->
+				<!-- AKHIR FORM DATA DIRI DOSEN  -->
 			</div>
 		</div>
 		<!-- AKHIR CONTENT -->
 
+		<script src="src/js/daftar-dosen.js"></script>
 		<script src="src/js/daftar-mhs.js"></script>
 	</body>
 </html>

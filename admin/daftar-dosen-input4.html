@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Input Data Mahasiswa</title>
+		<title>Daftar Dosen</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
 
@@ -59,30 +59,30 @@
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
-									fill="#808284"
+									fill="#57af81"
 									class="w-6 h-6">
 									<path
 										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
 								</svg>
-								<p class="text-gray-600">Dosen</p>
+								<p class="text-primary-main font-medium">Dosen</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
 						</button>
 						<button class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
-									fill="#57af81"
+									fill="#808284"
 									class="w-6 h-6">
 									<path
 										d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
 								</svg>
-								<p class="text-primary-main">Mahasiswa</p>
+								<p class="text-gray-600">Mahasiswa</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
 					</div>
 				</div>
@@ -250,11 +250,11 @@
 				class="container p-4 text-black w-full rounded-xl shadow-md bg-white">
 				<!-- HEAD -->
 				<div class="head flex justify-between mb-4">
-					<p class="font-bold">Input Data Mahasiswa</p>
+					<p class="font-bold">Input Data Dosen</p>
 					<button
+						id="open-modal"
+						data-modal="false"
 						class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-main text-white">
-						Lanjutkan
-
 						<svg
 							width="20"
 							height="20"
@@ -262,11 +262,14 @@
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg">
 							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M10.2929 3.29289C10.6834 2.90237 11.3166 2.90237 11.7071 3.29289L17.7071 9.29289C18.0976 9.68342 18.0976 10.3166 17.7071 10.7071L11.7071 16.7071C11.3166 17.0976 10.6834 17.0976 10.2929 16.7071C9.90237 16.3166 9.90237 15.6834 10.2929 15.2929L14.5858 11L3 11C2.44772 11 2 10.5523 2 10C2 9.44772 2.44772 9 3 9H14.5858L10.2929 4.70711C9.90237 4.31658 9.90237 3.68342 10.2929 3.29289Z"
+								d="M7.70711 10.2929C7.31658 9.90237 6.68342 9.90237 6.29289 10.2929C5.90237 10.6834 5.90237 11.3166 6.29289 11.7071L9.29289 14.7071C9.68342 15.0976 10.3166 15.0976 10.7071 14.7071L13.7071 11.7071C14.0976 11.3166 14.0976 10.6834 13.7071 10.2929C13.3166 9.90237 12.6834 9.90237 12.2929 10.2929L11 11.5858L11 6H16C17.1046 6 18 6.89543 18 8V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V8C2 6.89543 2.89543 6 4 6H9L9 11.5858L7.70711 10.2929Z"
+								fill="white" />
+							<path
+								d="M9 4C9 3.44772 9.44772 3 10 3C10.5523 3 11 3.44772 11 4L11 6H9L9 4Z"
 								fill="white" />
 						</svg>
+
+						Simpan Data
 					</button>
 				</div>
 				<!-- AKHIR HEAD -->
@@ -280,187 +283,273 @@
 					</div>
 
 					<div
-						class="data-diri z-50 flex flex-col gap-2 items-center text-gray-600">
+						class="data-diri z-50 flex flex-col gap-2 items-center text-primary-main">
 						<div
-							class="rounded-full w-[20px] h-[20px] bg-gray-200 border-4 border-gray-200"></div>
+							class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface"></div>
 						<p class="text-sm">Data Keluarga</p>
 					</div>
 
 					<div
-						class="data-diri z-50 flex flex-col gap-2 items-center text-gray-600">
+						class="data-diri z-50 flex flex-col gap-2 items-center text-primary-main">
 						<div
-							class="rounded-full w-[20px] h-[20px] bg-gray-200 border-4 border-gray-200"></div>
+							class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface"></div>
 						<p class="text-sm">Lampiran</p>
 					</div>
 
 					<div
-						class="data-diri z-50 flex flex-col gap-2 items-end text-gray-600">
+						class="data-diri z-50 flex flex-col gap-2 items-end text-primary-main">
 						<div
-							class="rounded-full w-[20px] h-[20px] bg-gray-200 border-4 border-gray-200"></div>
+							class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface"></div>
 						<p class="text-sm">Data Keuangan</p>
 					</div>
 
 					<div
 						class="h-2 w-full translate-y-[6px] absolute bg-gray-200 rounded-full z-20"></div>
 					<div
-						class="h-2 w-[415px] translate-y-[6px] absolute bg-gray-200 rounded-full z-20"></div>
+						class="h-2 w-[420px] translate-y-[6px] absolute bg-primary-surface rounded-full z-20"></div>
 					<div
-						class="h-2 w-[315px] translate-y-[6px] absolute bg-gray-200 rounded-full z-20 left-[430px]"></div>
+						class="h-2 w-[315px] translate-y-[6px] absolute bg-primary-surface rounded-full z-20 left-[430px]"></div>
 					<div
-						class="h-2 w-[355px] translate-y-[6px] absolute bg-gray-200 rounded-full z-20 left-[755px]"></div>
+						class="h-2 w-[355px] translate-y-[6px] absolute bg-primary-surface rounded-full z-20 left-[755px]"></div>
+					<div
+						class="h-2 w-full translate-y-[6px] absolute bg-primary-surface rounded-full z-20"></div>
 				</div>
 				<!-- AKHIR TIMELINE -->
 
-				<!-- FORM DATA DIRI MAHASISWA -->
-				<div class="h-[570px] overflow-auto pr-2">
-					<div class="head flex gap-4">
-						<img class="w-20 h-20" src="src/img/data-mhs1.png" alt="" />
-						<div class="flex flex-col text-sm justify-between text-gray-700">
-							<span>
-								<p>Format : .jpg, .jpeg, .png</p>
-								<p>Max : 500kb</p>
-							</span>
-							<button
-								class="flex items-center justify-center px-3 py-1 rounded-lg border border-primary-main text-primary-main">
-								<svg
-									width="21"
-									height="20"
-									viewBox="0 0 21 20"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M17.9142 2.58579C17.1332 1.80474 15.8668 1.80474 15.0858 2.58579L7.5 10.1716V13H10.3284L17.9142 5.41421C18.6953 4.63316 18.6953 3.36683 17.9142 2.58579Z"
-										fill="#57AF81" />
-									<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M2.5 6C2.5 4.89543 3.39543 4 4.5 4H8.5C9.05228 4 9.5 4.44772 9.5 5C9.5 5.55228 9.05228 6 8.5 6H4.5V16H14.5V12C14.5 11.4477 14.9477 11 15.5 11C16.0523 11 16.5 11.4477 16.5 12V16C16.5 17.1046 15.6046 18 14.5 18H4.5C3.39543 18 2.5 17.1046 2.5 16V6Z"
-										fill="#57AF81" />
-								</svg>
-
-								Ubah Gambar
-							</button>
+				<!-- DATA KEUANGAN -->
+				<div class="h-auto overflow-auto pr-2">
+					<!-- DATA DOSEN UKT -->
+					<div class="data-dosen w-full border border-gray-200 rounded-xl mb-4">
+						<!-- Head -->
+						<div
+							class="head bg-gray-300 text-white text-sm font-bold px-4 py-2 rounded-t-xl">
+							<p>Data Dosen</p>
 						</div>
-					</div>
+						<!-- Akhir Head -->
 
-					<form action="" class="mt-4 flex flex-col gap-4">
-						<div class="nama flex flex-col gap-1">
-							<label class="text-[12px]" for="">Nama</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="Roland Cronin" />
-						</div>
-
-						<div class="nim flex flex-col gap-1">
-							<label class="text-[12px]" for="">NIM</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="07653253" />
-						</div>
-
-						<div class="prodi flex flex-col gap-1">
-							<label class="text-[12px]" for="">Program Studi</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="Desain Komunikasi Visual" />
-						</div>
-
-						<div class="gender flex flex-col gap-1">
-							<label class="text-[12px]" for="">Jenis Kelamin</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="Laki-laki" />
-						</div>
-
-						<div class="tempat-lahir flex flex-col gap-1">
-							<label class="text-[12px]" for="">Bandung</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="Bandung" />
-						</div>
-
-						<div class="tanggal-lahir flex flex-col gap-1">
-							<label class="text-[12px]" for="">Tanggal Lahir</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="10 April 1996" />
-							<div class="flex gap-1 text-[12px] text-gray-500 items-center">
-								<svg
-									width="16"
-									height="16"
-									viewBox="0 0 16 16"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M14.4001 8.0001C14.4001 11.5347 11.5347 14.4001 8.0001 14.4001C4.46548 14.4001 1.6001 11.5347 1.6001 8.0001C1.6001 4.46548 4.46548 1.6001 8.0001 1.6001C11.5347 1.6001 14.4001 4.46548 14.4001 8.0001ZM8.8001 4.8001C8.8001 5.24193 8.44193 5.6001 8.0001 5.6001C7.55827 5.6001 7.2001 5.24193 7.2001 4.8001C7.2001 4.35827 7.55827 4.0001 8.0001 4.0001C8.44193 4.0001 8.8001 4.35827 8.8001 4.8001ZM7.2001 7.2001C6.75827 7.2001 6.4001 7.55827 6.4001 8.0001C6.4001 8.44193 6.75827 8.8001 7.2001 8.8001V11.2001C7.2001 11.6419 7.55827 12.0001 8.0001 12.0001H8.8001C9.24193 12.0001 9.6001 11.6419 9.6001 11.2001C9.6001 10.7583 9.24193 10.4001 8.8001 10.4001V8.0001C8.8001 7.55827 8.44193 7.2001 8.0001 7.2001H7.2001Z"
-										fill="#909090" />
-								</svg>
-								<p>Anda dapat menulis menggunakan format : DD/MM/YYYY</p>
+						<!-- Akhir Form -->
+						<form action="" class="flex flex-col gap-4 p-4">
+							<div class="nama *:block flex flex-col p-1">
+								<label class="text-[14px] font-medium" for="">Nama</label>
+								<input
+									class="px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="Roland Cronin" />
 							</div>
+
+							<div class="nim *:block flex flex-col p-1">
+								<label class="text-[14px] font-medium" for="">NIDN</label>
+								<input
+									class="px-3 py-2 rounded-lg border border-gray-300"
+									type="text"
+									value="07653253" />
+							</div>
+
+							<div class="prodi *:block flex flex-col p-1">
+								<label class="text-[14px] font-medium" for=""
+									>Program Studi</label
+								>
+								<select
+									class="px-3 py-2 rounded-lg border border-gray-300"
+									name=""
+									id="">
+									<option class="px-3 py-2" value="">
+										Desain Komunikasi Visual
+									</option>
+								</select>
+							</div>
+						</form>
+						<!-- Akhir  Form -->
+					</div>
+					<!-- AKHIR DATA DOSEN UKT -->
+
+					<!-- PENGHASILAN ORTU -->
+					<div
+						class="penghasilan-ortu w-full border border-gray-300 rounded-xl mb-4">
+						<!-- Head -->
+						<div
+							class="head bg-gray-300 text-white text-sm font-bold px-4 py-2 rounded-t-xl">
+							<p>Detail Gaji</p>
 						</div>
+						<!-- Akhir Head -->
 
-						<hr />
+						<!-- Penghasilan -->
+						<table class="w-full mb-4">
+							<thead class="text-sm bg-primary-main text-white">
+								<th class="px-4 py-2 text-start" colspan="3">A. Penghasilan</th>
+							</thead>
+							<tbody>
+								<tr class="text-center *:p-4 *:py-2 text-sm text-gray-700">
+									<td class="text-start">Nama Tunjangan</td>
+									<td class="">Rp</td>
+									<td class="text-end">
+										<input
+											class="focus:px-4 focus:py-3 focus:rounded focus:border focus:border-primary-main outline-none focus:bg-[#ECF1F5] text-end"
+											type="text"
+											value="2.053.800" />
+									</td>
+								</tr>
+								<tr class="text-center *:p-4 *:py-2 text-sm text-gray-700">
+									<td class="text-start">Tunjangan Jabatan Struktural</td>
+									<td class="">Rp</td>
+									<td class="text-end">
+										<input
+											class="focus:px-4 focus:py-3 focus:rounded focus:border focus:border-primary-main outline-none focus:bg-[#ECF1F5] text-end"
+											type="text"
+											value="352.000" />
+									</td>
+								</tr>
+								<tr class="text-center *:p-4 *:py-2 text-sm text-gray-700">
+									<td class="text-start">Tunjangan Kehadiran</td>
+									<td class="">Rp</td>
+									<td class="text-end">
+										<input
+											class="focus:px-4 focus:py-3 focus:rounded focus:border focus:border-primary-main outline-none focus:bg-[#ECF1F5] text-end"
+											type="text"
+											value="352.000" />
+									</td>
+								</tr>
+								<tr class="text-center *:p-4 *:py-2 text-sm text-gray-700">
+									<td class="text-start">Tunjangan Lembur</td>
+									<td class="">Rp</td>
+									<td class="text-end">
+										<input
+											class="focus:px-4 focus:py-3 focus:rounded focus:border focus:border-primary-main outline-none focus:bg-[#ECF1F5] text-end"
+											type="text"
+											value="0" />
+									</td>
+								</tr>
+								<tr
+									class="text-center *:p-4 *:py-2 text-sm text-gray-700 border-t border-b">
+									<td
+										class="text-start font-bold text-primary-main"
+										colspan="2">
+										Total Penghasilan
+									</td>
+									<td class="text-end font-bold text-primary-main">
+										Rp. 2.405.800
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- Akhir Penghasilan -->
 
-						<p class="text-base font-semibold">Alamat Kontak</p>
+						<!-- Potongan -->
+						<table class="w-full">
+							<thead class="text-sm bg-primary-main text-white">
+								<th class="px-4 py-2 text-start" colspan="3">A. Penghasilan</th>
+							</thead>
+							<tbody>
+								<tr class="text-center *:p-4 *:py-2 text-sm text-gray-700">
+									<td class="text-start">-</td>
+									<td class="">Rp</td>
+									<td class="text-end w-[461.800px]">
+										<input
+											class="focus:px-4 focus:py-3 focus:rounded focus:border focus:border-primary-main outline-none focus:bg-[#ECF1F5] text-end"
+											type="text"
+											value="0" />
+									</td>
+								</tr>
 
-						<div class="email-kampus flex flex-col gap-1">
-							<label class="text-[12px]" for="">Email Kampus</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="email"
-								value="rolandcronin@umb.student.ac.id" />
-						</div>
+								<tr
+									class="text-center *:p-4 *:py-2 text-sm text-gray-700 border-b">
+									<td class="text-start font-bold text-primary-main">
+										Total Potongan
+									</td>
+									<td class="">Rp</td>
+									<td class="text-end w-[461.800px]">
+										<input
+											class="focus:px-4 focus:py-3 focus:rounded focus:border focus:border-primary-main outline-none focus:bg-[#ECF1F5] text-end"
+											type="text"
+											value="0" />
+									</td>
+								</tr>
 
-						<div class="email-pribadi flex flex-col gap-1">
-							<label class="text-[12px]" for="">Email Pribadi</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="email"
-								value="roland@youmail.com" />
-						</div>
-
-						<div class="alamat-kos flex flex-col gap-1">
-							<label class="text-[12px]" for="">Alamat Kos</label>
-							<textarea
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								name=""
-								id=""
-								rows="3">
-91459 Zemlak Knoll</textarea
-							>
-						</div>
-
-						<div class="alamat-rumah flex flex-col gap-1">
-							<label class="text-[12px]" for="">Alamat Rumah</label>
-							<textarea
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								name=""
-								id=""
-								rows="3">
-91459 Zemlak Knoll</textarea
-							>
-						</div>
-
-						<div class="no-hp flex flex-col gap-1">
-							<label class="text-[12px]" for="">No HP</label>
-							<input
-								class="text-sm px-3 py-2 rounded-lg border border-gray-300"
-								type="text"
-								value="719-466-9612" />
-						</div>
-					</form>
+								<tr class="text-center *:p-4 *:py-2 text-sm text-gray-700">
+									<td class="text-end font-bold text-primary-main" colspan="2">
+										Penerimaan Bersih (A-B)
+									</td>
+									<td class="text-end font-bold text-primary-main">
+										Rp. 2.405.800
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- Akhir Potongan -->
+					</div>
+					<!-- AKHIR PENGHASILAN ORTU -->
 				</div>
-				<!-- AKHIR FORM DATA DIRI MAHASISWA  -->
+				<!-- AKHIR DATA KEUANGAN  -->
 			</div>
 		</div>
 		<!-- AKHIR CONTENT -->
+
+		<div
+			id="content-modal"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<img class="mb-4" src="src/img/save.svg" alt="" />
+					<h1 class="mb-3 text-xl font-bold text-success-hover text-center">
+						Simpan Data Dosen yang Telah diedit?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Dengan mengklik tombol dibawah, Anda akan menyimpan data Dosen.Anda
+						bisa mengedit kembali data yang telah diinput.
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">Ya, Simpan Data</button>
+					<button class="bg-white text-danger-main">
+						Tidak, Saya ingin melanjutkan Edit Data
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- AKHIR CONTENT MODAL SIMPAN DATA -->
+
+		<script>
+			const btnModal = document.getElementById("open-modal");
+			const closeModal = document.getElementById("close-modal");
+			const contentModal = document.getElementById("content-modal");
+
+			btnModal.addEventListener("click", () => {
+				contentModal.classList.add("fixed");
+				contentModal.classList.remove("hidden");
+			});
+
+			closeModal.addEventListener("click", () => {
+				contentModal.classList.remove("fixed");
+				contentModal.classList.add("hidden");
+			});
+
+			window.onclick = function (event) {
+				if (event.target == contentModal) {
+					contentModal.classList.remove("fixed");
+					contentModal.classList.add("hidden");
+				}
+			};
+		</script>
 	</body>
 </html>

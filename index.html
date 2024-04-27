@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="assets/js/tailwindcss.js"></script>
+
+		<link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet" />
+
+		<title>Login</title>
+		<link rel="stylesheet" href="assets/css/global.css" />
+	</head>
+	<body>
+		<div class="flex justify-center">
+			<!-- Left side -->
+			<img
+				class="w-2/5 h-screen object-cover hidden lg:block"
+				src="assets/img/benner-auth.png"
+				alt="" />
+			<!-- Akhir Left side -->
+
+			<!-- Right side -->
+			<div
+				class="w-full h-screen sm:w-3/5 flex flex-col px-10 py-20 justify-between">
+				<img class="w-[211px]" src="assets/img/logo.svg" alt="" />
+				<div class="w-full flex flex-col gap-6">
+					<span>
+						<h1
+							class="text-4xl h-11 bg-clip-text text-transparent font-bold bg-gradient-to-r from-gradient-one to-gradient-two">
+							Selamat Datang
+						</h1>
+						<p class="text-gray-500 text-base">
+							Kelola kebutuhan perkuliahan Anda melalui Sistem Informasi
+							Manajemen Terpadu Akademik, Riset, dan Inovasi.
+						</p>
+					</span>
+					<form action="" class="flex flex-col gap-4">
+						<div>
+							<label class="text-sm font-medium" for=""
+								>Email<span class="text-red-500">*</span></label
+							>
+							<input
+								class="block w-full p-3 rounded-lg border border-gray-300 focus:outline-none"
+								type="text"
+								placeholder="Masukan username/email Anda..." />
+						</div>
+						<div>
+							<label class="text-sm font-medium" for=""
+								>Kata Sandi<span class="text-red-500">*</span></label
+							>
+							<div
+								class="flex p-3 rounded-lg border border-gray-300 group-focus:outline-offset-2">
+								<input
+									id="password"
+									class="w-full focus:outline-none"
+									type="password"
+									placeholder="Masukan password Anda..." />
+
+								<img id="togglePassword" src="assets/img/eye-off.svg" alt="" />
+							</div>
+						</div>
+						<button
+							class="w-full flex justify-center font-bold rounded-lg gap-4 px-4 py-3 bg-gradient-to-r from-gradient-one to-gradient-two text-white">
+							Masuk
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="w-6 h-6">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</svg>
+						</button>
+					</form>
+					<div class="flex justify-between text-gray-500">
+						<a href="" class="underline underline-offset-4">Lupa Kata Sandi?</a>
+						<span class="flex gap-2 items-center">
+							<span class="flex items-center relative">
+								<input
+									class="accent-green-600 w-5 h-5 rounded-md border checked:bg-black checked:border-black"
+									type="checkbox"
+									name=""
+									id="remember" />
+							</span>
+							<label for="remember">Ingat Saya</label>
+						</span>
+					</div>
+				</div>
+				<div class="flex flex-col items-center gap-3 text-gray-500">
+					<p class="font-medium">Butuh bantuan?</p>
+					<div class="flex gap-6">
+						<a href="">
+							<img src="assets/img/facebook.svg" alt="" />
+						</a>
+						<a href="">
+							<img src="assets/img/ig.svg" alt="" />
+						</a>
+						<a href="">
+							<img src="assets/img/tiktok.svg" alt="" />
+						</a>
+						<a href="">
+							<img src="assets/img/twitter.svg" alt="" />
+						</a>
+						<a href="">
+							<img src="assets/img/youtube.svg" alt="" />
+						</a>
+					</div>
+					<p class="text-sm">
+						Copyright© 2023 Universitas Muhammadiyah Bandung. All Rights
+						Reserved.
+					</p>
+				</div>
+			</div>
+			<!-- Akhir Right side -->
+		</div>
+
+		<script src="assets/js/auth.js"></script>
+	</body>
+</html>
