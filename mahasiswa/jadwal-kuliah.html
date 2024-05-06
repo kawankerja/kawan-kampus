@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./src/js/tailwindcss.js"></script>
+    <style type="text/tailwindcss">
+      .active {
+        @apply bg-primary-main text-white; /* Applying Tailwind CSS utility classes */
+      }
+    </style>
   </head>
   <body>
     <div class="w-screen h-screen flex flex-row">
@@ -432,8 +437,722 @@
         <!-- END NAVIGASI MENU -->
       </aside>
       <!-- END SIDEBAR -->
+
+      <!-- START MAIN SECTION -->
+      <main class="w-full h-full overflow-y-auto bg-[#F7F7F7]">
+        <section class="p-10 flex flex-col space-y-5">
+          <div
+            class="w-full flex flex-col space-y-3 p-4 bg-white rounded-xl shadow-md"
+          >
+            <!-- START TITLE JADWAL -->
+            <div class="flex justify-between items-center">
+              <h1 class="text-[#252525] text-md font-semibold">
+                Jadwal Perkuliahan
+              </h1>
+              <div class="flex gap-4 items-center text-[#808284] font-medium">
+                <div class="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M16 2a1 1 0 0 1 1 1h3a1 1 0 0 1 1 1v14a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V4a1 1 0 0 1 1-1h3a1 1 0 0 1 2 0h6a1 1 0 0 1 1-1M7 5a1 1 0 0 0 2 0h6a1 1 0 1 0 2 0h2v2H5V5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p class="text-sm">Rabu, 13 Desember 2023</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p class="text-sm">12.55</p>
+                </div>
+              </div>
+            </div>
+            <!-- END TITLE JADWAL -->
+
+            <!-- START BUTTON DOWNLOAD -->
+            <button
+              class="bg-primary-main text-white px-4 py-2 w-fit rounded-lg flex gap-2 items-center font-medium"
+            >
+              <span>Download Tabel</span>
+              <img
+                src="./src/assets/document-download.svg"
+                alt="download-icon"
+              />
+            </button>
+            <!-- END BUTTON DOWNLOAD -->
+
+            <!-- START TABS -->
+            <div>
+              <div
+                id="group-button"
+                class="head flex w-fit rounded-t-lg border border-gray-300"
+              >
+                <button class="px-4 py-2 rounded-ss-lg bg-white active">
+                  Tabel
+                </button>
+                <button class="px-4 py-2 rounded-se-lg bg-white">
+                  Kalender
+                </button>
+              </div>
+              <!-- akhir group button -->
+              <hr class="border-gray-300" />
+            </div>
+            <!-- END TABS -->
+
+            <!-- START TABEL JADWAL -->
+            <div id="table">
+              <table class="min-w-full rounded rounded-b-lg overflow-hidden">
+                <thead class="bg-primary-main text-white">
+                  <tr>
+                    <th class="text-left py-4 px-6 rounded-tl-lg">Hari</th>
+                    <th class="text-left py-4 px-6">Mata Kuliah</th>
+                    <th class="text-center py-4 px-6">SKS</th>
+                    <th class="text-center py-4 px-6">Kelas</th>
+                    <th class="text-center py-4 px-6">Waktu</th>
+                    <th class="text-center py-4 px-6">Ruangan</th>
+                    <th
+                      class="text-center py-4 px-6 bg-primary-main text-white rounded-tr-lg"
+                    >
+                      Aksi
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="border">
+                  <!-- START ROW 1 -->
+                  <tr>
+                    <td
+                      class="py-4 px-6 text-info-main bg-info-surface font-semibold"
+                      rowspan="3"
+                    >
+                      Selasa
+                    </td>
+                    <td class="text-left py-4 px-6 bg-white text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">2</td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      IF22B
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      07.00-08.40
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      R.4.04
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-white flex gap-2 items-center"
+                    >
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="bg-success-surface">
+                    <td class="text-left py-4 px-6 text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 text-sm">2</td>
+                    <td class="text-center py-4 px-6 text-sm">IF22B</td>
+                    <td class="text-center py-4 px-6 text-sm">07.00-08.40</td>
+                    <td class="text-center py-4 px-6 text-sm">R.4.04</td>
+                    <td
+                      class="text-center py-4 px-6 bg-success-surface flex gap-2 items-center"
+                    >
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-left py-4 px-6 bg-white text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">2</td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      IF22B
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      07.00-08.40
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      R.4.04
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-white flex gap-2 items-center"
+                    >
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- END ROW 1 -->
+
+                  <!-- START ROW 2 -->
+                  <tr class="bg-success-surface">
+                    <td
+                      class="py-4 px-6 text-white bg-info-border font-semibold"
+                      rowspan="3"
+                    >
+                      Rabu
+                    </td>
+                    <td class="text-left py-4 px-6 bg-success-surface text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-success-surface text-sm"
+                    >
+                      2
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-success-surface text-sm"
+                    >
+                      IF22B
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-success-surface text-sm"
+                    >
+                      07.00-08.40
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-success-surface text-sm"
+                    >
+                      R.4.04
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-success-surface flex gap-2 items-center"
+                    >
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="text-left py-4 px-6 text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 text-sm">2</td>
+                    <td class="text-center py-4 px-6 text-sm">IF22B</td>
+                    <td class="text-center py-4 px-6 text-sm">07.00-08.40</td>
+                    <td class="text-center py-4 px-6 text-sm">R.4.04</td>
+                    <td
+                      class="text-center py-4 px-6 bg-white flex gap-2 items-center"
+                    >
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="bg-success-surface">
+                    <td class="text-left py-4 px-6 text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 text-sm">2</td>
+                    <td class="text-center py-4 px-6 text-sm">IF22B</td>
+                    <td class="text-center py-4 px-6 text-sm">07.00-08.40</td>
+                    <td class="text-center py-4 px-6 text-sm">R.4.04</td>
+                    <td class="text-center py-4 px-6 flex gap-2 items-center">
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- END ROW 2 -->
+
+                  <!-- START ROW 3 -->
+                  <tr>
+                    <td
+                      class="py-4 px-6 text-info-main bg-info-surface font-semibold"
+                      rowspan="2"
+                    >
+                      Jum'at
+                    </td>
+                    <td class="text-left py-4 px-6 bg-white text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">2</td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      IF22B
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      07.00-08.40
+                    </td>
+                    <td class="text-center py-4 px-6 bg-white text-sm">
+                      R.4.04
+                    </td>
+                    <td
+                      class="text-center py-4 px-6 bg-white flex gap-2 items-center"
+                    >
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="bg-success-surface">
+                    <td class="text-left py-4 px-6 text-sm">
+                      IF04209-Pengenalan Teknologi Open Source
+                    </td>
+                    <td class="text-center py-4 px-6 text-sm">2</td>
+                    <td class="text-center py-4 px-6 text-sm">IF22B</td>
+                    <td class="text-center py-4 px-6 text-sm">07.00-08.40</td>
+                    <td class="text-center py-4 px-6 text-sm">R.4.04</td>
+                    <td class="text-center py-4 px-6 flex gap-2 items-center">
+                      <button
+                        class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 20 20"
+                          class="w-5 h-5"
+                        >
+                          <g fill="currentColor">
+                            <path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2z" />
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 5a2 2 0 0 1 2-2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm3 4a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 0 0 0 2h3a1 1 0 1 0 0-2zm-3 4a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3 0a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                              clip-rule="evenodd"
+                            />
+                          </g>
+                        </svg>
+                        Presensi
+                      </button>
+                      <button
+                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
+                      >
+                        Aksi
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- END ROW 3 -->
+                </tbody>
+              </table>
+            </div>
+            <!-- END TABEL JADWAL -->
+
+            <!-- START KALENDER -->
+            <div id="kalender" class="hidden">
+              <div class="flex">
+                <div
+                  class="profile text-sm text-black w-full p-4 rounded-xl shadow-md bg-white"
+                >
+                  <div class="flex justify-between mb-4">
+                    <p class="font-semibold text-base">Informasi Akun</p>
+                    <button
+                      class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+                          fill="#57AF81"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+                          fill="#57AF81"
+                        />
+                      </svg>
+                      Edit
+                    </button>
+                  </div>
+
+                  <form action="" class="flex flex-col gap-4">
+                    <div>
+                      <label class="block mb-1" for="">Email</label>
+                      <input
+                        class="w-full px-3 py-2 rounded-lg border border-gray-300 disabled:bg-gray-200 disabled:text-gray-500"
+                        type="email"
+                        value="adipaticahya@umb.teacher.ac.id"
+                        disabled
+                      />
+                    </div>
+
+                    <div>
+                      <label class="block mb-1" for="password-new"
+                        >Kata Sandi Lama<span class="text-danger-main">*</span>
+                      </label>
+
+                      <div class="relative">
+                        <input
+                          id="password-new"
+                          class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
+                          type="password"
+                        />
+                        <img
+                          id="eye-new"
+                          class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
+                          src="/admin/src/img/eye.svg"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="block mb-1" for="password-old"
+                        >Kata Sandi<span class="text-danger-main">*</span>
+                      </label>
+
+                      <div class="relative">
+                        <input
+                          id="password-old"
+                          class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
+                          type="password"
+                          required
+                        />
+                        <img
+                          id="eye-old"
+                          class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
+                          src="/admin/src/img/eye.svg"
+                        />
+
+                        <p
+                          id="error-old"
+                          class="flex items-center gap-1 mt-1 text-gray-600 font-medium"
+                        >
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13.4 7.0001C13.4 10.5347 10.5346 13.4001 7.00001 13.4001C3.46538 13.4001 0.600006 10.5347 0.600006 7.0001C0.600006 3.46548 3.46538 0.600098 7.00001 0.600098C10.5346 0.600098 13.4 3.46548 13.4 7.0001ZM7.80001 3.8001C7.80001 4.24193 7.44183 4.6001 7.00001 4.6001C6.55818 4.6001 6.20001 4.24193 6.20001 3.8001C6.20001 3.35827 6.55818 3.0001 7.00001 3.0001C7.44183 3.0001 7.80001 3.35827 7.80001 3.8001ZM6.20001 6.2001C5.75818 6.2001 5.40001 6.55827 5.40001 7.0001C5.40001 7.44193 5.75818 7.8001 6.20001 7.8001V10.2001C6.20001 10.6419 6.55818 11.0001 7.00001 11.0001H7.80001C8.24183 11.0001 8.60001 10.6419 8.60001 10.2001C8.60001 9.75827 8.24183 9.4001 7.80001 9.4001V7.0001C7.80001 6.55827 7.44183 6.2001 7.00001 6.2001H6.20001Z"
+                              fill="#6F7072"
+                            />
+                          </svg>
+                          Harus menggunakan huruf kecil (a-z), huruf besar(A-Z),
+                          angka (1234567890), dan simbol (!@#$%^&*()_+)
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="block mb-1" for="password-konfirmasi"
+                        >Konfirmasi Kata Sandi Baru<span
+                          class="text-danger-main"
+                          >*</span
+                        >
+                      </label>
+
+                      <div class="relative">
+                        <input
+                          id="password-konfirmasi"
+                          class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
+                          type="password"
+                        />
+                        <img
+                          id="eye-konfirmasi"
+                          class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
+                          src="/admin/src/img/eye.svg"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="group-btn *:px-4 *:py-2 flex justify-end gap-4">
+                      <button
+                        class="rounded-lg border border-danger-main text-danger-main"
+                      >
+                        Batalkan
+                      </button>
+                      <button class="rounded-lg bg-primary-main text-white">
+                        Ubah Kata Sandi
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- END KALENDER -->
+          </div>
+        </section>
+      </main>
+      <!-- END MAIN SECTION -->
     </div>
 
     <script src="./components/sidebar/sidebar.js"></script>
+    <script src="./src/js/jadwal.js"></script>
   </body>
 </html>
