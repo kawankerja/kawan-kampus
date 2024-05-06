@@ -44,24 +44,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const linkDashboard = document.getElementById("link-dashboard");
+// const linkDashboard = document.getElementById("link-dashboard");
 
-linkDashboard.addEventListener("click", function () {
-  window.location.href = "dashboard.html";
-});
+// linkDashboard.addEventListener("click", function () {
+//   window.location.href = "dashboard.html";
+// });
 
-// for active link routes
-document.addEventListener("DOMContentLoaded", function () {
-  const currentLocation = window.location.pathname;
-  const navLinks = document.querySelectorAll(".nav-link");
+// // for active link routes
+// document.addEventListener("DOMContentLoaded", function () {
+//   const currentLocation = window.location.pathname;
+//   const navLinks = document.querySelectorAll(".nav-link");
 
-  navLinks.forEach((link) => {
-    const hiddenDiv = link.querySelector(".hidden");
-    if (link.pathname === currentLocation) {
-      link.classList.add("active");
-      if (hiddenDiv) {
-        hiddenDiv.classList.remove("hidden");
-      }
-    }
-  });
-});
+//   navLinks.forEach((link) => {
+//     const hiddenDiv = link.querySelector(".hidden");
+//     if (link.pathname === currentLocation) {
+//       link.classList.add("active");
+//       if (hiddenDiv) {
+//         hiddenDiv.classList.remove("hidden");
+//       }
+//     }
+//   });
+// });
