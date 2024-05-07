@@ -440,7 +440,7 @@
 
       <!-- START MAIN SECTION -->
       <main class="w-full h-full overflow-y-auto bg-[#F7F7F7]">
-        <section class="p-10 flex flex-col space-y-5">
+        <section class="px-10 py-20 flex flex-col space-y-5">
           <div
             class="w-full flex flex-col space-y-3 p-4 bg-white rounded-xl shadow-md"
           >
@@ -580,23 +580,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr class="bg-success-surface">
@@ -1006,143 +1048,126 @@
 
             <!-- START KALENDER -->
             <div id="kalender" class="hidden">
-              <div class="flex">
-                <div
-                  class="profile text-sm text-black w-full p-4 rounded-xl shadow-md bg-white"
-                >
-                  <div class="flex justify-between mb-4">
-                    <p class="font-semibold text-base">Informasi Akun</p>
-                    <button
-                      class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2"
-                    >
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
-                          fill="#57AF81"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
-                          fill="#57AF81"
-                        />
-                      </svg>
-                      Edit
-                    </button>
-                  </div>
-
-                  <form action="" class="flex flex-col gap-4">
-                    <div>
-                      <label class="block mb-1" for="">Email</label>
-                      <input
-                        class="w-full px-3 py-2 rounded-lg border border-gray-300 disabled:bg-gray-200 disabled:text-gray-500"
-                        type="email"
-                        value="adipaticahya@umb.teacher.ac.id"
-                        disabled
-                      />
-                    </div>
-
-                    <div>
-                      <label class="block mb-1" for="password-new"
-                        >Kata Sandi Lama<span class="text-danger-main">*</span>
-                      </label>
-
-                      <div class="relative">
-                        <input
-                          id="password-new"
-                          class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
-                          type="password"
-                        />
-                        <img
-                          id="eye-new"
-                          class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
-                          src="/admin/src/img/eye.svg"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label class="block mb-1" for="password-old"
-                        >Kata Sandi<span class="text-danger-main">*</span>
-                      </label>
-
-                      <div class="relative">
-                        <input
-                          id="password-old"
-                          class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
-                          type="password"
-                          required
-                        />
-                        <img
-                          id="eye-old"
-                          class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
-                          src="/admin/src/img/eye.svg"
-                        />
-
-                        <p
-                          id="error-old"
-                          class="flex items-center gap-1 mt-1 text-gray-600 font-medium"
+              <div class="overflow-hidden rounded-lg">
+                <table class="min-w-full">
+                  <thead
+                    class="bg-primary-main text-white text-xl font-semibold"
+                  >
+                    <tr>
+                      <th class="px-6 py-3 text-start" colspan="6">
+                        Jadwal Kuliah
+                      </th>
+                    </tr>
+                  </thead>
+                  <thead class="bg-[#C1C5C8] text-white text-sm">
+                    <tr>
+                      <th class="px-6 py-3 text-start">Jam Ke-</th>
+                      <th class="px-6 py-3 text-start">Senin</th>
+                      <th class="px-6 py-3 text-start">Selasa</th>
+                      <th class="px-6 py-3 text-start">Rabu</th>
+                      <th class="px-6 py-3 text-start">Kamis</th>
+                      <th class="px-6 py-3 text-start">Jumat</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-sm border">
+                    <!-- START DOSEN 1 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="text-primary-main items-center">1</td>
+                      <td rowspan="2">
+                        <button
+                          id="dkv16007"
+                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
                         >
-                          <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M13.4 7.0001C13.4 10.5347 10.5346 13.4001 7.00001 13.4001C3.46538 13.4001 0.600006 10.5347 0.600006 7.0001C0.600006 3.46548 3.46538 0.600098 7.00001 0.600098C10.5346 0.600098 13.4 3.46548 13.4 7.0001ZM7.80001 3.8001C7.80001 4.24193 7.44183 4.6001 7.00001 4.6001C6.55818 4.6001 6.20001 4.24193 6.20001 3.8001C6.20001 3.35827 6.55818 3.0001 7.00001 3.0001C7.44183 3.0001 7.80001 3.35827 7.80001 3.8001ZM6.20001 6.2001C5.75818 6.2001 5.40001 6.55827 5.40001 7.0001C5.40001 7.44193 5.75818 7.8001 6.20001 7.8001V10.2001C6.20001 10.6419 6.55818 11.0001 7.00001 11.0001H7.80001C8.24183 11.0001 8.60001 10.6419 8.60001 10.2001C8.60001 9.75827 8.24183 9.4001 7.80001 9.4001V7.0001C7.80001 6.55827 7.44183 6.2001 7.00001 6.2001H6.20001Z"
-                              fill="#6F7072"
-                            />
-                          </svg>
-                          Harus menggunakan huruf kecil (a-z), huruf besar(A-Z),
-                          angka (1234567890), dan simbol (!@#$%^&*()_+)
-                        </p>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label class="block mb-1" for="password-konfirmasi"
-                        >Konfirmasi Kata Sandi Baru<span
-                          class="text-danger-main"
-                          >*</span
+                          <p class="text-xs text-gray-600 font-medium">
+                            DKVI6007
+                          </p>
+                          <h1 class="text-success-main text-md">
+                            Tinjauan Desain Nusantara
+                          </h1>
+                          <p class="text-xs text-gray-600 font-medium">
+                            2 SKS | Wajib
+                          </p>
+                        </button>
+                      </td>
+                      <td rowspan="3">
+                        <button
+                          id="dkv16007"
+                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
                         >
-                      </label>
+                          <p class="text-xs text-gray-600 font-medium">
+                            DKVI6007
+                          </p>
+                          <h1 class="text-success-main text-md">
+                            Tinjauan Desain Nusantara
+                          </h1>
+                          <p class="text-xs text-gray-600 font-medium">
+                            2 SKS | Wajib
+                          </p>
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- END DOSEN 1 -->
 
-                      <div class="relative">
-                        <input
-                          id="password-konfirmasi"
-                          class="w-full px-3 py-2 rounded-lg border border-gray-300 outline-gray-300 outline-2 disabled:bg-gray-200 disabled:text-gray-500"
-                          type="password"
-                        />
-                        <img
-                          id="eye-konfirmasi"
-                          class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
-                          src="/admin/src/img/eye.svg"
-                        />
-                      </div>
-                    </div>
+                    <!-- START DOSEN 2 -->
+                    <tr class="text-center font-medium">
+                      <td class="px-6 py-4 text-primary-main">2</td>
 
-                    <div class="group-btn *:px-4 *:py-2 flex justify-end gap-4">
-                      <button
-                        class="rounded-lg border border-danger-main text-danger-main"
-                      >
-                        Batalkan
-                      </button>
-                      <button class="rounded-lg bg-primary-main text-white">
-                        Ubah Kata Sandi
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                      <td rowspan="2">
+                        <button
+                          id="dkv16007"
+                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
+                        >
+                          <p class="text-xs text-gray-600 font-medium">
+                            DKVI6007
+                          </p>
+                          <h1 class="text-success-main text-md">
+                            Tinjauan Desain Nusantara
+                          </h1>
+                          <p class="text-xs text-gray-600 font-medium">
+                            2 SKS | Wajib
+                          </p>
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- END DOSEN 2 -->
+
+                    <!-- START DOSEN 3 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">3</td>
+
+                      <td rowspan="2">
+                        <button
+                          id="dkv16007"
+                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-info-surface border border-info-border"
+                        >
+                          <p class="text-xs text-gray-600 font-medium">
+                            UNIV6001
+                          </p>
+                          <h1 class="text-info-main text-md">Bahasa Inggris</h1>
+                          <p class="text-xs text-gray-600 font-medium">
+                            2 SKS | Pilihan
+                          </p>
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- END DOSEN 3 -->
+
+                    <!-- START DOSEN 4 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">4</td>
+                      <td></td>
+                    </tr>
+                    <!-- END DOSEN 4 -->
+
+                    <!-- START DOSEN 5 -->
+
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">5</td>
+                      <td></td>
+                    </tr>
+                    <!-- END DOSEN 5 -->
+                  </tbody>
+                </table>
               </div>
             </div>
             <!-- END KALENDER -->
