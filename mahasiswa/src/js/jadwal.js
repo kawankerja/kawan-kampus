@@ -18,3 +18,25 @@ btnKalender.addEventListener("click", () => {
   table.classList.add("hidden");
 });
 // Akhir Script Tab
+
+// Fungsi untuk menampilkan dropdown
+const dropdownContent = document.getElementById("dropdown-content");
+const btnAction = document.getElementById("action-button");
+
+btnAction.addEventListener("click", (event) => {
+  // Toggle class untuk menampilkan atau menyembunyikan dropdown
+  dropdownContent.classList.toggle("open");
+});
+
+// Event listener untuk menutup dropdown saat klik di luar dropdown atau tombol
+document.addEventListener("click", (event) => {
+  const isDropdownClicked = dropdownContent.contains(event.target);
+  const isButtonClicked = btnAction.contains(event.target);
+
+  // Jika tidak ada yang diklik adalah dropdown atau tombol, sembunyikan dropdown
+  if (!isDropdownClicked && !isButtonClicked) {
+    dropdownContent.classList.remove("open");
+  }
+});
+
+// Akhir Fungsi untuk menyelesaikan dropdown
