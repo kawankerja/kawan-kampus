@@ -15,7 +15,6 @@
 .day {
 	min-height: 200px;
 	padding: 10px;
-	border: 1px solid #dadce0;
 	box-sizing: border-box;
 	cursor: pointer;
 	text-align: right;
@@ -23,6 +22,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
+	border: 1px solid #dadce0;
 }
 .weekend {
 	color: black;
@@ -53,7 +53,9 @@
 	background-color: #f9f9f9;
 }
 .selected {
-	border: 5px solid #b8dbca;
+	/* outline: 1px solud ; */
+	border: 3px solid #b8dbca;
+	box-sizing: border-box;
 }
 div.day p {
 	font-weight: normal;

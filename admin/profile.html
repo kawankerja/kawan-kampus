@@ -35,7 +35,7 @@
 						<p class="text-gray-600 font-semibold mb-2">AKUN SAYA</p>
 						<hr class="border-gray-400" />
 					</div>
-					<button class="flex justify-between w-full items-center">
+					<button id="profile" class="flex justify-between w-full items-center">
 						<span class="flex pl-3 py-3 gap-3 items-center">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
 						<hr class="border-gray-400" />
 					</div>
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button id="dosen" class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,9 @@
 							<div
 								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="mahasiswa"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +114,9 @@
 							<div
 								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									class="w-6 h-6"
@@ -138,7 +142,9 @@
 						<p class="text-gray-600 font-semibold mb-2">ADMININTRASI</p>
 						<hr class="border-gray-400" />
 					</div>
-					<button class="flex justify-between w-full items-center">
+					<button
+						id="verifikasi"
+						class="flex justify-between w-full items-center">
 						<span class="flex pl-3 py-3 gap-3 items-center">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -267,6 +273,7 @@
 						<div class="flex justify-between">
 							<p class="font-semibold text-base">Profile</p>
 							<button
+								id="edit-profile"
 								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
 								<svg
 									width="20"
@@ -343,7 +350,9 @@
 									class="w-full mb-1 px-3 py-2 rounded-lg border border-gray-300"
 									type="text"
 									value="10 Mei 2005" />
-								<p class="flex gap-2 text-[11px] font-medium text-[#909090]">
+								<p
+									id="info-tgl-lahir"
+									class="hidden flex gap-2 text-[11px] font-medium text-[#909090]">
 									<svg
 										width="20"
 										height="20"
@@ -361,7 +370,9 @@
 								</p>
 							</div>
 
-							<div class="flex gap-4 justify-end">
+							<div
+								id="batal-simpan-profile"
+								class="hidden flex gap-4 justify-end">
 								<button
 									class="px-3 py-1 text-danger-main rounded-lg border border-danger-main">
 									Batalkan
@@ -395,6 +406,7 @@
 						<div class="flex justify-between mb-4">
 							<p class="font-semibold text-base">Alamat & Kontak</p>
 							<button
+								id="edit-alamat"
 								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
 								<svg
 									width="20"
@@ -460,7 +472,8 @@
 									value="719-466-9612" />
 
 								<p
-									class="flex items-center gap-2 text-[11px] font-medium text-[#909090]">
+									id="phone-status-alamat"
+									class="flex items-center gap-2 text-[11px] font-medium text-[#909090] hidden">
 									<svg
 										width="16"
 										height="16"
@@ -478,7 +491,9 @@
 								</p>
 							</div>
 
-							<div class="flex gap-4 justify-end">
+							<div
+								id="batal-simpan-alamat"
+								class="flex gap-4 justify-end hidden">
 								<button
 									class="px-3 py-1 text-danger-main rounded-lg border border-danger-main">
 									Batalkan
@@ -513,6 +528,7 @@
 					<div class="flex justify-between mb-4">
 						<p class="font-semibold text-base">Kependudukan</p>
 						<button
+							id="edit-kependudukan"
 							class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
 							<svg
 								width="20"
@@ -535,14 +551,17 @@
 
 					<form action="" class="flex flex-col gap-4">
 						<div>
-							<label class="block mb-1" for="">Nomor Induk Kependudukan</label>
+							<label class="block mb-1 font-medium" for=""
+								>Nomor Induk Kependudukan</label
+							>
 							<input
 								class="w-full px-3 py-2 rounded-lg border border-gray-300"
 								type="text"
 								value="Roland Cronin" />
 
 							<p
-								class="mt-1 flex gap-2 text-[11px] font-medium text-[#909090] items-center">
+								id="phone-status-kependudukan"
+								class="hidden mt-1 flex gap-2 text-[11px] font-medium text-[#909090] items-center">
 								<svg
 									width="16"
 									height="16"
@@ -562,8 +581,11 @@
 
 						<div class="flex *:w-full gap-4">
 							<div>
-								<label class="block mb-1" for="">Kartu Tanda Penduduk</label>
+								<label class="block mb-1 font-medium" for=""
+									>Kartu Tanda Penduduk</label
+								>
 								<button
+									id="btn-ktp"
 									class="w-full px-3 py-2 rounded-lg border border-primary-main text-primary-main font-bold flex justify-center items-center gap-2">
 									<svg
 										width="21"
@@ -579,10 +601,31 @@
 									</svg>
 									Lihat Dokumen
 								</button>
+								<button
+									id="btn-ktp-edit"
+									class="hidden w-full px-3 py-2 rounded-lg bg-primary-main text-white font-bold flex justify-center items-center gap-2">
+									<svg
+										width="21"
+										height="20"
+										viewBox="0 0 21 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M6.5 2C5.39543 2 4.5 2.89543 4.5 4V16C4.5 17.1046 5.39543 18 6.5 18H14.5C15.6046 18 16.5 17.1046 16.5 16V7.41421C16.5 6.88378 16.2893 6.37507 15.9142 6L12.5 2.58579C12.1249 2.21071 11.6162 2 11.0858 2H6.5ZM11.5 8C11.5 7.44772 11.0523 7 10.5 7C9.94772 7 9.5 7.44772 9.5 8V10H7.5C6.94772 10 6.5 10.4477 6.5 11C6.5 11.5523 6.94772 12 7.5 12H9.5V14C9.5 14.5523 9.94771 15 10.5 15C11.0523 15 11.5 14.5523 11.5 14L11.5 12H13.5C14.0523 12 14.5 11.5523 14.5 11C14.5 10.4477 14.0523 10 13.5 10H11.5V8Z"
+											fill="white" />
+									</svg>
+
+									Unggah Dokumen
+								</button>
 							</div>
 							<div>
-								<label class="block mb-1" for="">Kartu Keluarga</label>
+								<label class="block mb-1 font-medium" for=""
+									>Kartu Keluarga</label
+								>
 								<button
+									id="btn-kk"
 									class="w-full px-3 py-2 rounded-lg border border-primary-main text-primary-main font-bold flex justify-center items-center gap-2">
 									<svg
 										width="21"
@@ -597,12 +640,31 @@
 											fill="#57AF81" />
 									</svg>
 									Lihat Dokumen
+								</button>
+
+								<button
+									id="btn-kk-edit"
+									class="hidden w-full px-3 py-2 rounded-lg bg-primary-main text-white font-bold flex justify-center items-center gap-2">
+									<svg
+										width="21"
+										height="20"
+										viewBox="0 0 21 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M6.5 2C5.39543 2 4.5 2.89543 4.5 4V16C4.5 17.1046 5.39543 18 6.5 18H14.5C15.6046 18 16.5 17.1046 16.5 16V7.41421C16.5 6.88378 16.2893 6.37507 15.9142 6L12.5 2.58579C12.1249 2.21071 11.6162 2 11.0858 2H6.5ZM11.5 8C11.5 7.44772 11.0523 7 10.5 7C9.94772 7 9.5 7.44772 9.5 8V10H7.5C6.94772 10 6.5 10.4477 6.5 11C6.5 11.5523 6.94772 12 7.5 12H9.5V14C9.5 14.5523 9.94771 15 10.5 15C11.0523 15 11.5 14.5523 11.5 14L11.5 12H13.5C14.0523 12 14.5 11.5523 14.5 11C14.5 10.4477 14.0523 10 13.5 10H11.5V8Z"
+											fill="white" />
+									</svg>
+
+									Unggah Dokumen
 								</button>
 							</div>
 						</div>
 
 						<div>
-							<label class="block mb-1" for="gender">Agama</label>
+							<label class="block mb-1 font-medium" for="gender">Agama</label>
 							<input
 								class="w-full px-3 py-2 rounded-lg border border-gray-300"
 								type="text"
@@ -610,14 +672,18 @@
 						</div>
 
 						<div>
-							<label class="block mb-1" for="">Kwarganegaraan</label>
+							<label class="block mb-1 font-medium" for=""
+								>Kwarganegaraan</label
+							>
 							<input
 								class="w-full px-3 py-2 rounded-lg border border-gray-300"
 								type="text"
 								value="Indonesia" />
 						</div>
 
-						<div class="flex gap-4 justify-end">
+						<div
+							id="batal-simpan-kependudukan"
+							class="hidden flex gap-4 justify-end">
 							<button
 								class="px-3 py-1 text-danger-main rounded-lg border border-danger-main">
 								Batalkan
@@ -650,29 +716,53 @@
 					class="keluarga text-sm text-black p-4 rounded-xl shadow-md bg-white">
 					<div class="flex justify-between mb-4">
 						<p class="font-semibold text-base">Keluarga</p>
-						<button
-							class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
-							<svg
-								width="20"
-								height="20"
-								viewBox="0 0 20 20"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
-									fill="#57AF81" />
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
-									fill="#57AF81" />
-							</svg>
-							Edit
-						</button>
+
+						<div class="flex gap-2">
+							<button
+								id="edit-keluarga"
+								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
+										fill="#57AF81" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
+										fill="#57AF81" />
+								</svg>
+								Edit
+							</button>
+
+							<button
+								onclick="addNewRow()"
+								id="tambah-keluarga"
+								class="hidden flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z"
+										fill="#57AF81" />
+								</svg>
+
+								Tambah Kolom
+							</button>
+						</div>
 					</div>
 
 					<table
-						class="w-full border border-separate border-spacing-0 rounded-xl">
+						class="w-full border border-separate border-spacing-0 rounded-xl mb-4">
 						<thead class="bg-gray-400 text-white">
 							<th class="p-4 rounded-ss-xl">No</th>
 							<th class="p-4">Nama Lengkap</th>
@@ -682,9 +772,9 @@
 						</thead>
 						<tbody>
 							<tr class="*:p-4 *:font-bold">
-								<td class="text-center flex justify-center">
-									<p class="hidden">1</p>
-									<span class="">
+								<td class="text-center flex justify-center hapus-row">
+									<p id="no-keluarga">1</p>
+									<span id="hapus-keluarga" class="hidden">
 										<svg
 											width="44"
 											height="28"
@@ -705,14 +795,47 @@
 								<td>504-887-3208</td>
 							</tr>
 							<tr class="*:p-4 *:font-bold">
-								<td class="text-center">2</td>
+								<td class="hapus-row text-center flex justify-center hapus-row">
+									<p id="no-keluarga">2</p>
+									<span id="hapus-keluarga" class="hapus-row hidden">
+										<svg
+											width="44"
+											height="28"
+											viewBox="0 0 44 28"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M21 6C20.6212 6 20.275 6.214 20.1056 6.55279L19.382 8H16C15.4477 8 15 8.44772 15 9C15 9.55228 15.4477 10 16 10L16 20C16 21.1046 16.8954 22 18 22H26C27.1046 22 28 21.1046 28 20V10C28.5523 10 29 9.55228 29 9C29 8.44772 28.5523 8 28 8H24.618L23.8944 6.55279C23.725 6.214 23.3788 6 23 6H21ZM19 12C19 11.4477 19.4477 11 20 11C20.5523 11 21 11.4477 21 12V18C21 18.5523 20.5523 19 20 19C19.4477 19 19 18.5523 19 18V12ZM24 11C23.4477 11 23 11.4477 23 12V18C23 18.5523 23.4477 19 24 19C24.5523 19 25 18.5523 25 18V12C25 11.4477 24.5523 11 24 11Z"
+												fill="#CB3A31" />
+										</svg>
+									</span>
+								</td>
 								<td>Edwin Hessel</td>
 								<td>Belum Kawin</td>
 								<td>Pelajar/Mahasiswa</td>
 								<td>777-386-9005</td>
 							</tr>
 							<tr class="*:p-4 *:font-bold">
-								<td class="rounded-es-xl text-center">3</td>
+								<td
+									class="rounded-es-xl text-center flex justify-center hapus-row">
+									<p id="no-keluarga">3</p>
+									<span id="hapus-keluarga" class="hidden">
+										<svg
+											width="44"
+											height="28"
+											viewBox="0 0 44 28"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M21 6C20.6212 6 20.275 6.214 20.1056 6.55279L19.382 8H16C15.4477 8 15 8.44772 15 9C15 9.55228 15.4477 10 16 10L16 20C16 21.1046 16.8954 22 18 22H26C27.1046 22 28 21.1046 28 20V10C28.5523 10 29 9.55228 29 9C29 8.44772 28.5523 8 28 8H24.618L23.8944 6.55279C23.725 6.214 23.3788 6 23 6H21ZM19 12C19 11.4477 19.4477 11 20 11C20.5523 11 21 11.4477 21 12V18C21 18.5523 20.5523 19 20 19C19.4477 19 19 18.5523 19 18V12ZM24 11C23.4477 11 23 11.4477 23 12V18C23 18.5523 23.4477 19 24 19C24.5523 19 25 18.5523 25 18V12C25 11.4477 24.5523 11 24 11Z"
+												fill="#CB3A31" />
+										</svg>
+									</span>
+								</td>
 								<td>Leigh Veum</td>
 								<td>Belum Kawin</td>
 								<td>Pelajar/Mahasiswa</td>
@@ -720,6 +843,33 @@
 							</tr>
 						</tbody>
 					</table>
+
+					<form
+						id="batal-simpan-keluarga"
+						class="hidden flex gap-4 justify-end">
+						<button
+							class="px-3 py-1 text-danger-main rounded-lg border border-danger-main">
+							Batalkan
+						</button>
+						<button
+							class="flex px-3 py-1 text-white bg-primary-main rounded-lg gap-2">
+							Simpan
+
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M6.66667 5.83325H4.16667C3.24619 5.83325 2.5 6.57944 2.5 7.49992V14.9999C2.5 15.9204 3.24619 16.6666 4.16667 16.6666H15.8333C16.7538 16.6666 17.5 15.9204 17.5 14.9999V7.49992C17.5 6.57944 16.7538 5.83325 15.8333 5.83325H13.3333M12.5 9.16659L10 11.6666M10 11.6666L7.5 9.16659M10 11.6666L10 3.33325"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</button>
+					</form>
 				</div>
 				<!-- Akhir keluarga -->
 			</div>
@@ -732,26 +882,6 @@
 						class="profile text-sm text-black w-full p-4 rounded-xl shadow-md bg-white">
 						<div class="flex justify-between mb-4">
 							<p class="font-semibold text-base">Informasi Akun</p>
-
-							<button
-								class="flex px-3 py-1 border border-primary-main rounded-lg text-primary-main gap-2">
-								<svg
-									width="20"
-									height="20"
-									viewBox="0 0 20 20"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M17.4142 2.58579C16.6332 1.80474 15.3668 1.80474 14.5858 2.58579L7 10.1716V13H9.82842L17.4142 5.41421C18.1953 4.63316 18.1953 3.36683 17.4142 2.58579Z"
-										fill="#57AF81" />
-									<path
-										fill-rule="evenodd"
-										clip-rule="evenodd"
-										d="M2 6C2 4.89543 2.89543 4 4 4H8C8.55228 4 9 4.44772 9 5C9 5.55228 8.55228 6 8 6H4V16H14V12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12V16C16 17.1046 15.1046 18 14 18H4C2.89543 18 2 17.1046 2 16V6Z"
-										fill="#57AF81" />
-								</svg>
-								Edit
-							</button>
 						</div>
 
 						<form action="" class="flex flex-col gap-4">
@@ -778,7 +908,7 @@
 									<img
 										id="eye-new"
 										class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
-										src="src/img/eye.svg" />
+										src="src/img/eye-off.svg" />
 								</div>
 							</div>
 
@@ -796,7 +926,7 @@
 									<img
 										id="eye-old"
 										class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
-										src="src/img/eye.svg" />
+										src="src/img/eye-off.svg" />
 
 									<p
 										id="error-old"
@@ -834,7 +964,7 @@
 									<img
 										id="eye-konfirmasi"
 										class="absolute right-3 top-3 -translate-y-1 cursor-pointer"
-										src="src/img/eye.svg" />
+										src="src/img/eye-off.svg" />
 								</div>
 							</div>
 
@@ -852,9 +982,53 @@
 				</div>
 			</div>
 			<!-- akhir informasi aku -->
+
+			<!-- Alert -->
+			<div class="alert absolute top-8 w-[1158.400px] hidden">
+				<div
+					class="alert-success flex items-center gap-2 p-4 w-full bg-[#E9F4EF] rounded-xl border border-[#B7DBC9] z-100 shadow-lg text-[#43936C]">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+
+					<p>Selamat! Anda berhasil menyimpan perubahan profil</p>
+				</div>
+
+				<div
+					class="alert-danger hidden flex items-center gap-2 p-4 w-full bg-[#FFF4F2] rounded-xl border border-[#EEB4B0] z-100 shadow-lg text-[#CB3A31]">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+							fill="#CB3A31" />
+					</svg>
+
+					<p>
+						Maaf, terjadi kesalahan. Perubahan gagal disimpan. Mohon coba lagi
+						beberapa saat lagi.
+					</p>
+				</div>
+			</div>
+			<!-- AkhirAlert -->
 		</div>
 		<!-- Akhir Content -->
 
 		<script src="src/js/profile.js"></script>
+		<script src="src/js/navigasi.js"></script>
 	</body>
 </html>

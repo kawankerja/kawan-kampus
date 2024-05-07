@@ -26,7 +26,7 @@
 						<p class="text-gray-600 font-semibold mb-2">AKUN SAYA</p>
 						<hr class="border-gray-400" />
 					</div>
-					<button class="flex justify-between w-full items-center">
+					<button id="profile" class="flex justify-between w-full items-center">
 						<span class="flex pl-3 py-3 gap-3 items-center">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@
 						<hr class="border-gray-400" />
 					</div>
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button id="dosen" class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,9 @@
 							<div
 								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="mahasiswa"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +105,9 @@
 							<div
 								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									class="w-6 h-6"
@@ -129,7 +133,9 @@
 						<p class="text-gray-600 font-semibold mb-2">ADMININTRASI</p>
 						<hr class="border-gray-400" />
 					</div>
-					<button class="flex justify-between w-full items-center">
+					<button
+						id="verifikasi"
+						class="flex justify-between w-full items-center">
 						<span class="flex pl-3 py-3 gap-3 items-center">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -373,6 +379,7 @@
 								</td>
 								<td>
 									<button
+										id="riwayat"
 										class="px-3 py-1 mb-2 bg-primary-main w-full rounded-lg font-medium text-white">
 										Lihat Riwayat
 									</button>
@@ -411,6 +418,7 @@
 								</td>
 								<td>
 									<button
+										id="riwayat"
 										class="px-3 py-1 mb-2 bg-primary-main w-full rounded-lg font-medium text-white">
 										Lihat Riwayat
 									</button>
@@ -488,6 +496,7 @@
 								</td>
 								<td>
 									<button
+										id="riwayat"
 										class="px-3 py-1 mb-2 bg-primary-main w-full rounded-lg font-medium text-white">
 										Lihat Riwayat
 									</button>
@@ -868,5 +877,15 @@
 			<!-- AKHIR KEUANGAN MAHASISWA -->
 		</div>
 		<!-- AKHIR CONTENT -->
+
+		<script>
+			document.querySelectorAll("#riwayat").forEach((button) => {
+				console.log(button);
+				button.addEventListener("click", () => {
+					window.location.href = "./verifikasi-pembayaran-riwayat.html";
+				});
+			});
+		</script>
+		<script src="src/js/navigasi.js"></script>
 	</body>
 </html>

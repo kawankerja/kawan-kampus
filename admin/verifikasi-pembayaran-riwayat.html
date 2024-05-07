@@ -238,6 +238,7 @@
 		<div class="container text-base my-12 mr-12">
 			<div class="btn-back mb-4">
 				<button
+					id="btn-kembali"
 					class="flex bg-gray-400 text-white px-3 py-1 rounded-lg gap-2 items-center">
 					<svg
 						width="20"
@@ -481,5 +482,11 @@
 			<!-- AKHIR RIWAYAT KEUANGAN -->
 		</div>
 		<!-- AKHIR CONTENT -->
+
+		<script>
+			document.getElementById("btn-kembali").addEventListener("click", () => {
+				window.location.href = "./verifikasi-pembayaran.html";
+			});
+		</script>
 	</body>
 </html>

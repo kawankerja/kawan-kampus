@@ -33,30 +33,30 @@ const eyeKonfirmasi = document.querySelector("#eye-konfirmasi");
 eyeOld.addEventListener("click", () => {
 	if (pwOld.type === "password") {
 		pwOld.type = "text";
-		eyeOld.src = "assets/img/eye-off.svg";
+		eyeOld.src = "assets/img/eye.svg";
 	} else {
 		pwOld.type = "password";
-		eyeOld.src = "assets/img/eye.svg";
+		eyeOld.src = "assets/img/eye-off.svg";
 	}
 });
 
 eyeNew.addEventListener("click", () => {
 	if (pwNew.type === "password") {
 		pwNew.type = "text";
-		eyeNew.src = "assets/img/eye-off.svg";
+		eyeNew.src = "assets/img/eye.svg";
 	} else {
 		pwNew.type = "password";
-		eyeNew.src = "assets/img/eye.svg";
+		eyeNew.src = "assets/img/eye-off.svg";
 	}
 });
 
 eyeKonfirmasi.addEventListener("click", () => {
 	if (pwKonfirmasi.type === "password") {
 		pwKonfirmasi.type = "text";
-		eyeKonfirmasi.src = "assets/img/eye-off.svg";
+		eyeKonfirmasi.src = "assets/img/eye.svg";
 	} else {
 		pwKonfirmasi.type = "password";
-		eyeKonfirmasi.src = "assets/img/eye.svg";
+		eyeKonfirmasi.src = "assets/img/eye-off.svg";
 	}
 });
 
@@ -74,13 +74,9 @@ function validPw(password) {
 		/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
 
 	if (regex.test(password)) {
-		// console.log("Password valid");
-		// return true;
 		errorOld.classList.add("hidden");
 	} else {
-		// return false;
 		errorOld.classList.remove("hidden");
-		// console.log("Password tidak valid");
 	}
 }
 
