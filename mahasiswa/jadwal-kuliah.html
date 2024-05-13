@@ -518,17 +518,19 @@
 
             <!-- START TABEL JADWAL -->
             <div id="table">
-              <table class="min-w-full rounded rounded-b-lg overflow-hidden">
+              <table
+                class="w-full border border-separate border-spacing-0 rounded-xl"
+              >
                 <thead class="bg-primary-main text-white">
                   <tr>
-                    <th class="text-left py-4 px-6 rounded-tl-lg">Hari</th>
+                    <th class="text-left py-4 px-6 rounded-ss-xl">Hari</th>
                     <th class="text-left py-4 px-6">Mata Kuliah</th>
                     <th class="text-center py-4 px-6">SKS</th>
                     <th class="text-center py-4 px-6">Kelas</th>
                     <th class="text-center py-4 px-6">Waktu</th>
                     <th class="text-center py-4 px-6">Ruangan</th>
                     <th
-                      class="text-center py-4 px-6 bg-primary-main text-white rounded-tr-lg"
+                      class="text-center py-4 px-6 bg-primary-main text-white rounded-se-xl"
                     >
                       Aksi
                     </th>
@@ -930,7 +932,7 @@
                   <!-- START ROW 3 -->
                   <tr>
                     <td
-                      class="py-4 px-6 text-info-main bg-info-surface font-semibold"
+                      class="py-4 px-6 text-info-main bg-info-surface font-semibold rounded-bl-xl"
                       rowspan="2"
                     >
                       Jum'at
@@ -1048,20 +1050,22 @@
 
             <!-- START KALENDER -->
             <div id="kalender" class="hidden">
-              <div class="overflow-hidden rounded-lg">
-                <table class="min-w-full">
+              <div class="w-full relative">
+                <table
+                  class="w-full border border-separate border-spacing-0 rounded-xl"
+                >
                   <thead
                     class="bg-primary-main text-white text-xl font-semibold"
                   >
                     <tr>
-                      <th class="px-6 py-3 text-start" colspan="6">
+                      <th class="px-6 py-3 text-start rounded-t-xl" colspan="6">
                         Jadwal Kuliah
                       </th>
                     </tr>
                   </thead>
                   <thead class="bg-[#C1C5C8] text-white text-sm">
                     <tr>
-                      <th class="px-6 py-3 text-start">Jam Ke-</th>
+                      <th class="w-22 text-center">Jam Ke-</th>
                       <th class="px-6 py-3 text-start">Senin</th>
                       <th class="px-6 py-3 text-start">Selasa</th>
                       <th class="px-6 py-3 text-start">Rabu</th>
@@ -1070,109 +1074,357 @@
                     </tr>
                   </thead>
                   <tbody class="text-sm border">
-                    <!-- START DOSEN 1 -->
+                    <!-- START LIST 1 -->
                     <tr class="text-center font-medium bg-white">
-                      <td class="text-primary-main items-center">1</td>
-                      <td rowspan="2">
-                        <button
-                          id="dkv16007"
-                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
-                        >
-                          <p class="text-xs text-gray-600 font-medium">
-                            DKVI6007
-                          </p>
-                          <h1 class="text-success-main text-md">
-                            Tinjauan Desain Nusantara
-                          </h1>
-                          <p class="text-xs text-gray-600 font-medium">
-                            2 SKS | Wajib
-                          </p>
-                        </button>
+                      <td class="px-6 py-4 text-primary-main items-center">
+                        1
                       </td>
-                      <td rowspan="3">
-                        <button
-                          id="dkv16007"
-                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
-                        >
-                          <p class="text-xs text-gray-600 font-medium">
-                            DKVI6007
-                          </p>
-                          <h1 class="text-success-main text-md">
-                            Tinjauan Desain Nusantara
-                          </h1>
-                          <p class="text-xs text-gray-600 font-medium">
-                            2 SKS | Wajib
-                          </p>
-                        </button>
-                      </td>
-                    </tr>
-                    <!-- END DOSEN 1 -->
-
-                    <!-- START DOSEN 2 -->
-                    <tr class="text-center font-medium">
-                      <td class="px-6 py-4 text-primary-main">2</td>
-
-                      <td rowspan="2">
-                        <button
-                          id="dkv16007"
-                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
-                        >
-                          <p class="text-xs text-gray-600 font-medium">
-                            DKVI6007
-                          </p>
-                          <h1 class="text-success-main text-md">
-                            Tinjauan Desain Nusantara
-                          </h1>
-                          <p class="text-xs text-gray-600 font-medium">
-                            2 SKS | Wajib
-                          </p>
-                        </button>
-                      </td>
-                    </tr>
-                    <!-- END DOSEN 2 -->
-
-                    <!-- START DOSEN 3 -->
-                    <tr class="text-center font-medium bg-white">
-                      <td class="py-4 text-primary-main">3</td>
-
-                      <td rowspan="2">
-                        <button
-                          id="dkv16007"
-                          class="p-2 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-info-surface border border-info-border"
-                        >
-                          <p class="text-xs text-gray-600 font-medium">
-                            UNIV6001
-                          </p>
-                          <h1 class="text-info-main text-md">Bahasa Inggris</h1>
-                          <p class="text-xs text-gray-600 font-medium">
-                            2 SKS | Pilihan
-                          </p>
-                        </button>
-                      </td>
-                    </tr>
-                    <!-- END DOSEN 3 -->
-
-                    <!-- START DOSEN 4 -->
-                    <tr class="text-center font-medium bg-white">
-                      <td class="py-4 text-primary-main">4</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                       <td></td>
                     </tr>
-                    <!-- END DOSEN 4 -->
+                    <!-- END LIST 1 -->
 
-                    <!-- START DOSEN 5 -->
+                    <!-- START LIST 2 -->
+                    <tr class="text-center font-medium bg-success-surface">
+                      <td class="px-6 py-4 text-primary-main">2</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 2 -->
 
+                    <!-- START LIST 3 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">3</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 3 -->
+
+                    <!-- START LIST 4 -->
+                    <tr class="text-center font-medium bg-success-surface">
+                      <td class="py-4 text-primary-main">4</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 4 -->
+
+                    <!-- START LIST 5 -->
                     <tr class="text-center font-medium bg-white">
                       <td class="py-4 text-primary-main">5</td>
                       <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                     </tr>
-                    <!-- END DOSEN 5 -->
+                    <!-- END LIST 5 -->
+
+                    <!-- START LIST 6 -->
+                    <tr class="text-center font-medium bg-success-surface">
+                      <td class="py-4 text-primary-main">6</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 6 -->
+
+                    <!-- START LIST 7 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">7</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 7 -->
+
+                    <!-- START LIST 8 -->
+                    <tr class="text-center font-medium bg-success-surface">
+                      <td class="py-4 text-primary-main">8</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 8 -->
+
+                    <!-- START LIST 9 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">9</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 9 -->
+
+                    <!-- START LIST 10 -->
+                    <tr class="text-center font-medium bg-success-surface">
+                      <td class="py-4 text-primary-main">10</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 10 -->
+
+                    <!-- START LIST 11 -->
+                    <tr class="text-center font-medium bg-white">
+                      <td class="py-4 text-primary-main">11</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- END LIST 11 -->
+
+                    <!-- START LIST 12 -->
+                    <tr class="text-center font-medium bg-success-surface">
+                      <td class="py-4 text-primary-main rounded-bl-xl">12</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="rounded-br-xl"></td>
+                    </tr>
+                    <!-- END LIST 12 -->
                   </tbody>
                 </table>
+
+                <!-- JADWAL SENIN -->
+                <div class="absolute top-24" style="left: calc(5% + 60px)">
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-[105px] w-full max-w-44 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      DKVI6007
+                    </p>
+                    <h1 id="title-matkul" class="text-success-main text-md">
+                      Tinjauan Desain Nusantara
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      2 SKS | Wajib
+                    </p>
+                  </button>
+                </div>
+
+                <div class="absolute top-64" style="left: calc(5% + 60px)">
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-52 w-full max-w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-info-surface border border-info-border"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      UNIV6001
+                    </p>
+                    <h1 id="title-matkul" class="text-info-main text-md">
+                      Pendidikan Agama Islam
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      3 SKS | Wajib
+                    </p>
+                  </button>
+                </div>
+                <!-- END JADWAL SENIN -->
+
+                <!-- JADWAL SELASA -->
+                <div class="absolute top-24" style="left: calc(25% + 60px)">
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-40 w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-success-surface border border-success-border"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      DKVI6007
+                    </p>
+                    <h1 id="title-matkul" class="text-success-main text-md">
+                      Gambar Sket
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      2 SKS | Wajib
+                    </p>
+                  </button>
+                </div>
+
+                <div class="absolute top-64" style="left: calc(25% + 60px)">
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-[105px] w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-info-surface border border-info-border"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      UNIV6001
+                    </p>
+                    <h1 id="title-matkul" class="text-info-main text-md">
+                      Bahasa Inggris
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      2 SKS | Pilihan
+                    </p>
+                  </button>
+                </div>
+
+                <div
+                  class="absolute top-[460px]"
+                  style="left: calc(25% + 60px)"
+                >
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-[105px] w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-[#F9F3FE] border border-[#D3A5FF]"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      UNIV6001
+                    </p>
+                    <h1 id="title-matkul" class="text-[#9B51E0] text-md">
+                      Estetika
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      2 SKS | Wajib
+                    </p>
+                  </button>
+                </div>
+                <!-- END JADWAL SELASA -->
+
+                <!-- JADWAL KAMIS -->
+                <div class="absolute bottom-0" style="left: calc(60% + 60px)">
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-40 w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-info-surface border border-info-border"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      UNIV6001
+                    </p>
+                    <h1 id="title-matkul" class="text-info-main text-md">
+                      Nirmana 2 Dimensi
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      3 SKS | Wajib
+                    </p>
+                  </button>
+                </div>
+                <!-- END JADWAL KAMIS -->
+
+                <!-- JADWAL JUMAT -->
+                <div
+                  class="absolute top-[150px]"
+                  style="left: calc(80% + 20px)"
+                >
+                  <button
+                    id="dkv16007"
+                    class="p-2 h-[105px] w-full max-w-44 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border"
+                  >
+                    <p
+                      id="kode-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      DKVI6007
+                    </p>
+                    <h1 id="title-matkul" class="text-success-main text-md">
+                      Manajemen Inovasi
+                    </h1>
+                    <p
+                      id="sks-matkul"
+                      class="text-xs text-gray-600 font-medium"
+                    >
+                      2 SKS | Wajib
+                    </p>
+                  </button>
+                </div>
+                <!-- END JADWAL JUMAT -->
               </div>
             </div>
             <!-- END KALENDER -->
           </div>
         </section>
+
+        <div
+          id="modal"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+        >
+          <div class="bg-white p-5 w-full max-w-[600px] rounded-xl relative">
+            <h2
+              class="text-md font-semibold mb-4 text-[#252525]"
+              id="modal-title"
+            >
+              Detail Mata Kuliah
+            </h2>
+            <div id="modal-content">
+              <!-- Konten detail mata kuliah akan ditambahkan melalui JavaScript -->
+            </div>
+            <button
+              id="close-modal"
+              class="absolute top-4 right-4 text-gray-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#424242]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </main>
       <!-- END MAIN SECTION -->
     </div>
