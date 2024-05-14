@@ -20,25 +20,31 @@ btnKalender.addEventListener("click", () => {
 // Akhir Script Tab
 
 // Fungsi untuk menampilkan dropdown
-const dropdownContent = document.getElementById("dropdown-content");
-const btnAction = document.getElementById("action-button");
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownsButton = document.querySelectorAll("#action-button");
 
-btnAction.addEventListener("click", (event) => {
-  // Toggle class untuk menampilkan atau menyembunyikan dropdown
-  dropdownContent.classList.toggle("open");
+  dropdownsButton.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Tutup semua dropdown lainnya
+      document.querySelectorAll(".dropdown-content").forEach((content) => {
+        content.classList.add("hidden");
+      });
+
+      // Tampilkan dropdown terkait tombol yang diklik
+      const dropdownContent = button.nextElementSibling;
+      dropdownContent.classList.toggle("open");
+    });
+  });
+
+  // Tambahkan event listener untuk menutup dropdown ketika klik di luar dropdown
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown") && !e.target.closest("#action-button")) {
+      document.querySelectorAll(".dropdown-content").forEach((content) => {
+        content.classList.add("hidden");
+      });
+    }
+  });
 });
-
-// Event listener untuk menutup dropdown saat klik di luar dropdown atau tombol
-document.addEventListener("click", (event) => {
-  const isDropdownClicked = dropdownContent.contains(event.target);
-  const isButtonClicked = btnAction.contains(event.target);
-
-  // Jika tidak ada yang diklik adalah dropdown atau tombol, sembunyikan dropdown
-  if (!isDropdownClicked && !isButtonClicked) {
-    dropdownContent.classList.remove("open");
-  }
-});
-
 // Akhir Fungsi untuk menyelesaikan dropdown
 
 document.addEventListener("DOMContentLoaded", function () {
