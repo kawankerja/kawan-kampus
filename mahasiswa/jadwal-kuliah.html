@@ -651,9 +651,7 @@
                     <td class="text-center py-4 px-6 text-sm">IF22B</td>
                     <td class="text-center py-4 px-6 text-sm">07.00-08.40</td>
                     <td class="text-center py-4 px-6 text-sm">R.4.04</td>
-                    <td
-                      class="text-center py-4 px-6 bg-success-surface flex gap-2 items-center"
-                    >
+                    <td class="text-center py-4 px-6 flex gap-2 items-center">
                       <button
                         class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
                       >
@@ -675,23 +673,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -732,23 +772,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <!-- END ROW 1 -->
@@ -784,9 +866,7 @@
                     >
                       R.4.04
                     </td>
-                    <td
-                      class="text-center py-4 px-6 bg-success-surface flex gap-2 items-center"
-                    >
+                    <td class="text-center py-4 px-6 flex gap-2 items-center">
                       <button
                         class="bg-[#57AF81] text-white font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded"
                       >
@@ -808,23 +888,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr class="bg-white">
@@ -859,23 +981,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr class="bg-success-surface">
@@ -908,23 +1072,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <!-- END ROW 2 -->
@@ -974,23 +1180,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr class="bg-success-surface">
@@ -1023,23 +1271,65 @@
                         </svg>
                         Presensi
                       </button>
-                      <button
-                        class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
-                      >
-                        Aksi
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="w-5 h-5"
+                      <div class="dropdown">
+                        <button
+                          id="action-button"
+                          class="bg-white text-primary-main border border-primary-main font-medium text-sm py-1.5 px-4 flex gap-2 items-center rounded-lg"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
+                          Aksi
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-5 h-5"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        <div
+                          class="dropdown-content hidden"
+                          id="dropdown-content"
+                        >
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/user-group.svg"
+                              alt="users"
+                              width="25px"
+                            />
+                            Daftar Peserta
+                          </button>
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start"
+                          >
+                            <img
+                              src="./src/assets/light-bulb.svg"
+                              alt="light-bulb"
+                              width="25px"
+                            />
+                            RPS
+                          </button>
+
+                          <button
+                            href="#"
+                            class="flex gap-2 items-center w-full py-2 px-4 justify-start text-start"
+                          >
+                            <img
+                              src="./src/assets/information-circle.svg"
+                              alt="info"
+                              width="25px"
+                            />
+                            Deskripsi Mata Kuliah
+                          </button>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <!-- END ROW 3 -->
