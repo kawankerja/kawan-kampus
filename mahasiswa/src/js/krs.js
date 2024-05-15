@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Akhir Fungsi untuk menyelesaikan dropdown
 
 document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll("#kalender .absolute button");
+  const buttons = document.querySelectorAll("#jadwal .absolute button");
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
