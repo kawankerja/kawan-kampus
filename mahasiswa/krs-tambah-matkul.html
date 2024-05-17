@@ -35,6 +35,7 @@
         >
           <!-- START BUTTON BACK -->
           <button
+            id="btn-back-to-krs"
             onclick="window.location.href = './krs-open.html'"
             class="px-4 py-1 flex gap-2 items-center rounded-lg bg-gray-400 text-white w-fit text-md font-medium"
           >
@@ -116,6 +117,7 @@
             </button>
 
             <button
+              id="btn-add-krs"
               class="grow flex gap-2 items-center justify-center bg-primary-main text-white rounded-lg py-2"
             >
               <img src="./src/assets/save.svg" alt="save-icon" />
@@ -1729,7 +1731,7 @@
 
         <!-- START MODAL DETAIL MATA KULIAH -->
         <div
-          id="modal"
+          id="modal-detail"
           class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
         >
           <div class="bg-white p-5 w-full max-w-[600px] rounded-xl relative">
@@ -1764,6 +1766,221 @@
           </div>
         </div>
         <!-- END MODAL DETAIL MATA KULIAH -->
+
+        <!-- START MODAL CONFIRMATION BACK -->
+        <div
+          id="modal-confirmation-back"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50"
+        >
+          <div
+            class="bg-white p-5 w-full max-w-[550px] rounded-xl relative flex flex-col space-y-3 items-center"
+          >
+            <button
+              id="close-modal-confirmation-back"
+              class="absolute top-4 right-4 text-gray-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#424242]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div
+              class="p-2 rounded-full bg-warning-surface text-warning-main w-fit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-8 h-8"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="flex flex-col space-y-2 items-center">
+              <h1 class="text-xl font-semibold text-warning-main">
+                Yakin Ingin kembali ke KRS?
+              </h1>
+              <p class="text-[#6F7072] text-md text-center">
+                Jika Anda menyetujui aksi ini, KRS yang Anda ambil pada sesi ini
+                <span class="font-semibold"
+                  >Tidak Akan Tersimpan dan Anda tidak dapat mengembalikan Aksi
+                  ini.</span
+                >
+              </p>
+            </div>
+            <div class="flex flex-col space-y-2 w-full">
+              <button
+                id="btn-confirm-back"
+                class="w-full rounded-lg text-center bg-warning-main text-white font-medium py-2"
+              >
+                Ya, Saya ingin keluar
+              </button>
+              <button
+                id="btn-cancel-back"
+                class="w-full text-center text-danger-main py-2"
+              >
+                Batalkan, saya masih ingin periksa kembali
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- END MODAL CONFIRMATION BACK -->
+
+        <!-- START MODAL CONFIRMATION ADD MATKUL -->
+        <div
+          id="modal-confirmation-add"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50"
+        >
+          <div
+            class="bg-white p-5 w-full max-w-[550px] rounded-xl relative flex flex-col space-y-3 items-center"
+          >
+            <button
+              id="close-modal-confirmation-add"
+              class="absolute top-4 right-4 text-gray-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#424242]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div
+              class="p-2 rounded-full bg-success-surface text-success-main w-fit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-8 h-8"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="flex flex-col space-y-2 items-center">
+              <h1 class="text-xl font-semibold text-success-main">
+                Yakin Ingin Mendaftarkan KRS?
+              </h1>
+              <p class="text-[#6F7072] text-md text-center">
+                Jika Anda menyetujui aksi ini, KRS yang Anda ambil akan
+                didaftarkan. Namun, KRS dapat disesuaikan kembali selama periode
+                KRS masih dibuka
+              </p>
+            </div>
+            <div class="flex flex-col space-y-2 w-full">
+              <button
+                id="btn-confirm-add"
+                class="w-full rounded-lg text-center bg-success-main text-white font-medium py-2"
+              >
+                Ya, Daftarkan KRS
+              </button>
+              <button
+                id="btn-cancel-add"
+                class="w-full text-center text-danger-main py-2"
+              >
+                Batalkan, saya masih ingin periksa kembali
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- END MODAL CONFIRMATION ADD MATKUL -->
+
+        <!-- START MODAL CONFIRMATION DELETE -->
+        <div
+          id="modal-confirmation-delete"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50"
+        >
+          <div
+            class="bg-white p-5 w-full max-w-[550px] rounded-xl relative flex flex-col space-y-3 items-center"
+          >
+            <button
+              id="close-modal-confirmation-delete"
+              class="absolute top-4 right-4 text-gray-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#424242]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div
+              class="p-2 rounded-full bg-danger-surface text-danger-main w-fit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-8 h-8"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="flex flex-col space-y-2 items-center">
+              <h1 class="text-xl font-semibold text-danger-main">
+                Yakin Ingin Hapus Mata Kuliah di KRS?
+              </h1>
+              <p class="text-[#6F7072] text-md text-center">
+                Jika Anda menyetujui aksi ini, KRS yang Anda ambil akan
+                terhapus. Anda dapat mengambil kembali mata kuliah ini selama
+                periode KRS dibuka
+              </p>
+            </div>
+            <div class="flex flex-col space-y-2 w-full">
+              <button
+                id="btn-confirm-delete"
+                class="w-full rounded-lg text-center bg-danger-main text-white font-medium py-2"
+              >
+                Ya, Hapus
+              </button>
+              <button
+                id="btn-cancel-delete"
+                class="w-full text-center text-danger-main py-2"
+              >
+                Batalkan, Saya ingin mengambil Mata Kuliah Ini
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- END MODAL CONFIRMATION DELETE -->
       </main>
       <!-- END MAIN SECTION -->
     </div>

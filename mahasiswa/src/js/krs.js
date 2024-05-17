@@ -17,9 +17,8 @@ btnJadwal.addEventListener("click", () => {
   jadwal.classList.remove("hidden");
   krs.classList.add("hidden");
 });
-// Akhir Script Tab
 
-// Fungsi untuk menampilkan dropdown
+// Fungsi untuk menampilkan dropdown aksi
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownsButton = document.querySelectorAll("#action-button");
 
@@ -45,8 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-// Akhir Fungsi untuk menyelesaikan dropdown
+// Akhir Fungsi untuk menyelesaikan dropdown aksi
 
+// fungsi untuk menampilkan modals detail matkul
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll("#jadwal .absolute button");
 
@@ -173,12 +173,106 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("modal-content").innerHTML = modalContent;
 
       // Show modal
-      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modal-detail").classList.remove("hidden");
     });
   });
 
   // Event listener untuk tombol close modal
   document.getElementById("close-modal").addEventListener("click", () => {
-    document.getElementById("modal").classList.add("hidden");
+    document.getElementById("modal-detail").classList.add("hidden");
   });
+});
+
+// Menampilkan Modal Confirmation back to KRS Page
+const btnBackToKrs = document.getElementById("btn-back-to-krs");
+const btnAddKrs = document.getElementById("btn-add-krs");
+const modalBack = document.getElementById("modal-confirmation-back");
+const modalAdd = document.getElementById("modal-confirmation-add");
+const btnConfirmBack = document.getElementById("btn-confirm-back");
+const btnCancelBack = document.getElementById("btn-cancel-back");
+const btnCloseBack = document.getElementById("close-modal-confirmation-back");
+const btnConfirmAdd = document.getElementById("btn-confirm-add");
+const btnCancelAdd = document.getElementById("btn-cancel-add");
+const btnCloseAdd = document.getElementById("close-modal-confirmation-add");
+
+// Show modal on button click
+btnBackToKrs.onclick = function (event) {
+  event.preventDefault();
+  modalBack.style.display = "flex";
+};
+
+btnAddKrs.onclick = function (event) {
+  event.preventDefault();
+  modalAdd.style.display = "flex";
+};
+
+// Handle confirm action
+btnConfirmBack.onclick = function () {
+  window.location.href = "./krs-open.html";
+};
+
+// Handle cancel action
+btnCancelBack.onclick = function () {
+  modalBack.style.display = "none";
+};
+
+btnCloseBack.onclick = function () {
+  modalBack.style.display = "none";
+};
+
+// Handle confirm action
+btnConfirmAdd.onclick = function () {
+  window.location.href = "./krs-tambah-matkul.html";
+};
+
+// Handle cancel action
+btnCancelAdd.onclick = function () {
+  modalAdd.style.display = "none";
+};
+
+btnCloseAdd.onclick = function () {
+  modalAdd.style.display = "none";
+};
+
+// Fungsi untuk DELETE MODAL
+document.addEventListener("DOMContentLoaded", function () {
+  const trashButtons = document.querySelectorAll("button#trash");
+  const modal = document.getElementById("modal-confirmation-delete");
+  const confirmButton = document.getElementById("btn-confirm-delete");
+  const cancelButton = document.getElementById("btn-cancel-delete");
+  const closeButton = document.getElementById(
+    "close-modal-confirmation-delete"
+  );
+  let currentButton = null;
+
+  trashButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      currentButton = this;
+      modal.style.display = "flex";
+    });
+  });
+
+  confirmButton.addEventListener("click", function () {
+    if (currentButton) {
+      currentButton.closest(".relative").remove();
+      modal.style.display = "none";
+      currentButton = null;
+    }
+  });
+
+  cancelButton.addEventListener("click", function () {
+    modal.style.display = "none";
+    currentButton = null;
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      currentButton = null;
+    }
+  });
+
+  closeButton.onclick = function () {
+    modal.style.display = "none";
+  };
 });
