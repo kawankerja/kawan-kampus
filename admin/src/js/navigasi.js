@@ -10,6 +10,10 @@ document.getElementById("mahasiswa").addEventListener("click", function () {
 	window.location.href = "./daftar-mahasiswa.html";
 });
 
+document.getElementById("pengumuman").addEventListener("click", function () {
+	window.location.href = "../dosen/dashboard-pengumuman.html";
+});
+
 document.getElementById("kalender").addEventListener("click", function () {
 	window.location.href = "./kalender-akademik.html";
 });
