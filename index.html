@@ -84,7 +84,9 @@
 						</button>
 					</form>
 					<div class="flex justify-between text-gray-500">
-						<a href="" class="underline underline-offset-4">Lupa Kata Sandi?</a>
+						<a id="open-modal" href="#" class="underline underline-offset-4">
+							Lupa Kata Sandi?
+						</a>
 						<span class="flex gap-2 items-center">
 							<span class="flex items-center relative">
 								<input
@@ -124,6 +126,116 @@
 			</div>
 			<!-- Akhir Right side -->
 		</div>
+
+		<!-- Pop Up Forgot Password -->
+		<div
+			id="content-modal"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="54"
+						height="55"
+						viewBox="0 0 54 55"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect
+							y="0.5"
+							width="54"
+							height="54"
+							rx="27"
+							fill="url(#paint0_linear_150_9974)" />
+						<path
+							d="M27 6.875C24.5136 6.875 22.129 7.86272 20.3709 9.62087C18.6127 11.379 17.625 13.7636 17.625 16.25V20H15.75C14.7554 20 13.8016 20.3951 13.0983 21.0983C12.3951 21.8016 12 22.7554 12 23.75V42.5C12 43.4946 12.3951 44.4484 13.0983 45.1516C13.8016 45.8549 14.7554 46.25 15.75 46.25H38.25C39.2446 46.25 40.1984 45.8549 40.9016 45.1516C41.6049 44.4484 42 43.4946 42 42.5V23.75C42 22.7554 41.6049 21.8016 40.9016 21.0983C40.1984 20.3951 39.2446 20 38.25 20H36.375V16.25C36.375 15.0189 36.1325 13.7998 35.6614 12.6623C35.1902 11.5249 34.4997 10.4914 33.6291 9.62087C32.7586 8.75032 31.7251 8.05977 30.5877 7.58863C29.4502 7.11749 28.2311 6.875 27 6.875ZM27 10.4375C30.2062 10.4375 32.8125 13.0437 32.8125 16.25V20H21.1875V16.25C21.1875 13.0437 23.7937 10.4375 27 10.4375ZM27.3562 24.6875C29.1187 24.6875 30.525 25.0812 31.5375 25.85C32.55 26.6375 33.0562 27.6875 33.0562 29C33.0562 29.825 32.775 30.5562 32.2312 31.25C31.6875 31.925 30.975 32.45 30.1125 32.8437C29.625 33.125 29.3062 33.4062 29.1375 33.725C28.9688 34.0625 28.875 34.475 28.875 35H25.125C25.125 34.0625 25.3125 33.425 25.6687 32.975C26.0625 32.525 26.7 32 27.675 31.4C28.1625 31.1375 28.5562 30.8 28.875 30.3875C29.1375 29.9937 29.2875 29.525 29.2875 29C29.2875 28.4375 29.1187 28.025 28.7812 27.7062C28.4437 27.3687 27.9375 27.2187 27.3562 27.2187C26.85 27.2187 26.4375 27.35 26.0625 27.6125C25.7625 27.875 25.575 28.2687 25.575 28.7937H21.8813C21.7875 27.5 22.3125 26.375 23.3438 25.7C24.3562 25.025 25.6875 24.6875 27.3562 24.6875ZM25.125 36.875H28.875V40.625H25.125V36.875Z"
+							fill="white" />
+						<defs>
+							<linearGradient
+								id="paint0_linear_150_9974"
+								x1="0.588022"
+								y1="-34.651"
+								x2="61.4169"
+								y2="-33.4049"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#65B675" />
+								<stop offset="1" stop-color="#138FC2" />
+							</linearGradient>
+						</defs>
+					</svg>
+
+					<h1
+						class="my-3 text-xl font-bold text-center bg-gradient-to-r from-gradient-one to-gradient-two bg-clip-text text-transparent">
+						Lupa Kata Sandi
+					</h1>
+					<p class="text-gray-700 text-center">
+						Tidak perlu khawatir, kami akan mengirimkan instruksi untuk
+						melakukan ubah kata sandi
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="form">
+					<div class="flex flex-col gap-1 mb-6">
+						<label class="text-xs" for=""
+							>Email<span class="text-red-500">*</span>
+						</label>
+						<input
+							class="p-3 rounded-lg border border-gray-300"
+							type="email"
+							name=""
+							id=""
+							placeholder="Masukan username/email Anda..." />
+					</div>
+					<div class="btn *:px-4 *:py-3 *:w-full *:rounded-lg">
+						<button
+							class="bg-primary-main text-white text-xl font-semibold bg-gradient-to-r from-gradient-one to-gradient-two text-transparent">
+							Ubah Kata Sandi
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Pop Up Forgot Password -->
+
+		<script>
+			const btnModal = document.getElementById("open-modal");
+			const closeModal = document.getElementById("close-modal");
+			const contentModal = document.getElementById("content-modal");
+
+			btnModal.addEventListener("click", () => {
+				contentModal.classList.add("fixed");
+				contentModal.classList.remove("hidden");
+			});
+
+			closeModal.addEventListener("click", () => {
+				contentModal.classList.remove("fixed");
+				contentModal.classList.add("hidden");
+			});
+
+			window.onclick = function (event) {
+				if (event.target == contentModal) {
+					contentModal.classList.remove("fixed");
+					contentModal.classList.add("hidden");
+				}
+			};
+		</script>
 
 		<script src="assets/js/auth.js"></script>
 	</body>
