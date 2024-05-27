@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+    <meta name="theme-color" content="#F7F7F7" />
+    <meta name="description" content="Daftar Hasil Studi | Mahasiswa" />
+    <link rel="icon" href="./src/assets/icon.png" />
+    <title>Daftar Hasil Studi | Mahasiswa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./src/js/tailwindcss.js"></script>
+    <style>
+      /* Hide the default radio button */
+      input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #4a5568; /* Customize border color */
+        border-radius: 30%;
+        outline: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        position: relative;
+      }
+
+      /* Style the dot when the radio button is checked */
+      input[type="radio"]:checked::before {
+        content: "";
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 30%;
+        background: #57af81; /* Customize dot color */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-screen h-screen flex flex-row">
+      <!-- START SIDEBAR -->
+      <aside class="w-1/3 max-w-[300px] h-full py-12 static z-50">
+        <div class="flex flex-col justify-between gap-5 pl-12 h-full">
+          <img
+            src="./src/assets/logo.png"
+            alt="logo-image"
+            class="w-40 pb-10"
+          />
+          <!-- START NAVIGASI MENU -->
+          <nav class="w-full h-full pr-5 overflow-y-auto">
+            <!-- MENU UTAMA -->
+            <div class="flex flex-col gap-3 pb-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="text-sm text-[#808284] font-semibold">MENU UTAMA</h1>
+                <span class="border-b-2 border-[#DBDFE3]"></span>
+              </div>
+              <ul class="w-full flex flex-col text-sm">
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <a
+                    href="./dashboard.html"
+                    class="w-full font-medium text-[#808284]"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <a
+                    href="./profile.html"
+                    class="w-full font-medium text-[#808284]"
+                  >
+                    Profil
+                  </a>
+                </li>
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <a
+                    href="./riwayat-keuangan.html"
+                    class="w-full font-medium text-[#808284]"
+                  >
+                    Riwayat Keuangan
+                  </a>
+                </li>
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <a
+                    href="./layanan-administrasi.html"
+                    class="w-full font-medium text-[#808284]"
+                  >
+                    Layanan Administrasi
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- AKADEMIK -->
+            <div class="flex flex-col gap-3 pb-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="text-sm text-[#808284] font-semibold">AKADEMIK</h1>
+                <span class="border-b-2 border-[#DBDFE3]"></span>
+              </div>
+              <ul class="w-full flex flex-col text-sm">
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z"
+                    />
+                  </svg>
+
+                  <button
+                    id="perkuliahan"
+                    type="button"
+                    class="w-full font-medium text-[#808284] flex items-center justify-between"
+                  >
+                    Perkuliahan
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-5 h-5 text-[#808284] transition-all"
+                      id="arrow-kuliah"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- DROPDOWN MENU PERKULIAHAN -->
+                <ul class="dropdown-kuliah flex flex-col hidden">
+                  <li class="w-full py-3 pl-3 flex gap-3 items-center ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      class="w-6 h-6 text-[#808284]"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                      />
+                    </svg>
+                    <a
+                      href="./jadwal-kuliah.html"
+                      class="w-full font-medium text-[#808284]"
+                      >Jadwal Kuliah</a
+                    >
+                  </li>
+                  <li class="w-full py-3 pl-3 flex gap-3 items-center ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      class="w-6 h-6 text-[#808284]"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                      />
+                    </svg>
+                    <a
+                      href="./krs-close.html"
+                      class="w-full font-medium text-[#808284]"
+                      >KRS</a
+                    >
+                  </li>
+                  <li class="w-full py-3 pl-3 flex gap-3 items-center ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      class="w-6 h-6 text-[#808284]"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                      />
+                    </svg>
+                    <a
+                      href="./daftar-hasil-studi.html"
+                      class="w-full font-medium text-[#808284]"
+                      >Daftar Hasil Studi</a
+                    >
+                  </li>
+                  <li class="w-full py-3 pl-3 flex gap-3 items-center ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      class="w-6 h-6 text-[#808284]"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                      />
+                    </svg>
+                    <a
+                      href="./kurikulum.html"
+                      class="w-full font-medium text-[#808284]"
+                      >Kurikulum</a
+                    >
+                  </li>
+                </ul>
+
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M16 2a1 1 0 0 1 1 1h3a1 1 0 0 1 1 1v14a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V4a1 1 0 0 1 1-1h3a1 1 0 0 1 2 0h6a1 1 0 0 1 1-1M7 5a1 1 0 0 0 2 0h6a1 1 0 1 0 2 0h2v2H5V5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+
+                  <a href="#" class="w-full font-medium text-[#808284]">
+                    Kalender Akademik
+                  </a>
+                </li>
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"
+                    />
+                  </svg>
+
+                  <button
+                    id="tugas"
+                    type="button"
+                    class="w-full font-medium text-[#808284] flex items-center justify-between"
+                  >
+                    Tugas Akhir
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-5 h-5 text-[#808284] transition-all"
+                      id="arrow-tugas"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- DROPDOWN MENU TUGAS AKHIR -->
+                <ul class="dropdown-tugas flex flex-col hidden">
+                  <li class="w-full pl-3 flex gap-3 items-center ml-4">
+                    <div class="flex justify-between w-full items-center">
+                      <div class="w-full flex gap-3 items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 48 48"
+                          class="w-6 h-6 text-[#57af81]"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                          />
+                        </svg>
+                        <a
+                          href="./pengajuan-tugas-akhir.html"
+                          class="w-full font-medium text-[#57af81]"
+                          >Pengajuan Tugas Akhir</a
+                        >
+                      </div>
+                      <span
+                        class="px-1 h-12 bg-[#57af81] rounded-ss-lg rounded-es-lg"
+                      ></span>
+                    </div>
+                    <div
+                      class="border-4 rounded-l-lg border-emerald-600 h-full hidden"
+                    ></div>
+                  </li>
+                  <li class="w-full py-3 pl-3 flex gap-3 items-center ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      class="w-6 h-6 text-[#808284]"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                      />
+                    </svg>
+                    <a href="#" class="w-full font-medium text-[#808284]"
+                      >Riwayat Bimbingan</a
+                    >
+                  </li>
+                  <li class="w-full py-3 pl-3 flex gap-3 items-center ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 48 48"
+                      class="w-6 h-6 text-[#808284]"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M13 7.5a1.5 1.5 0 0 0-3 0v18a7.5 7.5 0 0 0 7.5 7.5h17.379l-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l9-9a1.5 1.5 0 0 0 0-2.12l-9-9a1.5 1.5 0 0 0-2.122 2.12L34.88 30H17.5a4.5 4.5 0 0 1-4.5-4.5z"
+                      />
+                    </svg>
+                    <a href="#" class="w-full font-medium text-[#808284]"
+                      >Ujian Akhir</a
+                    >
+                  </li>
+                </ul>
+              </ul>
+            </div>
+
+            <!-- WISUDA -->
+            <div class="flex flex-col gap-3 pb-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="text-sm text-[#808284] font-semibold">WISUDA</h1>
+                <span class="border-b-2 border-[#DBDFE3]"></span>
+              </div>
+              <ul class="w-full flex flex-col text-sm">
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z"
+                      clip-rule="evenodd"
+                    />
+                    <path
+                      d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
+                    />
+                  </svg>
+
+                  <a href="#" class="w-full font-medium text-[#808284]">
+                    Yudisium
+                  </a>
+                </li>
+                <li class="w-full py-3 pl-3 flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[#808284]"
+                  >
+                    <path
+                      d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z"
+                    />
+                    <path
+                      d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z"
+                    />
+                    <path
+                      d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z"
+                    />
+                  </svg>
+
+                  <a href="#" class="w-full font-medium text-[#808284]">
+                    Pendaftaran Wisuda
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <a
+          class="flex gap-3 items-center w-full bg-[#FFF4F2] py-3 pl-12"
+          href="#"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            class="text-[#CB3A31] w-6 h-6"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20 12H10m10 0l-4 4m4-4l-4-4M4 4v16"
+            />
+          </svg>
+          <span class="text-[#CB3A31] font-medium">Keluar</span>
+        </a>
+        <!-- END NAVIGASI MENU -->
+      </aside>
+      <!-- END SIDEBAR -->
+
+      <!-- START MAIN SECTION -->
+      <main class="w-full h-full overflow-y-auto bg-[#F7F7F7]">
+        <section class="p-10 flex flex-col space-y-5 relative">
+          <!-- START ALERT -->
+          <div class="w-full">
+            <div
+              class="flex gap-2 items-center w-full bg-info-surface border border-info-border text-info-main text-md px-4 py-2 rounded-lg shadow-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+
+              <p>
+                Untuk mengetahui keseluruhan alur pelaksanaan Tugas Akhir, Anda
+                dapat membuka file SOP
+                <button class="font-bold">di sini</button>
+              </p>
+            </div>
+          </div>
+          <!-- END ALERT -->
+
+          <!-- START BREADCRUMBS -->
+          <div class="flex items-center gap-2 text-[#6F7072] text-md">
+            <a href="#">Tugas Akhir</a>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="m10 17l5-5m0 0l-5-5"
+                />
+              </svg>
+            </span>
+            <a
+              href="./pengajuan-tugas-akhir.html"
+              class="text-primary-main font-semibold"
+              >Pengajuan Tugas Akhir</a
+            >
+          </div>
+          <!-- END BREADCRUMBS -->
+
+          <!-- START PENGAJUAN TUGAS AKHIR -->
+          <div
+            class="w-full flex flex-col space-y-4 p-4 bg-white rounded-xl shadow-md"
+          >
+            <!-- START TITLE -->
+            <div class="flex flex-col space-y-2 items-start">
+              <h1 class="font-semibold text-md text-black">
+                Pengajuan Tugas Akhir
+              </h1>
+              <h2 class="font-bold text-[#6F7072] text-md">
+                Janis Kuvalis (200102002)
+              </h2>
+            </div>
+            <!-- END TITLE -->
+
+            <!-- START FORM -->
+            <form class="flex flex-col space-y-4">
+              <div class="flex flex-col space-y-1 items-start">
+                <label for="judul" class="text-xs font-medium"
+                  >Judul Tugas Akhir <span class="text-red-500">*</span></label
+                >
+                <input
+                  type="text"
+                  name="judul"
+                  id="judul"
+                  class="w-full border rounded-lg py-2 px-4"
+                  placeholder="Tulis judul tugas akhir di sini..."
+                />
+              </div>
+              <div class="relative">
+                <div class="flex flex-col space-y-1 items-start">
+                  <label for="dosen1" class="text-xs font-medium"
+                    >Dosen Pembimbing 1
+                    <span class="text-red-500">*</span></label
+                  >
+                  <div
+                    class="relative w-full border rounded-lg py-2 px-4 cursor-pointer"
+                    onclick="toggleRadioInput1()"
+                  >
+                    <input
+                      type="text"
+                      name="dosen"
+                      id="dosen1"
+                      placeholder="Pilih dosen pembimbing 1"
+                      required
+                      readonly
+                    />
+                    <button class="absolute top-3 right-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="m7 10l5 5m0 0l5-5"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- START RADIO INPUT -->
+                <div
+                  id="radio-input1"
+                  class="w-full bg-white rounded-lg shadow-lg p-4 hidden absolute z-50"
+                >
+                  <div class="flex flex-col space-y-1">
+                    <label for="search" class="text-xs font-medium">Cari</label>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="search"
+                        placeholder="Cari di sini..."
+                        class="w-full p-2 mb-4 border border-gray-300 rounded-lg"
+                      />
+                      <button class="absolute top-3 right-3">
+                        <img src="./src/assets/search.svg" alt="search-icon" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col space-y-3">
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Adipati Cahya S.Kom, M.Ds.
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Lana
+                      Weimann
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Darryl Beier
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Shawn
+                      Conn DDS
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Anna
+                      Block
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Dr.
+                      Meredith Rath
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Leon
+                      Zboncak
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Pete
+                      Bahringer
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Dianna Fadel
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Kellie Tromp
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Ben
+                      Emard
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Henry
+                      Hintz
+                    </label>
+                  </div>
+                </div>
+                <!-- END RADIO INPUT -->
+              </div>
+              <div class="relative">
+                <div class="flex flex-col space-y-1 items-start">
+                  <label for="dosen2" class="text-xs font-medium"
+                    >Dosen Pembimbing 2
+                  </label>
+                  <div
+                    class="relative w-full border rounded-lg py-2 px-4 cursor-pointer"
+                    onclick="toggleRadioInput2()"
+                  >
+                    <input
+                      type="text"
+                      name="dosen"
+                      id="dosen2"
+                      placeholder="Pilih dosen pembimbing 2"
+                      required
+                      readonly
+                    />
+                    <button class="absolute top-3 right-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="m7 10l5 5m0 0l5-5"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- START RADIO INPUT -->
+                <div
+                  id="radio-input2"
+                  class="w-full bg-white rounded-lg shadow-lg p-4 hidden absolute z-50"
+                >
+                  <div class="flex flex-col space-y-1">
+                    <label for="search" class="text-xs font-medium">Cari</label>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="search"
+                        placeholder="Cari di sini..."
+                        class="w-full p-2 mb-4 border border-gray-300 rounded-lg"
+                      />
+                      <button class="absolute top-3 right-3">
+                        <img src="./src/assets/search.svg" alt="search-icon" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col space-y-3">
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Adipati Cahya S.Kom, M.Ds.
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Lana
+                      Weimann
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Darryl Beier
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Shawn
+                      Conn DDS
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Anna
+                      Block
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Dr.
+                      Meredith Rath
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Leon
+                      Zboncak
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Pete
+                      Bahringer
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Dianna Fadel
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Kellie Tromp
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Ben
+                      Emard
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Henry
+                      Hintz
+                    </label>
+                  </div>
+                </div>
+                <!-- END RADIO INPUT -->
+              </div>
+              <div class="relative">
+                <div class="flex flex-col space-y-1 items-start">
+                  <label for="dosen3" class="text-xs font-medium"
+                    >Dosen Pembimbing 3
+                  </label>
+                  <div
+                    class="relative w-full border rounded-lg py-2 px-4 cursor-pointer"
+                    onclick="toggleRadioInput3()"
+                  >
+                    <input
+                      type="text"
+                      name="dosen"
+                      id="dosen3"
+                      placeholder="Pilih dosen pembimbing 3"
+                      required
+                      readonly
+                    />
+                    <button class="absolute top-3 right-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="m7 10l5 5m0 0l5-5"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- START RADIO INPUT -->
+                <div
+                  id="radio-input3"
+                  class="w-full bg-white rounded-lg shadow-lg p-4 hidden absolute z-50"
+                >
+                  <div class="flex flex-col space-y-1">
+                    <label for="search" class="text-xs font-medium">Cari</label>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="search"
+                        placeholder="Cari di sini..."
+                        class="w-full p-2 mb-4 border border-gray-300 rounded-lg"
+                      />
+                      <button class="absolute top-3 right-3">
+                        <img src="./src/assets/search.svg" alt="search-icon" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col space-y-3">
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Adipati Cahya S.Kom, M.Ds.
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Lana
+                      Weimann
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Darryl Beier
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Shawn
+                      Conn DDS
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Anna
+                      Block
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Dr.
+                      Meredith Rath
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Leon
+                      Zboncak
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Pete
+                      Bahringer
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Dianna Fadel
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" />
+                      Kellie Tromp
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Ben
+                      Emard
+                    </label>
+                    <label class="block">
+                      <input type="radio" name="selection" class="mr-2" /> Henry
+                      Hintz
+                    </label>
+                  </div>
+                </div>
+                <!-- END RADIO INPUT -->
+              </div>
+              <div class="flex flex-col space-y-1 items-start">
+                <label for="file" class="text-xs font-medium">
+                  File Proposal Penelitian
+                  <span class="text-red-500">*</span>
+                </label>
+                <div class="w-full flex items-center gap-2 border rounded-lg">
+                  <label
+                    for="file"
+                    class="border border-primary-main bg-white rounded-lg py-2 px-4 cursor-pointer text-primary-main font-medium flex gap-2 items-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span>Unggah File</span>
+                  </label>
+                  <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    hidden
+                    onchange="updateFileName()"
+                  />
+                  <span id="file-name" class="text-sm text-gray-500">
+                    Belum ada file yang diunggah</span
+                  >
+                </div>
+                <div
+                  class="flex gap-1 items-center text-xs text-[#6F7072] font-medium"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Jenis file yang diizinkan : PDF, Docs</span>
+                </div>
+              </div>
+              <button
+                class="flex items-center gap-2 w-fit px-4 py-2 rounded-lg bg-primary-main text-white text-md font-medium"
+              >
+                <img src="./src/assets/save-solid.svg" alt="save-icon" />
+                <span>Ajukan Tugas Akhir</span>
+              </button>
+            </form>
+            <!-- END FORM -->
+          </div>
+          <!-- END PENGAJUAN TUGAS AKHIR -->
+        </section>
+      </main>
+      <!-- END MAIN SECTION -->
+    </div>
+
+    <script src="./components/sidebar/sidebar.js"></script>
+    <script src="./src/js/pengajuan-tugas.js"></script>
+  </body>
+</html>
