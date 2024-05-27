@@ -90,6 +90,14 @@ const config = {
         ticks: {
           precision: 0,
         },
+        grid: {
+          display: false,
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
       },
     },
     plugins: {
