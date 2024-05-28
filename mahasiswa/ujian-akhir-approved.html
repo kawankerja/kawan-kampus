@@ -591,7 +591,7 @@
             <!-- END TITLE -->
 
             <!-- START ALERT 2 -->
-            <div class="w-fit">
+            <div class="w-full">
               <div
                 class="flex gap-2 items-start w-full bg-warning-surface border border-warning-border text-warning-main text-xs p-2 rounded-lg"
               >
@@ -686,11 +686,13 @@
 
             <!-- START TABEL RIWAYAT BIMBINGAN -->
             <table
+              id="table-contact"
               class="w-full border border-separate border-spacing-0 rounded-xl"
             >
               <thead class="bg-[#C1C5C8] text-white text-sm">
                 <tr>
                   <th class="px-6 py-3 rounded-tl-lg">Pembimbing & Penguji</th>
+                  <th class="px-6 py-3">Peran</th>
                   <th class="px-6 py-3">Status</th>
                   <th class="px-6 py-3 rounded-tr-lg">Kontak</th>
                 </tr>
@@ -698,7 +700,8 @@
               <tbody class="bg-white text-sm border text-black">
                 <!-- START JADWAL 1 -->
                 <tr class="text-center">
-                  <td class="px-6 py-4">Adipati Cahya</td>
+                  <td class="px-6 py-4" id="nama-dosen">Adipati Cahya</td>
+                  <td class="px-6 py-4">Pembimbing 1</td>
                   <td class="px-6 py-4">
                     <span
                       class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
@@ -706,9 +709,10 @@
                       Disetujui
                     </span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-6 py-4 kontak-dosen">
                     <button
                       class="px-6 py-1 bg-success-main rounded-lg text-white font-medium w-40 text-sm relative"
+                      id="contact-btn"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -730,7 +734,8 @@
 
                 <!-- START JADWAL 2 -->
                 <tr class="text-center">
-                  <td class="px-6 py-4">Adipati Cahya</td>
+                  <td class="px-6 py-4" id="nama-dosen">Clarence Schowalter</td>
+                  <td class="px-6 py-4">Pembimbing 2</td>
                   <td class="px-6 py-4">
                     <span
                       class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
@@ -738,9 +743,10 @@
                       Disetujui
                     </span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-6 py-4 kontak-dosen">
                     <button
                       class="px-6 py-1 bg-success-main rounded-lg text-white font-medium w-40 text-sm relative"
+                      id="contact-btn"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -762,7 +768,10 @@
 
                 <!-- START JADWAL 3 -->
                 <tr class="text-center">
-                  <td class="px-6 py-4 rounded-bl-xl">Adipati Cahya</td>
+                  <td class="px-6 py-4 rounded-bl-xl" id="nama-dosen">
+                    Nancy Mann
+                  </td>
+                  <td class="px-6 py-4">Penguji</td>
                   <td class="px-6 py-4">
                     <span
                       class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
@@ -770,9 +779,10 @@
                       Disetujui
                     </span>
                   </td>
-                  <td class="px-6 py-4 rounded-br-xl">
+                  <td class="px-6 py-4 rounded-br-xl kontak-dosen">
                     <button
                       class="px-6 py-1 bg-success-main rounded-lg text-white font-medium w-40 text-sm relative"
+                      id="contact-btn"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -797,6 +807,44 @@
           </div>
           <!-- END RIWAYAT BIMBINGAN -->
         </section>
+
+        <!-- START MODAL DETAIL CONTACT -->
+        <div
+          id="modal-detail-contact"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+        >
+          <div class="bg-white p-5 w-full max-w-[600px] rounded-xl relative">
+            <h2
+              class="text-md font-semibold mb-4 text-[#252525]"
+              id="modal-title"
+            >
+              Kontak Penguji
+            </h2>
+            <div id="modal-content">
+              <!-- Konten detail mata kuliah akan ditambahkan melalui JavaScript -->
+            </div>
+            <button
+              id="close-modal"
+              class="absolute top-4 right-4 text-gray-600"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#424242]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- END MODAL DETAIL CONTACT -->
       </main>
       <!-- END MAIN SECTION -->
     </div>
