@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </tbody>
         </table>
 
-        <button class="w-full bg-primary-main text-white py-2 rounded-lg mt-6">Tutup</button>
+        
 
       `;
 
@@ -152,6 +152,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Event listener for close modal button
   document.getElementById("close-modal").addEventListener("click", () => {
+    document.getElementById("modal-detail-contact").classList.add("hidden");
+  });
+  // Event listener for close modal button
+  document.getElementById("close-modal-btn").addEventListener("click", () => {
     document.getElementById("modal-detail-contact").classList.add("hidden");
   });
 });
