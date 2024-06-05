@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./src/js/tailwindcss.js"></script>
+    <style type="text/tailwindcss">
+      .active {
+        @apply bg-primary-border border-black text-primary-pressed; /* Applying Tailwind CSS utility classes */
+      }
+    </style>
   </head>
   <body>
     <div class="w-screen h-screen flex flex-row">
@@ -516,7 +521,7 @@
                     class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface z-50"
                   ></div>
                   <div
-                    class="h-1.5 w-1/2 translate-y-[6px] absolute bg-gray-200 rounded-full z-20"
+                    class="h-1.5 w-1/2 translate-y-[6px] absolute bg-primary-surface rounded-full z-20"
                   ></div>
                 </div>
                 <p class="text-sm text-primary-main">
@@ -526,455 +531,208 @@
               <div class="flex flex-col space-y-2 items-center">
                 <div class="flex">
                   <div
-                    class="rounded-full w-[20px] h-[20px] bg-gray-200 border-4 z-50"
+                    class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface z-50"
                   ></div>
                   <div
-                    class="h-1.5 w-1/2 translate-y-[6px] absolute bg-gray-200 rounded-full z-20"
+                    class="h-1.5 w-1/2 translate-y-[6px] absolute bg-primary-surface rounded-full z-20"
                   ></div>
                 </div>
-                <p class="text-sm text-gray-600">Daftar Wisuda</p>
+                <p class="text-sm text-primary-main">Daftar Wisuda</p>
               </div>
               <div class="flex flex-col space-y-2 items-end">
                 <div
-                  class="rounded-full w-[20px] h-[20px] bg-gray-200 border-4 border-gray-200 z-50"
+                  class="rounded-full w-[20px] h-[20px] bg-primary-main border-4 border-primary-surface z-50"
                 ></div>
-                <p class="text-sm text-gray-600">Cetak Kartu Wisuda</p>
+                <p class="text-sm text-primary-main">Cetak Kartu Wisuda</p>
               </div>
             </div>
             <!-- END TIMELINE -->
 
-            <!-- START TABEL KELENGKAPAN -->
+            <!-- START TABEL DATA WISUDAWAN -->
             <table
-              class="w-full border border-separate border-spacing-0 rounded-xl"
+              class="w-full h-fit border border-separate border-spacing-0 rounded-xl"
             >
-              <thead class="bg-primary-main text-white text-sm">
-                <tr class="w-full">
-                  <th class="px-6 py-3 rounded-tl-lg w-10">No</th>
-                  <th class="px-6 py-3 w-64">Kelengkapan</th>
-                  <th class="px-6 py-3 w-52">Deskripsi</th>
-                  <th class="px-6 py-3">Status Verifikasi</th>
-                  <th class="px-6 py-3 rounded-tr-lg">Aksi</th>
+              <thead class="bg-[#C1C5C8] text-white text-sm">
+                <tr>
+                  <th class="px-6 py-2 text-start rounded-t-xl" colspan="3">
+                    Data Wisudawan
+                  </th>
                 </tr>
               </thead>
-              <tbody class="bg-white text-sm border text-black">
-                <!-- START JADWAL 1 -->
-                <tr class="text-center">
-                  <td class="px-6 py-4">1</td>
-                  <td class="px-6 py-4 text-start">
-                    Bebas Tanggungan Biaya Pendidikan (UKT dan SPSA)
-                  </td>
-                  <td class="px-6 py-4 text-start">
-                    Lakukan pengurusan bebas tanggungan biaya ke Fakultas
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Disetujui
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
+              <tbody class="text-sm border text-[#6F7072]">
+                <!-- START DATA 1 -->
+                <tr class="text-start">
+                  <td class="px-6 py-2 w-32">Nama</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">Janis Kuvalis</td>
                 </tr>
-                <!-- END JADWAL 1 -->
+                <!-- END DATA 1 -->
 
-                <!-- START JADWAL 2 -->
-                <tr class="text-center bg-success-surface">
-                  <td class="px-6 py-4">2</td>
-                  <td class="px-6 py-4 text-start">
-                    Bebas Tanggungan di Perpustakaan Pusat
-                  </td>
-                  <td class="px-6 py-4 text-start">
-                    Lakukan pengurusan bebas tanggungan biaya ke Perpustakaan
-                    Pusat
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-warning-surface text-warning-main border border-warning-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Menunggu
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
+                <!-- START DATA 2 -->
+                <tr class="text-start bg-success-surface">
+                  <td class="px-6 py-2 w-32">NIM</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">66437393</td>
                 </tr>
-                <!-- END JADWAL 2 -->
+                <!-- END DATA 2 -->
 
-                <!-- START JADWAL 3 -->
-                <tr class="text-center">
-                  <td class="px-6 py-4">3</td>
-                  <td class="px-6 py-4 text-start">
-                    Sudah melakukan Upload File Tugas Akhir ke Perpustakaan
-                    Pusat
-                  </td>
-                  <td class="px-6 py-4 text-start">
-                    Lakukan Upload File Tugas Akhir ke Perpustakaan Pusat dengan
-                    klik tombol aksi <span class="font-bold">Upload File</span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-danger-surface text-danger-main border border-danger-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Ditolak
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        id="btn-upload-tugas-akhir"
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
+                <!-- START DATA 3 -->
+                <tr class="text-start">
+                  <td class="px-6 py-2 w-32">Fakultas</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">Sastra</td>
                 </tr>
-                <!-- END JADWAL 3 -->
+                <!-- END DATA 3 -->
 
-                <!-- START JADWAL 4 -->
-                <tr class="text-center bg-success-surface">
-                  <td class="px-6 py-4">4</td>
-                  <td class="px-6 py-4 text-start">
-                    Bebas Tanggungan di Fakultas
-                  </td>
-                  <td class="px-6 py-4 text-start">
-                    Lakukan pengurusan bebas tanggungan biaya ke Fakultas
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Disetujui
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
+                <!-- START DATA 4 -->
+                <tr class="text-start bg-success-surface">
+                  <td class="px-6 py-2 w-32">Prodi</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">Desain Komunikasi Visual</td>
                 </tr>
-                <!-- END JADWAL 4 -->
+                <!-- END DATA 4 -->
 
-                <!-- START JADWAL 5 -->
-                <tr class="text-center">
-                  <td class="px-6 py-4">5</td>
-                  <td class="px-6 py-4 text-start">Pembayaran Iuran IKA</td>
-                  <td class="px-6 py-4 text-start">
-                    Lakukan Pembayaran Iuran IKA di Perpustakaan Pusat
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Disetujui
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
+                <!-- START DATA 5 -->
+                <tr class="text-start">
+                  <td class="px-6 py-2 w-32">No. Ijazah</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">991247912874120123</td>
                 </tr>
-                <!-- END JADWAL 5 -->
-
-                <!-- START JADWAL 6 -->
-                <tr class="text-center bg-success-surface">
-                  <td class="px-6 py-4">6</td>
-                  <td class="px-6 py-4 text-start">Pengisian Formulir IKA</td>
-                  <td class="px-6 py-4 text-start">
-                    Lakukan pengisian formulir IKA di Perpustakaan Pusat
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Disetujui
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- END JADWAL 6 -->
-
-                <!-- START JADWAL 7 -->
-                <tr class="text-center">
-                  <td class="px-6 py-4">7</td>
-                  <td class="px-6 py-4 text-start">
-                    Uji Kompetensi Kemampuan Bahasa Inggris
-                  </td>
-                  <td class="px-6 py-4 text-start">
-                    Jika belum, Anda dapat akses halaman
-                    <span class="font-bold text-primary-main underline"
-                      >Uji Kemampuan Bahasa Inggris</span
-                    >
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Disetujui
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- END JADWAL 7 -->
-
-                <!-- START JADWAL 8 -->
-                <tr class="text-center bg-success-surface">
-                  <td class="px-6 py-4 rounded-bl-xl">8</td>
-                  <td class="px-6 py-4 text-start">
-                    Mengisi data Tracer Study
-                  </td>
-                  <td class="px-6 py-4 text-start">
-                    Jika belum, Anda dapat akses halaman
-                    <span class="font-bold text-primary-main underline"
-                      >Tracer Study</span
-                    >
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl"
-                    >
-                      Disetujui
-                    </span>
-                  </td>
-                  <td class="px-6 py-4 rounded-br-xl">
-                    <div class="flex gap-3 items-center w-full">
-                      <button
-                        class="bg-white text-primary-main px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium border border-primary-main"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="size-5"
-                        >
-                          <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                          <path
-                            fill-rule="evenodd"
-                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-
-                        <span>Lihat File</span>
-                      </button>
-                      <button
-                        class="bg-primary-main text-white px-3 py-1 w-fit rounded-lg flex gap-1 items-center font-medium"
-                      >
-                        <img src="./src/assets/upload.svg" alt="upload-icon" />
-                        <span>Upload File</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- END JADWAL 8 -->
+                <!-- END DATA 5 -->
               </tbody>
             </table>
-            <!-- END TABEL KELENGKAPAN -->
+            <!-- END TABEL DATA WISUDAWAN -->
 
-            <div class="flex justify-between items-start">
-              <p class="text-[#6F7072] text-xs font-medium">
-                *Anda dapat melanjutkan proses berikutnya jika telah melengkapi
-                seluruh kelengkapan Penjejakan
-              </p>
+            <!-- START TABEL INFORMASI WISUDA -->
+            <table
+              class="w-full h-fit border border-separate border-spacing-0 rounded-xl"
+            >
+              <thead class="bg-[#C1C5C8] text-white text-sm">
+                <tr>
+                  <th class="px-6 py-2 text-start rounded-t-xl" colspan="3">
+                    Informasi Wisuda
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-sm border text-[#6F7072]">
+                <!-- START DATA 1 -->
+                <tr class="text-start">
+                  <td class="w-full h-full" colspan="3">
+                    <div class="w-full h-full">
+                      <div
+                        class="flex gap-2 items-center w-full bg-info-surface border border-info-border text-info-main p-2"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="size-6"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+
+                        <p>
+                          Tunjukkan kartu wisuda saat mengambil toga di Fakultas
+                          masing-masing
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!-- END DATA 1 -->
+
+                <!-- START DATA 2 -->
+                <tr class="text-start">
+                  <td class="px-6 py-2 w-16">Ukuran Toga</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">M</td>
+                </tr>
+                <!-- END DATA 2 -->
+
+                <!-- START DATA 3 -->
+                <tr class="text-start bg-success-surface">
+                  <td class="px-6 py-2 w-16">Periode Wisuda</td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end">140</td>
+                </tr>
+                <!-- END DATA 3 -->
+
+                <!-- START DATA 4 -->
+                <tr class="text-start">
+                  <td class="px-6 py-2 w-16 rounded-bl-xl">
+                    Tanggal Pelaksanaan Wisuda
+                  </td>
+                  <td class="px-6 py-2">:</td>
+                  <td class="px-6 py-2 text-end rounded-br-xl">
+                    20 November 2022
+                  </td>
+                </tr>
+                <!-- END DATA 4 -->
+              </tbody>
+            </table>
+            <!-- END TABEL INFORMASI WISUDA -->
+
+            <!-- START BUTTON NEXT -->
+            <div class="flex justify-end">
               <button
-                class="flex gap-2 items-center bg-gray-200 text-gray-500 px-3 py-2 w-fit rounded-lg"
+                class="flex gap-2 items-center bg-primary-main text-white px-3 py-2 w-fit rounded-lg"
               >
-                <span>Lanjut ke Daftar Wisuda</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-5"
+                  fill="currentColor"
+                  class="size-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    fill-rule="evenodd"
+                    d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 0 0 3 3h.27l-.155 1.705A1.875 1.875 0 0 0 7.232 22.5h9.536a1.875 1.875 0 0 0 1.867-2.045l-.155-1.705h.27a3 3 0 0 0 3-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0 0 18 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25ZM16.5 6.205v-2.83A.375.375 0 0 0 16.125 3h-8.25a.375.375 0 0 0-.375.375v2.83a49.353 49.353 0 0 1 9 0Zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 0 1-.374.409H7.232a.375.375 0 0 1-.374-.409l.526-5.784a.373.373 0 0 1 .333-.337 41.741 41.741 0 0 1 8.566 0Zm.967-3.97a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H18a.75.75 0 0 1-.75-.75V10.5ZM15 9.75a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V10.5a.75.75 0 0 0-.75-.75H15Z"
+                    clip-rule="evenodd"
                   />
                 </svg>
+                <span>Cetak Kartu Wisuda</span>
               </button>
             </div>
+            <!-- END BUTTON NEXT -->
+
+            <!-- START VIDEO TUTORIAL -->
+            <div class="flex flex-col items-start space-y-4">
+              <h1 class="font-semibold text-md text-black">
+                Video Tutorial Wisuda
+              </h1>
+              <div class="grid grid-cols-2 gap-4 w-full">
+                <div class="flex flex-col space-y-2">
+                  <iframe
+                    class="w-full aspect-video rounded-xl"
+                    src="https://www.youtube.com/embed/SozEct-HAB4"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                  <h2 class="font-semibold text-md text-gray-600">
+                    Tutorial Penggunaan Toga
+                  </h2>
+                </div>
+                <div class="flex flex-col space-y-2">
+                  <iframe
+                    class="w-full aspect-video rounded-xl"
+                    src="https://www.youtube.com/embed/kcFzR-kKhYA"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                  <h2 class="font-semibold text-md text-gray-600">
+                    Tutorial Proses Wisuda
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <!-- END VIDEO TUTORIAL -->
           </div>
           <!-- END PENDAFTARAN WISUDA -->
         </section>
