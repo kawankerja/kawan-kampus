@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- CDN Tailwind -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet" />
+
+		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
+
+		<!-- config tailwinds -->
+		<script src="src/js/tailwindcss.js"></script>
+		<title>BAP</title>
+
+		<link rel="stylesheet" href="src/css/global.css" />
+	</head>
+	<body class="flex bg-success-surface text-sm gap-8">
+		<!-- SIDEBAR -->
+		<aside class="w-1/4 h-full py-14 bg-white flex flex-col gap-12">
+			<img class="px-12 w-3/4" src="src/img/logo.svg" alt="" />
+			<div class="menu pl-12 flex flex-col gap-5">
+				<!-- MENU UTAMA -->
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">MENU UTAMA</p>
+						<hr class="border-gray-400" />
+					</div>
+
+					<div>
+						<button
+							id="dashboard"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L2.29289 9.29289C1.90237 9.68342 1.90237 10.3166 2.29289 10.7071C2.68342 11.0976 3.31658 11.0976 3.70711 10.7071L4 10.4142V17C4 17.5523 4.44772 18 5 18H7C7.55228 18 8 17.5523 8 17V15C8 14.4477 8.44772 14 9 14H11C11.5523 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H15C15.5523 18 16 17.5523 16 17V10.4142L16.2929 10.7071C16.6834 11.0976 17.3166 11.0976 17.7071 10.7071C18.0976 10.3166 18.0976 9.68342 17.7071 9.29289L10.7071 2.29289Z"
+										fill="#808284" />
+								</svg>
+								<p class="text-gray-600">Dashboard</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+
+						<button id="profile" class="flex w-full items-center">
+							<div class="flex justify-between w-full items-center p-3">
+								<span class="flex gap-3 items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="#808284"
+										class="w-6 h-6">
+										<path
+											fill-rule="evenodd"
+											d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+											clip-rule="evenodd" />
+									</svg>
+									<p class="text-gray-600">Profile</p>
+								</span>
+
+								<svg
+									id="icon-profile"
+									class="w-5 h-5 transition-all rotate-180"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M5.29289 12.7071C5.68342 13.0976 6.31658 13.0976 6.70711 12.7071L10 9.41421L13.2929 12.7071C13.6834 13.0976 14.3166 13.0976 14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L10.7071 7.29289C10.3166 6.90237 9.68342 6.90237 9.29289 7.29289L5.29289 11.2929C4.90237 11.6834 4.90237 12.3166 5.29289 12.7071Z"
+										fill="#A3A6A8" />
+								</svg>
+							</div>
+						</button>
+
+						<!-- Dropdown Profile -->
+						<ul
+							id="dropdown-profile"
+							class="text-gray-600 *:cursor-pointer hidden">
+							<!-- Data Diri -->
+							<li
+								id="data-diri"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Data Diri</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+							</li>
+
+							<!-- Gaji -->
+							<li
+								id="gaji"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Gaji</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg py-3 invisible"></div>
+							</li>
+						</ul>
+						<!-- Akhir Dropdown Profile -->
+
+						<!-- Riwayat Pengajaran -->
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10.3939 2.08085C10.1424 1.97305 9.85763 1.97305 9.60608 2.08085L2.60608 5.08085C2.2384 5.23843 2 5.59997 2 6C2 6.40003 2.2384 6.76157 2.60608 6.91915L5.25037 8.05241C5.34653 7.94347 5.46706 7.85473 5.60608 7.79515L9.60608 6.08087C10.1137 5.86331 10.7016 6.09846 10.9191 6.60609C11.1367 7.11372 10.9015 7.7016 10.3939 7.91916L7.66668 9.08797L9.60608 9.91915C9.85763 10.027 10.1424 10.027 10.3939 9.91915L17.3939 6.91915C17.7616 6.76157 18 6.40003 18 6C18 5.59997 17.7616 5.23843 17.3939 5.08085L10.3939 2.08085Z"
+										fill="#808284" />
+									<path
+										d="M3.31004 9.39673L5 10.121V14.2226C4.65723 14.1449 4.30705 14.0867 3.95071 14.0494C3.48094 14.0001 3.1097 13.6289 3.06044 13.1591C3.02046 12.7778 3 12.391 3 11.9998C3 11.1033 3.10741 10.2315 3.31004 9.39673Z"
+										fill="#808284" />
+									<path
+										d="M9.29996 16.5725C8.62708 15.9129 7.85167 15.3584 7 14.9351V10.9781L8.81824 11.7574C9.57289 12.0808 10.4271 12.0808 11.1818 11.7574L16.69 9.39673C16.8926 10.2315 17 11.1033 17 11.9998C17 12.391 16.9795 12.7778 16.9396 13.1591C16.8903 13.6289 16.5191 14.0001 16.0493 14.0494C13.9765 14.2667 12.1124 15.188 10.7 16.5725C10.3112 16.9537 9.68881 16.9537 9.29996 16.5725Z"
+										fill="#808284" />
+									<path
+										d="M6 18C6.55228 18 7 17.5523 7 17V14.9351C6.37136 14.6227 5.70117 14.3817 5 14.2226V17C5 17.5523 5.44772 18 6 18Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Lapor Lanjut Studi</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR MENU UTAMA -->
+
+				<!-- AKADEMIK -->
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">AKADEMIK</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button
+							id="perkuliahan"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M9 4.80423C7.9428 4.28906 6.75516 4 5.5 4C4.24484 4 3.0572 4.28906 2 4.80423V14.8042C3.0572 14.2891 4.24484 14 5.5 14C7.1686 14 8.71789 14.5108 10 15.3847C11.2821 14.5108 12.8314 14 14.5 14C15.7552 14 16.9428 14.2891 18 14.8042V4.80423C16.9428 4.28906 15.7552 4 14.5 4C13.2448 4 12.0572 4.28906 11 4.80423V12C11 12.5523 10.5523 13 10 13C9.44772 13 9 12.5523 9 12V4.80423Z"
+										fill="#57af81" />
+								</svg>
+
+								<p class="text-primary-main">Perkuliahan</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg visible"></div>
+						</button>
+
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Kalender Akademik</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+
+						<button id="bimbingan" class="flex w-full items-center">
+							<div class="flex justify-between w-full items-center p-3">
+								<span class="flex gap-3 items-center">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9 6C9 7.65685 7.65685 9 6 9C4.34315 9 3 7.65685 3 6C3 4.34315 4.34315 3 6 3C7.65685 3 9 4.34315 9 6Z"
+											fill="#808284" />
+										<path
+											d="M17 6C17 7.65685 15.6569 9 14 9C12.3431 9 11 7.65685 11 6C11 4.34315 12.3431 3 14 3C15.6569 3 17 4.34315 17 6Z"
+											fill="#808284" />
+										<path
+											d="M12.9291 17C12.9758 16.6734 13 16.3395 13 16C13 14.3648 12.4393 12.8606 11.4998 11.6691C12.2352 11.2435 13.0892 11 14 11C16.7614 11 19 13.2386 19 16V17H12.9291Z"
+											fill="#808284" />
+										<path
+											d="M6 11C8.76142 11 11 13.2386 11 16V17H1V16C1 13.2386 3.23858 11 6 11Z"
+											fill="#808284" />
+									</svg>
+
+									<p class="text-gray-600">Bimbingan</p>
+								</span>
+
+								<svg
+									id="icon-bimbingan"
+									class="w-5 h-5 rotate-180 transition-all"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M5.29289 12.7071C5.68342 13.0976 6.31658 13.0976 6.70711 12.7071L10 9.41421L13.2929 12.7071C13.6834 13.0976 14.3166 13.0976 14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L10.7071 7.29289C10.3166 6.90237 9.68342 6.90237 9.29289 7.29289L5.29289 11.2929C4.90237 11.6834 4.90237 12.3166 5.29289 12.7071Z"
+										fill="#A3A6A8" />
+								</svg>
+							</div>
+						</button>
+
+						<!-- Dropdown Bimbingan -->
+						<ul
+							id="dropdown-bimbingan"
+							class="text-gray-600 hidden *:cursor-pointer">
+							<!-- Catatan Studi -->
+							<li
+								id="catatan-studi"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Catatan Studi</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+
+							<!-- Krs -->
+							<li
+								id="krs"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>KRS</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+
+							<!-- Tugas Akhir -->
+							<li
+								id="tugas-akhir"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Tugas Akhir</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+
+							<!-- Ujian Akhir -->
+							<li
+								id="ujian-akhir"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Ujian Akhir</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+						</ul>
+						<!-- Akhir Dropdown Bimbingan -->
+
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM11 6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44772 9 6V10C9 10.2652 9.10536 10.5196 9.29289 10.7071L12.1213 13.5355C12.5118 13.9261 13.145 13.9261 13.5355 13.5355C13.9261 13.145 13.9261 12.5118 13.5355 12.1213L11 9.58579V6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Riwayat Pengajaran</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR AKADEMIK -->
+
+				<!-- KPI DOSEN -->
+				<div id="kpi" class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">KPI DOSEN</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 6V5C6 3.34315 7.34315 2 9 2H11C12.6569 2 14 3.34315 14 5V6H16C17.1046 6 18 6.89543 18 8V11.5708C15.5096 12.4947 12.8149 12.9999 10 12.9999C7.18514 12.9999 4.49037 12.4947 2 11.5707V8C2 6.89543 2.89543 6 4 6H6ZM8 5C8 4.44772 8.44772 4 9 4H11C11.5523 4 12 4.44772 12 5V6H8V5ZM9 10C9 9.44772 9.44772 9 10 9H10.01C10.5623 9 11.01 9.44772 11.01 10C11.01 10.5523 10.5623 11 10.01 11H10C9.44772 11 9 10.5523 9 10Z"
+										fill="#808284" />
+									<path
+										d="M2 13.6923V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V13.6923C15.4872 14.5404 12.7964 14.9999 10 14.9999C7.20363 14.9999 4.51279 14.5404 2 13.6923Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">KPI Dosen</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- KPI DOSEN -->
+			</div>
+			<button
+				id="open-modal-keluar"
+				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="#CB3A31"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M3 3C2.44772 3 2 3.44772 2 4V16C2 16.5523 2.44772 17 3 17C3.55228 17 4 16.5523 4 16V4C4 3.44772 3.55228 3 3 3Z" />
+					<path
+						d="M13.2929 12.2929C12.9024 12.6834 12.9024 13.3166 13.2929 13.7071C13.6834 14.0976 14.3166 14.0976 14.7071 13.7071L17.7071 10.7071C17.8946 10.5196 18 10.2652 18 10C18 9.73478 17.8946 9.48043 17.7071 9.29289L14.7071 6.29289C14.3166 5.90237 13.6834 5.90237 13.2929 6.29289C12.9024 6.68342 12.9024 7.31658 13.2929 7.70711L14.5858 9L7 9C6.44771 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H14.5858L13.2929 12.2929Z" />
+				</svg>
+				Keluar
+			</button>
+		</aside>
+
+		<!-- POP UP KELUAR  -->
+		<div
+			id="content-modal-keluar"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="56"
+						height="56"
+						viewBox="0 0 56 56"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect width="56" height="56" rx="28" fill="#FFF4F2" />
+						<path
+							d="M34.6667 33.333L40 27.9997M40 27.9997L34.6667 22.6663M40 27.9997L21.3333 27.9997M29.3333 33.333V34.6663C29.3333 36.8755 27.5425 38.6663 25.3333 38.6663H20C17.7909 38.6663 16 36.8755 16 34.6663V21.333C16 19.1239 17.7909 17.333 20 17.333H25.3333C27.5425 17.333 29.3333 19.1239 29.3333 21.333V22.6663"
+							stroke="#CB3A31"
+							stroke-width="4"
+							stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+
+					<h1 class="my-3 text-xl font-bold text-danger-hover text-center">
+						Yakin ingin keluar akun?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Apabila Anda keluar dari akun, Anda diharuskan melakukan login ulang
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal-keluar"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">
+						Tidak, Tetap Gunakan Akun Ini
+					</button>
+					<button class="bg-white text-danger-main">
+						Ya, Keluar dari Akun Ini
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP KELUAR  -->
+		<!-- AKHIR SIDEBAR -->
+
+		<div class="container text-base my-12 mr-12 relative">
+			<div class="flex gap-2 items-center font-semibold mb-4 text-gray-700">
+				<a href="perkuliahan.html">Perkuliahan</a>
+				<p>></p>
+				<p class="text-primary-main">Berita Acara Perkuliahan</p>
+			</div>
+			<div class="bg-white p-4 rounded-xl flex flex-col gap-4">
+				<!-- HEAD -->
+				<div class="flex items-center justify-between">
+					<div class="flex flex-col gap-1">
+						<h1 class="font-semibold">
+							Berita Acara Perkuliahan Pengenalan Teknologi Open Source IF22B
+						</h1>
+						<p class="text-gray-700">CPL Prodi :</p>
+						<p class="text-gray-700">CPL Mata Kuliah :</p>
+					</div>
+					<button
+						id="open-modal"
+						class="text-sm flex items-center gap-2 py-2 px-4 rounded-lg bg-primary-main text-white font-medium">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M10 3C10.5523 3 11 3.44772 11 4V9H16C16.5523 9 17 9.44772 17 10C17 10.5523 16.5523 11 16 11H11V16C11 16.5523 10.5523 17 10 17C9.44772 17 9 16.5523 9 16V11H4C3.44772 11 3 10.5523 3 10C3 9.44771 3.44772 9 4 9L9 9V4C9 3.44772 9.44772 3 10 3Z"
+								fill="white" />
+						</svg>
+						Buat BAP
+					</button>
+				</div>
+
+				<div class="relative w-fit">
+					<button
+						id="download"
+						class="w-fit text-sm flex items-center gap-2 py-2 px-4 rounded-lg bg-primary-main text-white font-medium">
+						Download Tabel
+
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M6 2C4.89543 2 4 2.89543 4 4V16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V7.41421C16 6.88378 15.7893 6.37507 15.4142 6L12 2.58579C11.6249 2.21071 11.1162 2 10.5858 2H6ZM11 8C11 7.44772 10.5523 7 10 7C9.44772 7 9 7.44772 9 8V11.5858L7.70711 10.2929C7.31658 9.90237 6.68342 9.90237 6.29289 10.2929C5.90237 10.6834 5.90237 11.3166 6.29289 11.7071L9.29289 14.7071C9.68342 15.0976 10.3166 15.0976 10.7071 14.7071L13.7071 11.7071C14.0976 11.3166 14.0976 10.6834 13.7071 10.2929C13.3166 9.90237 12.6834 9.90237 12.2929 10.2929L11 11.5858V8Z"
+								fill="white" />
+						</svg>
+					</button>
+
+					<div
+						id="dropdown-download"
+						class="hidden absolute translate-y-2 bg-white flex flex-col *:p-3 rounded-lg border w-full text-sm shadow-lg">
+						<button class="flex items-center gap-2">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8 3C8 2.44772 8.44772 2 9 2H11C11.5523 2 12 2.44772 12 3C12 3.55228 11.5523 4 11 4H9C8.44772 4 8 3.55228 8 3Z"
+									fill="#6F7072" />
+								<path
+									d="M6 3C4.89543 3 4 3.89543 4 5V16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V5C16 3.89543 15.1046 3 14 3C14 4.65685 12.6569 6 11 6H9C7.34315 6 6 4.65685 6 3Z"
+									fill="#6F7072" />
+							</svg>
+							Copy
+						</button>
+						<button class="flex items-center gap-2">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M6 2C4.89688 2 4 2.89687 4 4V16C4 17.1031 4.89688 18 6 18H14C15.1031 18 16 17.1031 16 16V7H12C11.4469 7 11 6.55312 11 6V2H6ZM12 2V6H16L12 2ZM8.86562 9.81875L10 11.4406L11.1344 9.81875C11.3719 9.47812 11.8406 9.39687 12.1781 9.63437C12.5156 9.87187 12.6 10.3406 12.3625 10.6781L10.9156 12.75L12.3656 14.8187C12.6031 15.1594 12.5219 15.625 12.1812 15.8625C11.8406 16.1 11.375 16.0187 11.1375 15.6781L10 14.0562L8.86562 15.6781C8.62812 16.0187 8.15938 16.1 7.82188 15.8625C7.48438 15.625 7.4 15.1562 7.6375 14.8187L9.08437 12.75L7.63438 10.6812C7.39688 10.3406 7.47812 9.875 7.81875 9.6375C8.15937 9.4 8.625 9.48125 8.8625 9.82187L8.86562 9.81875Z"
+									fill="#6F7072" />
+							</svg>
+							Excel
+						</button>
+						<button
+							class="flex items-center gap-2 bg-success-surface rounded-b-lg">
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M6.5005 11C6.36787 11 6.24068 11.0527 6.1469 11.1464C6.05311 11.2402 6.00043 11.3674 6.00043 11.5V13.5C6.00043 13.6326 6.05311 13.7598 6.1469 13.8536C6.24068 13.9473 6.36787 14 6.5005 14C6.63313 14 6.76032 13.9473 6.8541 13.8536C6.94789 13.7598 7.00057 13.6326 7.00057 13.5V13.334H7.33462C7.64417 13.334 7.94105 13.211 8.15993 12.9922C8.37882 12.7733 8.50179 12.4765 8.50179 12.167C8.50179 11.8575 8.37882 11.5607 8.15993 11.3418C7.94105 11.123 7.64417 11 7.33462 11H6.5005ZM7.33462 12.334H7.00057V12H7.33462C7.37892 12 7.4214 12.0176 7.45272 12.0489C7.48405 12.0802 7.50164 12.1227 7.50164 12.167C7.50164 12.2113 7.48405 12.2538 7.45272 12.2851C7.4214 12.3164 7.37892 12.334 7.33462 12.334ZM12.0013 11.499C12.0016 11.3666 12.0544 11.2396 12.1481 11.1461C12.2419 11.0525 12.3689 11 12.5014 11H13.5005C13.6331 11 13.7603 11.0527 13.8541 11.1464C13.9479 11.2402 14.0006 11.3674 14.0006 11.5C14.0006 11.6326 13.9479 11.7598 13.8541 11.8536C13.7603 11.9473 13.6331 12 13.5005 12H13.0014V12.335H13.5015C13.6341 12.335 13.7613 12.3877 13.8551 12.4814C13.9489 12.5752 14.0016 12.7024 14.0016 12.835C14.0016 12.9676 13.9489 13.0948 13.8551 13.1886C13.7613 13.2823 13.6341 13.335 13.5015 13.335H13.0014L13.0024 13.499C13.0026 13.5647 12.9898 13.6297 12.9647 13.6904C12.9397 13.7511 12.903 13.8063 12.8567 13.8528C12.7631 13.9468 12.636 13.9997 12.5034 14C12.3707 14.0003 12.2434 13.9478 12.1495 13.8543C12.0555 13.7607 12.0026 13.6336 12.0023 13.501L12.0013 12.834V11.499ZM9.50093 11C9.3683 11 9.24111 11.0527 9.14732 11.1464C9.05354 11.2402 9.00086 11.3674 9.00086 11.5V13.5C9.00086 13.6326 9.05354 13.7598 9.14732 13.8536C9.24111 13.9473 9.3683 14 9.50093 14H10.003C10.4009 14 10.7825 13.842 11.0638 13.5607C11.3452 13.2794 11.5032 12.8978 11.5032 12.5C11.5032 12.1022 11.3452 11.7206 11.0638 11.4393C10.7825 11.158 10.4009 11 10.003 11H9.50093ZM10.001 13V12H10.003C10.1356 12 10.2628 12.0527 10.3566 12.1464C10.4504 12.2402 10.5031 12.3674 10.5031 12.5C10.5031 12.6326 10.4504 12.7598 10.3566 12.8536C10.2628 12.9473 10.1356 13 10.003 13H10.001ZM10.003 6.5V2H5.50036C5.10248 2 4.72089 2.15804 4.43955 2.43934C4.1582 2.72064 4.00014 3.10218 4.00014 3.5V9.082C3.70768 9.18538 3.45447 9.37687 3.27536 9.6301C3.09624 9.88333 3.00004 10.1858 3 10.496V14.499C3.00004 14.8092 3.09624 15.1117 3.27536 15.3649C3.45447 15.6181 3.70768 15.8096 4.00014 15.913V16.5C4.00014 16.8978 4.1582 17.2794 4.43955 17.5607C4.72089 17.842 5.10248 18 5.50036 18H14.5016C14.8995 18 15.2811 17.842 15.5625 17.5607C15.8438 17.2794 16.0019 16.8978 16.0019 16.5V15.913C16.2939 15.8093 16.5467 15.6177 16.7255 15.3645C16.9042 15.1113 17.0001 14.8089 17 14.499V10.496C17.0001 10.1861 16.9042 9.88375 16.7255 9.63055C16.5467 9.37735 16.2939 9.18572 16.0019 9.082V8H11.5012C11.1033 8 10.7217 7.84196 10.4404 7.56066C10.1591 7.27936 10.001 6.89782 10.001 6.5M4.50221 9.996H15.5008C15.6334 9.996 15.7606 10.0487 15.8544 10.1424C15.9482 10.2362 16.0009 10.3634 16.0009 10.496V14.499C16.0009 14.6316 15.9482 14.7588 15.8544 14.8526C15.7606 14.9463 15.6334 14.999 15.5008 14.999H4.50221C4.36959 14.999 4.24239 14.9463 4.14861 14.8526C4.05483 14.7588 4.00214 14.6316 4.00214 14.499V10.496C4.00214 10.3634 4.05483 10.2362 4.14861 10.1424C4.24239 10.0487 4.36959 9.996 4.50221 9.996ZM11.0011 6.5V2.25L15.7518 7H11.5012C11.3686 7 11.2414 6.94732 11.1476 6.85355C11.0538 6.75979 11.0011 6.63261 11.0011 6.5Z"
+									fill="#6F7072" />
+							</svg>
+							PDF
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR HEAD -->
+
+				<!-- TABLE -->
+				<div class="h-[500px] overflow-auto pr-2">
+					<table
+						class="w-full border border-separate border-spacing-0 rounded-xl">
+						<thead class="bg-primary-main text-white text-sm">
+							<th class="p-4 rounded-ss-xl">TM Ke</th>
+							<th class="p-4">Hari/Tanggal/Jam</th>
+							<th class="p-4">Pokok Bahasan</th>
+							<th class="p-4">Metode</th>
+							<th class="p-4">Evaluasi</th>
+							<th class="p-4">Kehadiran</th>
+							<th class="p-4 rounded-se-xl">Aksi</th>
+						</thead>
+						<tbody>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="">Pengenalan Teknologi Open Source</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">2</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="text-left">
+									Silakan review jurnal dengan ketentuan berikut : 1. Review 1
+									Jurnal internasional atau 2. Review 2 Jurnal Nasional. Catatan
+									: Template review jurnal sudah disediakan, silakan mengikuti
+									template tersebut. Tema jurnal yang direview tentang software
+									teknologi. Clue : Silakan bisa cari di google scholar dengan
+									keyword “Software Teknologi” Jurnal yang direview tidak boleh
+									sama antar mahasiswa, silakan berkoordinasi
+								</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">3</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="">Pengenalan Teknologi Open Source</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">4</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="">Pengenalan Teknologi Open Source</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">5</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="text-left">
+									Silakan review jurnal dengan ketentuan berikut : 1. Review 1
+									Jurnal internasional atau 2. Review 2 Jurnal Nasional. Catatan
+									: Template review jurnal sudah disediakan, silakan mengikuti
+									template tersebut. Tema jurnal yang direview tentang software
+									teknologi. Clue : Silakan bisa cari di google scholar dengan
+									keyword “Software Teknologi” Jurnal yang direview tidak boleh
+									sama antar mahasiswa, silakan berkoordinasi
+								</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">6</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="">Pengenalan Teknologi Open Source</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">7</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="text-left">
+									Silakan review jurnal dengan ketentuan berikut : 1. Review 1
+									Jurnal internasional atau 2. Review 2 Jurnal Nasional. Catatan
+									: Template review jurnal sudah disediakan, silakan mengikuti
+									template tersebut. Tema jurnal yang direview tentang software
+									teknologi. Clue : Silakan bisa cari di google scholar dengan
+									keyword “Software Teknologi” Jurnal yang direview tidak boleh
+									sama antar mahasiswa, silakan berkoordinasi
+								</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">8</td>
+								<td>Selasa, 10 Oktober 2023 (07.00 - 08.40)</td>
+								<td class="">Pengenalan Teknologi Open Source</td>
+								<td class="">Tatap Muka</td>
+								<td class="">-</td>
+								<td class="">31</td>
+								<td class="">
+									<div class="flex flex-col gap-2">
+										<button
+											id="edit"
+											class="w-full px-3 py-1 gap-1 bg-primary-main rounded-lg font-medium text-white flex justify-center items-center">
+											Edit
+										</button>
+										<button
+											id="hapus"
+											class="w-full px-3 py-1 gap-1 border border-danger-main bg-white rounded-lg font-medium text-danger-main flex justify-center items-center">
+											Hapus
+										</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- AKHIR TABLE -->
+			</div>
+
+			<!-- POP UP ALERT -->
+			<div class="absolute w-full top-0 flex flex-col gap-4 hidden">
+				<div
+					class="flex text-primary-main gap-2 p-4 bg-primary-surface border border-primary-border rounded-xl w-full shadow-lg">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+					<p>Selamat! Anda berhasil menginput berita acara perkuliahan!</p>
+				</div>
+				<div
+					class="flex text-primary-main gap-2 p-4 bg-primary-surface border border-primary-border rounded-xl w-full shadow-lg">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+					<p>
+						Selamat! Perubahan berita acara perkuliahan telah berhasil disimpan!
+					</p>
+				</div>
+				<div
+					class="flex text-danger-main gap-2 p-4 bg-danger-surface border border-danger-border rounded-xl w-full shadow-lg">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+							fill="#CB3A31" />
+					</svg>
+					<p>
+						Maaf, terjadi kesalahan. Berita acara perkuliahan gagal disimpan.
+					</p>
+				</div>
+			</div>
+			<!-- POP UP ALERT -->
+		</div>
+
+		<!-- POP UP BAP -->
+		<div
+			id="content-modal-bap"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 fixed hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[1022px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="flex justify-between">
+					<h1 class="font-semibold">
+						Input Berita Acara Perkuliahan Pengenalan Teknologi Open Source
+						IF22B
+					</h1>
+					<div data-modal="false" id="close-modal-bap" class="cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<form action="" class="flex flex-col gap-4">
+					<div class="flex flex-col w-fit gap-1">
+						<label class="text-xs font-medium" for=""
+							>Metode<span class="text-danger-main">*</span></label
+						>
+						<select class="py-2 px-3 rounded-lg border" name="" id="">
+							<option value="" selected>Tatap Muka</option>
+							<option value="">Online</option>
+						</select>
+					</div>
+					<div class="flex flex-col gap-1">
+						<label class="text-xs font-medium" for=""
+							>Pokok Bahasan<span class="text-danger-main">*</span></label
+						>
+						<textarea
+							class="py-2 px-3 rounded-lg border"
+							rows="4"
+							name=""
+							id="">
+Silakan review jurnal dengan ketentuan berikut :  1. Review 1 Jurnal internasional atau 2. Review 2 Jurnal Nasional. Catatan : Template review jurnal sudah disediakan, silakan mengikuti template tersebut. Tema jurnal yang direview tentang software teknologi. Clue : Silakan bisa cari di google scholar dengan keyword “Software Teknologi” Jurnal yang direview tidak boleh sama antar mahasiswa, silakan berkoordinasi
+						</textarea
+						>
+					</div>
+					<div class="flex flex-col gap-1">
+						<label class="text-xs font-medium" for=""
+							>Evaluasi<span class="text-danger-main">*</span></label
+						>
+						<textarea
+							class="py-2 px-3 rounded-lg border"
+							rows="6"
+							name=""
+							id="">
+Silakan review jurnal dengan ketentuan berikut :  1. Review 1 Jurnal internasional atau 2. Review 2 Jurnal Nasional. Catatan : Template review jurnal sudah disediakan, silakan mengikuti template tersebut. Tema jurnal yang direview tentang software teknologi. Clue : Silakan bisa cari di google scholar dengan keyword “Software Teknologi” Jurnal yang direview tidak boleh sama antar mahasiswa, silakan berkoordinasi
+						</textarea
+						>
+					</div>
+
+					<div
+						class="flex gap-4 justify-end *:px-4 *:py-2 *:rounded-lg *:font-semibold">
+						<button
+							class="rounded-lg border border-danger-main text-danger-main">
+							Batalkan
+						</button>
+						<button class="flex gap-2 bg-primary-main text-white">
+							<svg
+								width="21"
+								height="20"
+								viewBox="0 0 21 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.45711 10.2929C8.06658 9.90237 7.43342 9.90237 7.04289 10.2929C6.65237 10.6834 6.65237 11.3166 7.04289 11.7071L10.0429 14.7071C10.4334 15.0976 11.0666 15.0976 11.4571 14.7071L14.4571 11.7071C14.8476 11.3166 14.8476 10.6834 14.4571 10.2929C14.0666 9.90237 13.4334 9.90237 13.0429 10.2929L11.75 11.5858L11.75 6H16.75C17.8546 6 18.75 6.89543 18.75 8V15C18.75 16.1046 17.8546 17 16.75 17H4.75C3.64543 17 2.75 16.1046 2.75 15V8C2.75 6.89543 3.64543 6 4.75 6H9.75L9.75 11.5858L8.45711 10.2929Z"
+									fill="white" />
+								<path
+									d="M9.75 4C9.75 3.44772 10.1977 3 10.75 3C11.3023 3 11.75 3.44772 11.75 4L11.75 6H9.75L9.75 4Z"
+									fill="white" />
+							</svg>
+							Simpan
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- AKHIR POP UP BAP -->
+
+		<script src="src/js/sidebar.js"></script>
+		<script src="src/js/navigasi.js"></script>
+		<script>
+			const btnDownload = document.getElementById("download");
+			const dropdown = document.getElementById("dropdown-download");
+
+			btnDownload.addEventListener("click", () => {
+				dropdown.classList.toggle("hidden");
+			});
+
+			const EDIT = document.querySelectorAll("#edit");
+			const BAP = document.getElementById("open-modal");
+			const modal = document.getElementById("content-modal-bap");
+			const closemodal = document.getElementById("close-modal-bap");
+
+			EDIT.forEach((edit) => {
+				edit.addEventListener("click", () => {
+					modal.classList.toggle("hidden");
+				});
+			});
+
+			BAP.addEventListener("click", () => {
+				modal.classList.toggle("hidden");
+			});
+			closemodal.addEventListener("click", () => {
+				modal.classList.toggle("hidden");
+			});
+		</script>
+	</body>
+</html>

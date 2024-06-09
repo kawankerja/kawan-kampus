@@ -12,18 +12,81 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
 			rel="stylesheet" />
 
-		<link rel="shortcut icon" href="../src/img/icon.png" type="image/x-icon" />
+		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
 
 		<!-- config tailwinds -->
-		<script src="../src/js/tailwindcss.js"></script>
-		<title>Sidebar</title>
+		<script src="src/js/tailwindcss.js"></script>
+		<title>KRS</title>
 
-		<link rel="stylesheet" href="../src/css/global.css" />
+		<link rel="stylesheet" href="src/css/global.css" />
+
+		<style>
+			.hadir {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #57af81;
+				border: 1px solid #57af81;
+				font-weight: 600;
+			}
+			.hadir.active {
+				border-radius: 6px;
+				background-color: #57af81;
+				color: white;
+				font-weight: 600;
+			}
+			.izin {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #3267e3;
+				border: 1px solid #3267e3;
+				font-weight: 600;
+			}
+			.izin.active {
+				border-radius: 6px;
+				background-color: #3267e3;
+				color: white;
+				font-weight: 600;
+			}
+			.sakit {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #cd7b2e;
+				border: 1px solid #cd7b2e;
+				font-weight: 600;
+			}
+			.sakit.active {
+				border-radius: 6px;
+				background-color: #cd7b2e;
+				color: white;
+				font-weight: 600;
+			}
+			.alfa {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #cb3a31;
+				border: 1px solid #cb3a31;
+				font-weight: 600;
+			}
+			.alfa.active {
+				border-radius: 6px;
+				background-color: #cb3a31;
+				color: white;
+				font-weight: 600;
+			}
+		</style>
 	</head>
 	<body class="flex bg-success-surface text-sm gap-8">
 		<!-- SIDEBAR -->
 		<aside class="w-1/4 h-full py-14 bg-white flex flex-col gap-12">
-			<img class="px-12 w-3/4" src="../src/img/logo.svg" alt="" />
+			<img class="px-12 w-3/4" src="src/img/logo.svg" alt="" />
 			<div class="menu pl-12 flex flex-col gap-5">
 				<!-- MENU UTAMA -->
 				<div class="menu-list flex flex-col gap-3">
@@ -33,7 +96,9 @@
 					</div>
 
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="dashboard"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -43,12 +108,12 @@
 									xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L2.29289 9.29289C1.90237 9.68342 1.90237 10.3166 2.29289 10.7071C2.68342 11.0976 3.31658 11.0976 3.70711 10.7071L4 10.4142V17C4 17.5523 4.44772 18 5 18H7C7.55228 18 8 17.5523 8 17V15C8 14.4477 8.44772 14 9 14H11C11.5523 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H15C15.5523 18 16 17.5523 16 17V10.4142L16.2929 10.7071C16.6834 11.0976 17.3166 11.0976 17.7071 10.7071C18.0976 10.3166 18.0976 9.68342 17.7071 9.29289L10.7071 2.29289Z"
-										fill="#57af81" />
+										fill="#808284" />
 								</svg>
-								<p class="text-primary-main">Dashboard</p>
+								<p class="text-gray-600">Dashboard</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
 
 						<button id="profile" class="flex w-full items-center">
@@ -69,7 +134,7 @@
 
 								<svg
 									id="icon-profile"
-									class="w-5 h-5 rotate-180 transition-all"
+									class="w-5 h-5 transition-all rotate-180"
 									width="20"
 									height="20"
 									viewBox="0 0 20 20"
@@ -87,9 +152,11 @@
 						<!-- Dropdown Profile -->
 						<ul
 							id="dropdown-profile"
-							class="text-gray-600 hidden *:cursor-pointer">
+							class="text-gray-600 *:cursor-pointer hidden">
 							<!-- Data Diri -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="data-diri"
+								class="flex items-center justify-between gap-3 ml-8">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -104,11 +171,13 @@
 									<p>Data Diri</p>
 								</div>
 								<div
-									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 							</li>
 
 							<!-- Gaji -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="gaji"
+								class="flex items-center justify-between gap-3 ml-8">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -123,7 +192,7 @@
 									<p>Gaji</p>
 								</div>
 								<div
-									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg py-3 invisible"></div>
 							</li>
 						</ul>
 						<!-- Akhir Dropdown Profile -->
@@ -167,7 +236,9 @@
 						<hr class="border-gray-400" />
 					</div>
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="perkuliahan"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -183,10 +254,12 @@
 								<p class="text-gray-600">Perkuliahan</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 						</button>
 
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -253,9 +326,11 @@
 						<!-- Dropdown Bimbingan -->
 						<ul
 							id="dropdown-bimbingan"
-							class="text-gray-600 hidden *:cursor-pointer">
+							class="text-gray-600 *:cursor-pointer hidden">
 							<!-- Catatan Studi -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="catatan-studi"
+								class="flex items-center justify-between gap-3 ml-8">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -267,14 +342,14 @@
 											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
 											fill="#727272" />
 									</svg>
-									<p>Catatan Studi</p>
+									<p class="text-gray-600">Catatan Studi</p>
 								</div>
 								<div
-									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 							</li>
 
 							<!-- Krs -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li id="krs" class="flex items-center justify-between gap-3 ml-8">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -286,14 +361,16 @@
 											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
 											fill="#727272" />
 									</svg>
-									<p>KRS</p>
+									<p class="text-gray-600">KRS</p>
 								</div>
 								<div
-									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 							</li>
 
 							<!-- Tugas Akhir -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="tugas-akhir"
+								class="flex items-center justify-between gap-3 ml-8">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -305,14 +382,16 @@
 											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
 											fill="#727272" />
 									</svg>
-									<p>Tugas Akhir</p>
+									<p class="text-grau-600">Tugas Akhir</p>
 								</div>
 								<div
-									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 							</li>
 
 							<!-- Ujian Akhir -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="ujian-akhir"
+								class="flex items-center justify-between gap-3 ml-8">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -324,10 +403,10 @@
 											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
 											fill="#727272" />
 									</svg>
-									<p>Ujian Akhir</p>
+									<p class="text-grau-600">Ujian Akhir</p>
 								</div>
 								<div
-									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 							</li>
 						</ul>
 						<!-- Akhir Dropdown Bimbingan -->
@@ -350,14 +429,14 @@
 								<p class="text-gray-600">Riwayat Pengajaran</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
 						</button>
 					</div>
 				</div>
 				<!-- AKHIR AKADEMIK -->
 
 				<!-- KPI DOSEN -->
-				<div class="menu-list flex flex-col gap-3">
+				<div id="kpi" class="menu-list flex flex-col gap-3">
 					<div class="head">
 						<p class="text-gray-600 font-semibold mb-2">KPI DOSEN</p>
 						<hr class="border-gray-400" />
@@ -375,16 +454,16 @@
 										fill-rule="evenodd"
 										clip-rule="evenodd"
 										d="M6 6V5C6 3.34315 7.34315 2 9 2H11C12.6569 2 14 3.34315 14 5V6H16C17.1046 6 18 6.89543 18 8V11.5708C15.5096 12.4947 12.8149 12.9999 10 12.9999C7.18514 12.9999 4.49037 12.4947 2 11.5707V8C2 6.89543 2.89543 6 4 6H6ZM8 5C8 4.44772 8.44772 4 9 4H11C11.5523 4 12 4.44772 12 5V6H8V5ZM9 10C9 9.44772 9.44772 9 10 9H10.01C10.5623 9 11.01 9.44772 11.01 10C11.01 10.5523 10.5623 11 10.01 11H10C9.44772 11 9 10.5523 9 10Z"
-										fill="#808284" />
+										fill="#57af81" />
 									<path
 										d="M2 13.6923V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V13.6923C15.4872 14.5404 12.7964 14.9999 10 14.9999C7.20363 14.9999 4.51279 14.5404 2 13.6923Z"
-										fill="#808284" />
+										fill="#57af81" />
 								</svg>
 
-								<p class="text-gray-600">KPI Dosen</p>
+								<p class="text-primary-main">KPI Dosen</p>
 							</span>
 							<div
-								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg visible"></div>
 						</button>
 					</div>
 				</div>
@@ -392,7 +471,7 @@
 			</div>
 			<button
 				id="open-modal-keluar"
-				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium cursor-pointer">
+				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium">
 				<svg
 					width="20"
 					height="20"
@@ -467,9 +546,279 @@
 			</div>
 		</div>
 		<!-- AKHIR POP UP KELUAR  -->
-
 		<!-- AKHIR SIDEBAR -->
 
-		<script src="../src/js/sidebar.js"></script>
+		<div class="container text-base my-12 mr-12 relative">
+			<div class="bg-white p-4 rounded-xl flex flex-col gap-4">
+				<!-- HEAD -->
+				<div class="flex items-center justify-between">
+					<h1 class="font-semibold">KPI Dosen</h1>
+
+					<div class="flex items-center px-3 py-2 border rounded-lg">
+						<input
+							placeholder="Cari di sini..."
+							class="focus:outline-none"
+							type="text"
+							name=""
+							id="" />
+
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M8 4.5C5.79086 4.5 4 6.29086 4 8.5C4 10.7091 5.79086 12.5 8 12.5C10.2091 12.5 12 10.7091 12 8.5C12 6.29086 10.2091 4.5 8 4.5ZM2 8.5C2 5.18629 4.68629 2.5 8 2.5C11.3137 2.5 14 5.18629 14 8.5C14 9.79583 13.5892 10.9957 12.8907 11.9765L17.7071 16.7929C18.0976 17.1834 18.0976 17.8166 17.7071 18.2071C17.3166 18.5976 16.6834 18.5976 16.2929 18.2071L11.4765 13.3907C10.4957 14.0892 9.29583 14.5 8 14.5C4.68629 14.5 2 11.8137 2 8.5Z"
+								fill="#636363" />
+						</svg>
+					</div>
+				</div>
+
+				<!-- AKHIR HEAD -->
+
+				<!-- TABLE -->
+				<div class="h-[330px] overflow-auto pr-2">
+					<table
+						class="w-full border border-separate border-spacing-0 rounded-xl">
+						<thead class="bg-primary-main text-white text-sm">
+							<th class="p-4 rounded-ss-xl">No</th>
+							<th class="p-4">Masa Penugasan</th>
+							<th class="p-4 rounded-se-xl">Laporan</th>
+						</thead>
+						<tbody class="">
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td>1</td>
+								<td>2023/2024 - Ganjil</td>
+								<td
+									class="flex gap-2 *:px-3 *:py-2 *:rounded-lg *:font-medium justify-center">
+									<button class="bg-primary-main text-white">
+										Isi Laporan Kinerja
+									</button>
+									<button
+										disabled
+										class="bg-primary-main text-white disabled:bg-gray-300 disabled:text-gray-600">
+										Lihat Laporan Kinerja
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td>2</td>
+								<td>2023/2024 - Ganjil</td>
+								<td
+									class="flex gap-2 *:px-3 *:py-2 *:rounded-lg *:font-medium justify-center">
+									<button id="edit" class="bg-primary-main text-white">
+										Edit Laporan Kinerja
+									</button>
+									<button
+										class="border border-primary-main text-primary-main disabled:bg-gray-300 disabled:text-gray-600">
+										Lihat Laporan Kinerja
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td>3</td>
+								<td>2023/2024 - Ganjil</td>
+								<td
+									class="flex gap-2 *:px-3 *:py-2 *:rounded-lg *:font-medium justify-center">
+									<button id="edit" class="bg-primary-main text-white">
+										Edit Laporan Kinerja
+									</button>
+									<button
+										class="border border-primary-main text-primary-main disabled:bg-gray-300 disabled:text-gray-600">
+										Lihat Laporan Kinerja
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">4</td>
+								<td>2023/2024 - Ganjil</td>
+								<td
+									class="rounded-br-xl flex gap-2 *:px-3 *:py-2 *:rounded-lg *:font-medium justify-center">
+									<button id="edit" class="bg-primary-main text-white">
+										Edit Laporan Kinerja
+									</button>
+									<button
+										class="border border-primary-main text-primary-main disabled:bg-gray-300 disabled:text-gray-600">
+										Lihat Laporan Kinerja
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- AKHIR TABLE -->
+
+				<!-- PAGINATION -->
+				<div class="box-pagination flex justify-between mt-4 items-center">
+					<p class="text-gray-700">Menampilkan 1 dari 10 data</p>
+					<div class="pagination flex gap-3 items-center">
+						<div class="left cursor-pointer">
+							<svg
+								width="32"
+								height="32"
+								viewBox="0 0 32 32"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<rect
+									x="0.5"
+									y="0.5"
+									width="31"
+									height="31"
+									rx="15.5"
+									fill="white" />
+								<rect
+									x="0.5"
+									y="0.5"
+									width="31"
+									height="31"
+									rx="15.5"
+									stroke="#DBDFE3" />
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M18.7071 11.2929C19.0976 11.6834 19.0976 12.3166 18.7071 12.7071L15.4142 16L18.7071 19.2929C19.0976 19.6834 19.0976 20.3166 18.7071 20.7071C18.3166 21.0976 17.6834 21.0976 17.2929 20.7071L13.2929 16.7071C12.9024 16.3166 12.9024 15.6834 13.2929 15.2929L17.2929 11.2929C17.6834 10.9024 18.3166 10.9024 18.7071 11.2929Z"
+									fill="#424242" />
+							</svg>
+						</div>
+						<div
+							class="number flex items-center gap-1 bg-[#E6EAEE] *:px-3 *:py-1 text-gray-600 rounded-lg">
+							<p class="cursor-pointer rounded-lg bg-primary-main text-white">
+								1
+							</p>
+							<p class="cursor-pointer">2</p>
+							<p class="cursor-pointer">3</p>
+							<p class="cursor-pointer">4</p>
+							<p class="cursor-pointer">...</p>
+							<p class="cursor-pointer">37</p>
+							<p class="cursor-pointer">38</p>
+							<p class="cursor-pointer">39</p>
+							<p class="cursor-pointer">40</p>
+						</div>
+						<div class="right cursor-pointer">
+							<svg
+								width="32"
+								height="32"
+								viewBox="0 0 32 32"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<rect
+									x="-0.5"
+									y="0.5"
+									width="31"
+									height="31"
+									rx="15.5"
+									transform="matrix(-1 0 0 1 31 0)"
+									fill="white" />
+								<rect
+									x="-0.5"
+									y="0.5"
+									width="31"
+									height="31"
+									rx="15.5"
+									transform="matrix(-1 0 0 1 31 0)"
+									stroke="#DBDFE3" />
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M13.2929 11.2929C12.9024 11.6834 12.9024 12.3166 13.2929 12.7071L16.5858 16L13.2929 19.2929C12.9024 19.6834 12.9024 20.3166 13.2929 20.7071C13.6834 21.0976 14.3166 21.0976 14.7071 20.7071L18.7071 16.7071C19.0976 16.3166 19.0976 15.6834 18.7071 15.2929L14.7071 11.2929C14.3166 10.9024 13.6834 10.9024 13.2929 11.2929Z"
+									fill="#424242" />
+							</svg>
+						</div>
+					</div>
+				</div>
+				<!-- AKHIR PAGINATION -->
+			</div>
+
+			<!-- ALERT -->
+			<div
+				class="flex flex-col gap-3 *:p-4 *:gap-2 *:shadow-lg absolute top-0 w-full hidden">
+				<span
+					class="border border-primary-main bg-primary-surface text-primary-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+					KRS mahasiswa telah disetujui.
+				</span>
+
+				<span
+					class="border border-danger-main bg-danger-surface text-danger-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+							fill="#CB3A31" />
+					</svg>
+					Maaf, terjadi kesalahan. KRS mahasiswa gagal disetujui.
+				</span>
+
+				<span
+					class="border border-primary-main bg-primary-surface text-primary-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+					KRS mahasiswa telah ditolak.
+				</span>
+
+				<span
+					class="border border-danger-main bg-danger-surface text-danger-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+							fill="#CB3A31" />
+					</svg>
+					Maaf, terjadi kesalahan. KRS mahasiswa gagal ditolak.
+				</span>
+			</div>
+			<!-- AKHIR ALERT -->
+		</div>
+
+		<script src="src/js/sidebar.js"></script>
+		<script src="src/js/navigasi.js"></script>
+
+		<script>
+			document.querySelectorAll("#edit").forEach((edit) => {
+				edit.addEventListener("click", function () {
+					window.location.href = "./kpi-laporan-kinerja.html";
+				});
+			});
+		</script>
 	</body>
 </html>

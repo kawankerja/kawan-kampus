@@ -3,7 +3,7 @@ const btnDataDiri = document.querySelector("#group-button button:first-child");
 const btnInformasiAkun = document.querySelector(
 	"#group-button button:last-child"
 );
-const dataDiri = document.querySelector("#data-diri");
+const dataDiri = document.querySelector("#data-diri-btn");
 const informasiAkun = document.querySelector("#informasi-akun");
 
 btnDataDiri.addEventListener("click", () => {

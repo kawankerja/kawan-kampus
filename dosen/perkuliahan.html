@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- CDN Tailwind -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet" />
+
+		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
+
+		<!-- config tailwinds -->
+		<script src="src/js/tailwindcss.js"></script>
+		<title>Perkuliahan</title>
+
+		<link rel="stylesheet" href="src/css/global.css" />
+		<style type="text/tailwindcss">
+			.active {
+				@apply bg-primary-main text-white; /* Applying Tailwind CSS utility classes */
+			}
+		</style>
+	</head>
+	<body class="flex bg-success-surface text-sm gap-8">
+		<!-- SIDEBAR -->
+		<aside class="w-1/4 h-full py-14 bg-white flex flex-col gap-12">
+			<img class="px-12 w-3/4" src="src/img/logo.svg" alt="" />
+			<div class="menu pl-12 flex flex-col gap-5">
+				<!-- MENU UTAMA -->
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">MENU UTAMA</p>
+						<hr class="border-gray-400" />
+					</div>
+
+					<div>
+						<button
+							id="dashboard"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L2.29289 9.29289C1.90237 9.68342 1.90237 10.3166 2.29289 10.7071C2.68342 11.0976 3.31658 11.0976 3.70711 10.7071L4 10.4142V17C4 17.5523 4.44772 18 5 18H7C7.55228 18 8 17.5523 8 17V15C8 14.4477 8.44772 14 9 14H11C11.5523 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H15C15.5523 18 16 17.5523 16 17V10.4142L16.2929 10.7071C16.6834 11.0976 17.3166 11.0976 17.7071 10.7071C18.0976 10.3166 18.0976 9.68342 17.7071 9.29289L10.7071 2.29289Z"
+										fill="#808284" />
+								</svg>
+								<p class="text-gray-600">Dashboard</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+
+						<button id="profile" class="flex w-full items-center">
+							<div class="flex justify-between w-full items-center p-3">
+								<span class="flex gap-3 items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="#808284"
+										class="w-6 h-6">
+										<path
+											fill-rule="evenodd"
+											d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+											clip-rule="evenodd" />
+									</svg>
+									<p class="text-gray-600">Profile</p>
+								</span>
+
+								<svg
+									id="icon-profile"
+									class="w-5 h-5 transition-all rotate-180"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M5.29289 12.7071C5.68342 13.0976 6.31658 13.0976 6.70711 12.7071L10 9.41421L13.2929 12.7071C13.6834 13.0976 14.3166 13.0976 14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L10.7071 7.29289C10.3166 6.90237 9.68342 6.90237 9.29289 7.29289L5.29289 11.2929C4.90237 11.6834 4.90237 12.3166 5.29289 12.7071Z"
+										fill="#A3A6A8" />
+								</svg>
+							</div>
+						</button>
+
+						<!-- Dropdown Profile -->
+						<ul
+							id="dropdown-profile"
+							class="text-gray-600 *:cursor-pointer hidden">
+							<!-- Data Diri -->
+							<li
+								id="data-diri"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Data Diri</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+							</li>
+
+							<!-- Gaji -->
+							<li
+								id="gaji"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Gaji</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg py-3 invisible"></div>
+							</li>
+						</ul>
+						<!-- Akhir Dropdown Profile -->
+
+						<!-- Riwayat Pengajaran -->
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10.3939 2.08085C10.1424 1.97305 9.85763 1.97305 9.60608 2.08085L2.60608 5.08085C2.2384 5.23843 2 5.59997 2 6C2 6.40003 2.2384 6.76157 2.60608 6.91915L5.25037 8.05241C5.34653 7.94347 5.46706 7.85473 5.60608 7.79515L9.60608 6.08087C10.1137 5.86331 10.7016 6.09846 10.9191 6.60609C11.1367 7.11372 10.9015 7.7016 10.3939 7.91916L7.66668 9.08797L9.60608 9.91915C9.85763 10.027 10.1424 10.027 10.3939 9.91915L17.3939 6.91915C17.7616 6.76157 18 6.40003 18 6C18 5.59997 17.7616 5.23843 17.3939 5.08085L10.3939 2.08085Z"
+										fill="#808284" />
+									<path
+										d="M3.31004 9.39673L5 10.121V14.2226C4.65723 14.1449 4.30705 14.0867 3.95071 14.0494C3.48094 14.0001 3.1097 13.6289 3.06044 13.1591C3.02046 12.7778 3 12.391 3 11.9998C3 11.1033 3.10741 10.2315 3.31004 9.39673Z"
+										fill="#808284" />
+									<path
+										d="M9.29996 16.5725C8.62708 15.9129 7.85167 15.3584 7 14.9351V10.9781L8.81824 11.7574C9.57289 12.0808 10.4271 12.0808 11.1818 11.7574L16.69 9.39673C16.8926 10.2315 17 11.1033 17 11.9998C17 12.391 16.9795 12.7778 16.9396 13.1591C16.8903 13.6289 16.5191 14.0001 16.0493 14.0494C13.9765 14.2667 12.1124 15.188 10.7 16.5725C10.3112 16.9537 9.68881 16.9537 9.29996 16.5725Z"
+										fill="#808284" />
+									<path
+										d="M6 18C6.55228 18 7 17.5523 7 17V14.9351C6.37136 14.6227 5.70117 14.3817 5 14.2226V17C5 17.5523 5.44772 18 6 18Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Lapor Lanjut Studi</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR MENU UTAMA -->
+
+				<!-- AKADEMIK -->
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">AKADEMIK</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button
+							id="perkuliahan"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M9 4.80423C7.9428 4.28906 6.75516 4 5.5 4C4.24484 4 3.0572 4.28906 2 4.80423V14.8042C3.0572 14.2891 4.24484 14 5.5 14C7.1686 14 8.71789 14.5108 10 15.3847C11.2821 14.5108 12.8314 14 14.5 14C15.7552 14 16.9428 14.2891 18 14.8042V4.80423C16.9428 4.28906 15.7552 4 14.5 4C13.2448 4 12.0572 4.28906 11 4.80423V12C11 12.5523 10.5523 13 10 13C9.44772 13 9 12.5523 9 12V4.80423Z"
+										fill="#57af81" />
+								</svg>
+
+								<p class="text-primary-main">Perkuliahan</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg visible"></div>
+						</button>
+
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Kalender Akademik</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+
+						<button id="bimbingan" class="flex w-full items-center">
+							<div class="flex justify-between w-full items-center p-3">
+								<span class="flex gap-3 items-center">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9 6C9 7.65685 7.65685 9 6 9C4.34315 9 3 7.65685 3 6C3 4.34315 4.34315 3 6 3C7.65685 3 9 4.34315 9 6Z"
+											fill="#808284" />
+										<path
+											d="M17 6C17 7.65685 15.6569 9 14 9C12.3431 9 11 7.65685 11 6C11 4.34315 12.3431 3 14 3C15.6569 3 17 4.34315 17 6Z"
+											fill="#808284" />
+										<path
+											d="M12.9291 17C12.9758 16.6734 13 16.3395 13 16C13 14.3648 12.4393 12.8606 11.4998 11.6691C12.2352 11.2435 13.0892 11 14 11C16.7614 11 19 13.2386 19 16V17H12.9291Z"
+											fill="#808284" />
+										<path
+											d="M6 11C8.76142 11 11 13.2386 11 16V17H1V16C1 13.2386 3.23858 11 6 11Z"
+											fill="#808284" />
+									</svg>
+
+									<p class="text-gray-600">Bimbingan</p>
+								</span>
+
+								<svg
+									id="icon-bimbingan"
+									class="w-5 h-5 rotate-180 transition-all"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M5.29289 12.7071C5.68342 13.0976 6.31658 13.0976 6.70711 12.7071L10 9.41421L13.2929 12.7071C13.6834 13.0976 14.3166 13.0976 14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L10.7071 7.29289C10.3166 6.90237 9.68342 6.90237 9.29289 7.29289L5.29289 11.2929C4.90237 11.6834 4.90237 12.3166 5.29289 12.7071Z"
+										fill="#A3A6A8" />
+								</svg>
+							</div>
+						</button>
+
+						<!-- Dropdown Bimbingan -->
+						<ul
+							id="dropdown-bimbingan"
+							class="text-gray-600 hidden *:cursor-pointer">
+							<!-- Catatan Studi -->
+							<li
+								id="catatan-studi"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Catatan Studi</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+
+							<!-- Krs -->
+							<li
+								id="krs"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>KRS</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+
+							<!-- Tugas Akhir -->
+							<li
+								id="tugas-akhir"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Tugas Akhir</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+
+							<!-- Ujian Akhir -->
+							<li
+								id="ujian-akhir"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Ujian Akhir</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+							</li>
+						</ul>
+						<!-- Akhir Dropdown Bimbingan -->
+
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM11 6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44772 9 6V10C9 10.2652 9.10536 10.5196 9.29289 10.7071L12.1213 13.5355C12.5118 13.9261 13.145 13.9261 13.5355 13.5355C13.9261 13.145 13.9261 12.5118 13.5355 12.1213L11 9.58579V6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Riwayat Pengajaran</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR AKADEMIK -->
+
+				<!-- KPI DOSEN -->
+				<div id="kpi" class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">KPI DOSEN</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 6V5C6 3.34315 7.34315 2 9 2H11C12.6569 2 14 3.34315 14 5V6H16C17.1046 6 18 6.89543 18 8V11.5708C15.5096 12.4947 12.8149 12.9999 10 12.9999C7.18514 12.9999 4.49037 12.4947 2 11.5707V8C2 6.89543 2.89543 6 4 6H6ZM8 5C8 4.44772 8.44772 4 9 4H11C11.5523 4 12 4.44772 12 5V6H8V5ZM9 10C9 9.44772 9.44772 9 10 9H10.01C10.5623 9 11.01 9.44772 11.01 10C11.01 10.5523 10.5623 11 10.01 11H10C9.44772 11 9 10.5523 9 10Z"
+										fill="#808284" />
+									<path
+										d="M2 13.6923V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V13.6923C15.4872 14.5404 12.7964 14.9999 10 14.9999C7.20363 14.9999 4.51279 14.5404 2 13.6923Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">KPI Dosen</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- KPI DOSEN -->
+			</div>
+			<button
+				id="open-modal-keluar"
+				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="#CB3A31"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M3 3C2.44772 3 2 3.44772 2 4V16C2 16.5523 2.44772 17 3 17C3.55228 17 4 16.5523 4 16V4C4 3.44772 3.55228 3 3 3Z" />
+					<path
+						d="M13.2929 12.2929C12.9024 12.6834 12.9024 13.3166 13.2929 13.7071C13.6834 14.0976 14.3166 14.0976 14.7071 13.7071L17.7071 10.7071C17.8946 10.5196 18 10.2652 18 10C18 9.73478 17.8946 9.48043 17.7071 9.29289L14.7071 6.29289C14.3166 5.90237 13.6834 5.90237 13.2929 6.29289C12.9024 6.68342 12.9024 7.31658 13.2929 7.70711L14.5858 9L7 9C6.44771 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H14.5858L13.2929 12.2929Z" />
+				</svg>
+				Keluar
+			</button>
+		</aside>
+
+		<!-- POP UP KELUAR  -->
+		<div
+			id="content-modal-keluar"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="56"
+						height="56"
+						viewBox="0 0 56 56"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect width="56" height="56" rx="28" fill="#FFF4F2" />
+						<path
+							d="M34.6667 33.333L40 27.9997M40 27.9997L34.6667 22.6663M40 27.9997L21.3333 27.9997M29.3333 33.333V34.6663C29.3333 36.8755 27.5425 38.6663 25.3333 38.6663H20C17.7909 38.6663 16 36.8755 16 34.6663V21.333C16 19.1239 17.7909 17.333 20 17.333H25.3333C27.5425 17.333 29.3333 19.1239 29.3333 21.333V22.6663"
+							stroke="#CB3A31"
+							stroke-width="4"
+							stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+
+					<h1 class="my-3 text-xl font-bold text-danger-hover text-center">
+						Yakin ingin keluar akun?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Apabila Anda keluar dari akun, Anda diharuskan melakukan login ulang
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal-keluar"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">
+						Tidak, Tetap Gunakan Akun Ini
+					</button>
+					<button class="bg-white text-danger-main">
+						Ya, Keluar dari Akun Ini
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP KELUAR  -->
+		<!-- AKHIR SIDEBAR -->
+
+		<div class="container text-base my-12 mr-12 relative">
+			<div class="bg-white p-4 rounded-xl flex flex-col gap-4">
+				<div class="flex items-center justify-between">
+					<h1 class="font-semibold">Jadwal Mengajar Adipati Cahya</h1>
+					<div class="flex *:items-center justify-between gap-3 *:gap-2 ml-8">
+						<div class="flex">
+							<svg
+								width="20"
+								height="21"
+								viewBox="0 0 20 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M6 2.5C5.44772 2.5 5 2.94772 5 3.5V4.5H4C2.89543 4.5 2 5.39543 2 6.5V16.5C2 17.6046 2.89543 18.5 4 18.5H16C17.1046 18.5 18 17.6046 18 16.5V6.5C18 5.39543 17.1046 4.5 16 4.5H15V3.5C15 2.94772 14.5523 2.5 14 2.5C13.4477 2.5 13 2.94772 13 3.5V4.5H7V3.5C7 2.94772 6.55228 2.5 6 2.5ZM6 7.5C5.44772 7.5 5 7.94772 5 8.5C5 9.05228 5.44772 9.5 6 9.5H14C14.5523 9.5 15 9.05228 15 8.5C15 7.94772 14.5523 7.5 14 7.5H6Z"
+									fill="#808284" />
+							</svg>
+
+							<p>Rabu, 13 Desember 2023</p>
+						</div>
+						<div class="flex">
+							<svg
+								width="20"
+								height="21"
+								viewBox="0 0 20 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 6.5C11 5.94772 10.5523 5.5 10 5.5C9.44772 5.5 9 5.94772 9 6.5V10.5C9 10.7652 9.10536 11.0196 9.29289 11.2071L12.1213 14.0355C12.5118 14.4261 13.145 14.4261 13.5355 14.0355C13.9261 13.645 13.9261 13.0118 13.5355 12.6213L11 10.0858V6.5Z"
+									fill="#808284" />
+							</svg>
+
+							<p>12.55</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex items-center justify-between">
+					<div class="flex flex-col gap-2 text-sm">
+						<p class="font-semibold text-gray-800">Keterangan Aksi</p>
+						<div
+							class="flex gap-6 *:gap-2 *:items-center *:flex *:text-gray-700 *:font-medium">
+							<div>
+								<svg
+									width="28"
+									height="29"
+									viewBox="0 0 28 29"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<rect y="0.5" width="28" height="28" rx="4" fill="#57AF81" />
+									<path
+										d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+										fill="white" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+										fill="white" />
+								</svg>
+								<p>: Presensi</p>
+							</div>
+							<div>
+								<svg
+									width="28"
+									height="29"
+									viewBox="0 0 28 29"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<rect y="0.5" width="28" height="28" rx="4" fill="#3267E3" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M8 8.5C8 7.39543 8.89543 6.5 10 6.5H14.5858C15.1162 6.5 15.6249 6.71071 16 7.08579L19.4142 10.5C19.7893 10.8751 20 11.3838 20 11.9142V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V8.5ZM10 14.5C10 13.9477 10.4477 13.5 11 13.5H17C17.5523 13.5 18 13.9477 18 14.5C18 15.0523 17.5523 15.5 17 15.5H11C10.4477 15.5 10 15.0523 10 14.5ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H11Z"
+										fill="white" />
+								</svg>
+								<p>: Buat BAP</p>
+							</div>
+							<div>
+								<svg
+									width="28"
+									height="29"
+									viewBox="0 0 28 29"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<rect y="0.5" width="28" height="28" rx="4" fill="#CD7B2E" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M10 6.5C8.89543 6.5 8 7.39543 8 8.5V20.5C8 21.6046 8.89543 22.5 10 22.5H18C19.1046 22.5 20 21.6046 20 20.5V11.9142C20 11.3838 19.7893 10.8751 19.4142 10.5L16 7.08579C15.6249 6.71071 15.1162 6.5 14.5858 6.5H10ZM12 16.5C12 15.9477 11.5523 15.5 11 15.5C10.4477 15.5 10 15.9477 10 16.5V19.5C10 20.0523 10.4477 20.5 11 20.5C11.5523 20.5 12 20.0523 12 19.5V16.5ZM14 13.5C14.5523 13.5 15 13.9477 15 14.5V19.5C15 20.0523 14.5523 20.5 14 20.5C13.4477 20.5 13 20.0523 13 19.5V14.5C13 13.9477 13.4477 13.5 14 13.5ZM18 12.5C18 11.9477 17.5523 11.5 17 11.5C16.4477 11.5 16 11.9477 16 12.5V19.5C16 20.0523 16.4477 20.5 17 20.5C17.5523 20.5 18 20.0523 18 19.5V12.5Z"
+										fill="white" />
+								</svg>
+								<p>: Lihat Nilai</p>
+							</div>
+							<div>
+								<svg
+									width="28"
+									height="29"
+									viewBox="0 0 28 29"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<rect y="0.5" width="28" height="28" rx="4" fill="#9B51E0" />
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+										fill="white" />
+								</svg>
+								<p>: Jadwalkan Ulang Perkuliahan</p>
+							</div>
+						</div>
+					</div>
+					<button
+						class="rounded-lg text-white font-medium bg-primary-main flex items-center gap-2 py-2 px-4">
+						Download Tabel
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M6 2C4.89543 2 4 2.89543 4 4V16C4 17.1046 4.89543 18 6 18H14C15.1046 18 16 17.1046 16 16V7.41421C16 6.88378 15.7893 6.37507 15.4142 6L12 2.58579C11.6249 2.21071 11.1162 2 10.5858 2H6ZM11 8C11 7.44772 10.5523 7 10 7C9.44772 7 9 7.44772 9 8V11.5858L7.70711 10.2929C7.31658 9.90237 6.68342 9.90237 6.29289 10.2929C5.90237 10.6834 5.90237 11.3166 6.29289 11.7071L9.29289 14.7071C9.68342 15.0976 10.3166 15.0976 10.7071 14.7071L13.7071 11.7071C14.0976 11.3166 14.0976 10.6834 13.7071 10.2929C13.3166 9.90237 12.6834 9.90237 12.2929 10.2929L11 11.5858V8Z"
+								fill="white" />
+						</svg>
+					</button>
+				</div>
+
+				<div class="flex flex-col gap-1">
+					<p class="">Pilih Pertemuan</p>
+					<select
+						class="py-2 px-3 border rounded-lg border-gray-300 w-[200px]"
+						name=""
+						id="">
+						<option value="">Ke-1</option>
+						<option value="">Ke-2</option>
+						<option value="">Ke-3</option>
+						<option value="">Ke-4</option>
+						<option value="" selected>Ke-5</option>
+						<option value="">Ke-6</option>
+					</select>
+				</div>
+
+				<div class="flex flex-col">
+					<div class="flex *:py-2 *:px-3 *:w-[150px] *:border">
+						<button id="btn-table" class="rounded-ss-lg active">Tabel</button>
+						<button
+							id="btn-kalender"
+							class="rounded-se-lg bg-white text-gray-600">
+							Kalender
+						</button>
+					</div>
+					<hr />
+				</div>
+
+				<!-- TABEL -->
+				<div id="table">
+					<table
+						class="border border-separate border-spacing-0 rounded-xl text-sm">
+						<thead class="bg-primary-main text-white">
+							<th class="p-4 text-center rounded-ss-xl">Hari</th>
+							<th class="p-4">No</th>
+							<th class="p-4">Nama Mata Kuliah</th>
+							<th class="p-4">SKS</th>
+							<th class="p-4">Prodi - Kelas</th>
+							<th class="p-4 w-[15%]">Waktu</th>
+							<th class="p-4">Ruangan</th>
+							<th class="p-4 rounded-se-xl w-[20%]">Aksi</th>
+						</thead>
+						<tbody>
+							<tr class="*:p-4 *:text-sm">
+								<td
+									class="bg-primary-surface text-primary-main font-semibold"
+									rowspan="2">
+									Selasa
+								</td>
+								<td class="text-center">1</td>
+								<td>IF04209 - Pengenalan Teknologi Open Source</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF22B</td>
+								<td class="text-center">07.00 - 08.40</td>
+								<td>R.4.04</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm bg-success-surface">
+								<td class="text-center">2</td>
+								<td>IF00141 - Data Analitik</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF22B</td>
+								<td class="text-center">09.10 - 10.50</td>
+								<td>R.4.04</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm">
+								<td
+									class="bg-primary-border text-white font-semibold"
+									rowspan="6">
+									Rabu
+								</td>
+								<td class="text-center">3</td>
+								<td>IF00137 - Digital Marketing</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF20A</td>
+								<td class="text-center">07.00 - 08.40</td>
+								<td>Ruang Besar</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm bg-success-surface">
+								<td class="text-center">4</td>
+								<td>IF00137 - Digital Marketing</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF20B</td>
+								<td class="text-center">07.00 - 08.40</td>
+								<td>Ruang Besar</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm">
+								<td class="text-center">5</td>
+								<td>IF04209 - Dokumen Rencana Bisnis</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF20B</td>
+								<td class="text-center">09.10 - 10.50</td>
+								<td>R.4.04</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm bg-success-surface">
+								<td class="text-center">6</td>
+								<td>IF00141 - Data Analitik</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF20B</td>
+								<td class="text-center">13.00 - 14.40</td>
+								<td>R.6.12</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm">
+								<td class="text-center">7</td>
+								<td>IF01104 - Desain Interaksi</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF23C</td>
+								<td class="text-center">14.50 - 16.30</td>
+								<td>R.4.03</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm bg-success-surface">
+								<td class="text-center">8</td>
+								<td>IF00138 - Praktikum Digital Marketing</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF20A</td>
+								<td class="text-center">09.00 - 12.00</td>
+								<td>Laboratorium Informatika</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm">
+								<td
+									class="rounded-bl-xl bg-primary-surface text-primary-main font-semibold"
+									rowspan="2">
+									Jum’at
+								</td>
+								<td class="text-center">9</td>
+								<td>IF00138 - Praktikum Digital Marketing</td>
+								<td class="text-center">2</td>
+								<td>Teknik Informatika - IF20B</td>
+								<td class="text-center">13.00 - 16.20</td>
+								<td>Laboratorium Informatika</td>
+								<td>
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+							<tr class="*:p-4 *:text-sm bg-success-surface">
+								<td class="text-center">10</td>
+								<td>IF329 - Decision Support System</td>
+								<td class="text-center">3</td>
+								<td>Teknik Informatika - IF21</td>
+								<td class="text-center">15.30 - 18.00</td>
+								<td>Daring</td>
+								<td class="rounded-br-xl">
+									<button id="presensi">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#57AF81" />
+											<path
+												d="M13 6.5C12.4477 6.5 12 6.94772 12 7.5C12 8.05228 12.4477 8.5 13 8.5H15C15.5523 8.5 16 8.05228 16 7.5C16 6.94772 15.5523 6.5 15 6.5H13Z"
+												fill="white" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8 9.5C8 8.39543 8.89543 7.5 10 7.5C10 9.15685 11.3431 10.5 13 10.5H15C16.6569 10.5 18 9.15685 18 7.5C19.1046 7.5 20 8.39543 20 9.5V20.5C20 21.6046 19.1046 22.5 18 22.5H10C8.89543 22.5 8 21.6046 8 20.5V9.5ZM11 13.5C10.4477 13.5 10 13.9477 10 14.5C10 15.0523 10.4477 15.5 11 15.5H11.01C11.5623 15.5 12.01 15.0523 12.01 14.5C12.01 13.9477 11.5623 13.5 11.01 13.5H11ZM14 13.5C13.4477 13.5 13 13.9477 13 14.5C13 15.0523 13.4477 15.5 14 15.5H17C17.5523 15.5 18 15.0523 18 14.5C18 13.9477 17.5523 13.5 17 13.5H14ZM11 17.5C10.4477 17.5 10 17.9477 10 18.5C10 19.0523 10.4477 19.5 11 19.5H11.01C11.5623 19.5 12.01 19.0523 12.01 18.5C12.01 17.9477 11.5623 17.5 11.01 17.5H11ZM14 17.5C13.4477 17.5 13 17.9477 13 18.5C13 19.0523 13.4477 19.5 14 19.5H17C17.5523 19.5 18 19.0523 18 18.5C18 17.9477 17.5523 17.5 17 17.5H14Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="bap">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.666504"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#3267E3" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M8.6665 8.5C8.6665 7.39543 9.56193 6.5 10.6665 6.5H15.2523C15.7827 6.5 16.2914 6.71071 16.6665 7.08579L20.0807 10.5C20.4558 10.8751 20.6665 11.3838 20.6665 11.9142V20.5C20.6665 21.6046 19.7711 22.5 18.6665 22.5H10.6665C9.56193 22.5 8.6665 21.6046 8.6665 20.5V8.5ZM10.6665 14.5C10.6665 13.9477 11.1142 13.5 11.6665 13.5H17.6665C18.2188 13.5 18.6665 13.9477 18.6665 14.5C18.6665 15.0523 18.2188 15.5 17.6665 15.5H11.6665C11.1142 15.5 10.6665 15.0523 10.6665 14.5ZM11.6665 17.5C11.1142 17.5 10.6665 17.9477 10.6665 18.5C10.6665 19.0523 11.1142 19.5 11.6665 19.5H17.6665C18.2188 19.5 18.6665 19.0523 18.6665 18.5C18.6665 17.9477 18.2188 17.5 17.6665 17.5H11.6665Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="nilai">
+										<svg
+											width="29"
+											height="29"
+											viewBox="0 0 29 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												x="0.333496"
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#CD7B2E" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M10.3335 6.5C9.22893 6.5 8.3335 7.39543 8.3335 8.5V20.5C8.3335 21.6046 9.22893 22.5 10.3335 22.5H18.3335C19.4381 22.5 20.3335 21.6046 20.3335 20.5V11.9142C20.3335 11.3838 20.1228 10.8751 19.7477 10.5L16.3335 7.08579C15.9584 6.71071 15.4497 6.5 14.9193 6.5H10.3335ZM12.3335 16.5C12.3335 15.9477 11.8858 15.5 11.3335 15.5C10.7812 15.5 10.3335 15.9477 10.3335 16.5V19.5C10.3335 20.0523 10.7812 20.5 11.3335 20.5C11.8858 20.5 12.3335 20.0523 12.3335 19.5V16.5ZM14.3335 13.5C14.8858 13.5 15.3335 13.9477 15.3335 14.5V19.5C15.3335 20.0523 14.8858 20.5 14.3335 20.5C13.7812 20.5 13.3335 20.0523 13.3335 19.5V14.5C13.3335 13.9477 13.7812 13.5 14.3335 13.5ZM18.3335 12.5C18.3335 11.9477 17.8858 11.5 17.3335 11.5C16.7812 11.5 16.3335 11.9477 16.3335 12.5V19.5C16.3335 20.0523 16.7812 20.5 17.3335 20.5C17.8858 20.5 18.3335 20.0523 18.3335 19.5V12.5Z"
+												fill="white" />
+										</svg>
+									</button>
+									<button id="jadwal-ulang">
+										<svg
+											width="28"
+											height="29"
+											viewBox="0 0 28 29"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<rect
+												y="0.5"
+												width="28"
+												height="28"
+												rx="4"
+												fill="#9B51E0" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M15.4892 7.67094C15.1102 6.10969 12.8898 6.10969 12.5108 7.67094C12.2659 8.67949 11.1104 9.15811 10.2242 8.61809C8.85218 7.78212 7.28212 9.35218 8.11809 10.7242C8.65811 11.6104 8.17949 12.7659 7.17094 13.0108C5.60969 13.3898 5.60969 15.6102 7.17094 15.9892C8.17949 16.2341 8.65811 17.3896 8.11809 18.2758C7.28212 19.6478 8.85218 21.2179 10.2242 20.3819C11.1105 19.8419 12.2659 20.3205 12.5108 21.3291C12.8898 22.8903 15.1102 22.8903 15.4892 21.3291C15.7341 20.3205 16.8896 19.8419 17.7758 20.3819C19.1478 21.2179 20.7179 19.6478 19.8819 18.2758C19.3419 17.3896 19.8205 16.2341 20.8291 15.9892C22.3903 15.6102 22.3903 13.3898 20.8291 13.0108C19.8205 12.7659 19.3419 11.6104 19.8819 10.7242C20.7179 9.35218 19.1478 7.78212 17.7758 8.61809C16.8896 9.15811 15.7341 8.67949 15.4892 7.67094ZM14 17.5C15.6569 17.5 17 16.1569 17 14.5C17 12.8431 15.6569 11.5 14 11.5C12.3431 11.5 11 12.8431 11 14.5C11 16.1569 12.3431 17.5 14 17.5Z"
+												fill="white" />
+										</svg>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- AKHIR TABEL -->
+
+				<!-- KALENDER -->
+				<div id="content-kalender" class="hidden">
+					<div class="w-full relative">
+						<table
+							class="w-full border border-separate border-spacing-0 rounded-xl">
+							<thead class="bg-primary-main text-white text-xl font-semibold">
+								<tr>
+									<th class="px-6 py-3 text-start rounded-t-xl" colspan="6">
+										Jadwal Mengajar
+									</th>
+								</tr>
+							</thead>
+							<thead class="bg-[#C1C5C8] text-white text-sm">
+								<tr>
+									<th class="w-22 text-center">Jam Ke-</th>
+									<th class="px-6 py-3 text-start">Senin</th>
+									<th class="px-6 py-3 text-start">Selasa</th>
+									<th class="px-6 py-3 text-start">Rabu</th>
+									<th class="px-6 py-3 text-start">Kamis</th>
+									<th class="px-6 py-3 text-start">Jumat</th>
+								</tr>
+							</thead>
+							<tbody class="text-sm border">
+								<!-- START LIST 1 -->
+								<tr class="text-center font-medium bg-white">
+									<td class="px-6 py-4 text-primary-main items-center">1</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 1 -->
+
+								<!-- START LIST 2 -->
+								<tr class="text-center font-medium bg-success-surface">
+									<td class="px-6 py-4 text-primary-main">2</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 2 -->
+
+								<!-- START LIST 3 -->
+								<tr class="text-center font-medium bg-white">
+									<td class="py-4 text-primary-main">3</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 3 -->
+
+								<!-- START LIST 4 -->
+								<tr class="text-center font-medium bg-success-surface">
+									<td class="py-4 text-primary-main">4</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 4 -->
+
+								<!-- START LIST 5 -->
+								<tr class="text-center font-medium bg-white">
+									<td class="py-4 text-primary-main">5</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 5 -->
+
+								<!-- START LIST 6 -->
+								<tr class="text-center font-medium bg-success-surface">
+									<td class="py-4 text-primary-main">6</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 6 -->
+
+								<!-- START LIST 7 -->
+								<tr class="text-center font-medium bg-white">
+									<td class="py-4 text-primary-main">7</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 7 -->
+
+								<!-- START LIST 8 -->
+								<tr class="text-center font-medium bg-success-surface">
+									<td class="py-4 text-primary-main">8</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 8 -->
+
+								<!-- START LIST 9 -->
+								<tr class="text-center font-medium bg-white">
+									<td class="py-4 text-primary-main">9</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 9 -->
+
+								<!-- START LIST 10 -->
+								<tr class="text-center font-medium bg-success-surface">
+									<td class="py-4 text-primary-main">10</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 10 -->
+
+								<!-- START LIST 11 -->
+								<tr class="text-center font-medium bg-white">
+									<td class="py-4 text-primary-main">11</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<!-- END LIST 11 -->
+
+								<!-- START LIST 12 -->
+								<tr class="text-center font-medium bg-success-surface">
+									<td class="py-4 text-primary-main rounded-bl-xl">12</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="rounded-br-xl"></td>
+								</tr>
+								<!-- END LIST 12 -->
+							</tbody>
+						</table>
+
+						<!-- JADWAL SENIN -->
+						<div class="absolute top-24" style="left: calc(5% + 60px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-[105px] w-full max-w-44 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									DKVI6007
+								</p>
+								<h1 id="title-matkul" class="text-success-main text-md">
+									Tinjauan Desain Nusantara
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									2 SKS | Wajib
+								</p>
+							</button>
+						</div>
+
+						<div class="absolute top-64" style="left: calc(5% + 60px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-52 w-full max-w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-info-surface border border-info-border">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									UNIV6001
+								</p>
+								<h1 id="title-matkul" class="text-info-main text-md">
+									Pendidikan Agama Islam
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									3 SKS | Wajib
+								</p>
+							</button>
+						</div>
+						<!-- END JADWAL SENIN -->
+
+						<!-- JADWAL SELASA -->
+						<div class="absolute top-24" style="left: calc(25% + 60px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-40 w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-success-surface border border-success-border">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									DKVI6007
+								</p>
+								<h1 id="title-matkul" class="text-success-main text-md">
+									Gambar Sket
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									2 SKS | Wajib
+								</p>
+							</button>
+						</div>
+
+						<div class="absolute top-64" style="left: calc(25% + 60px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-[105px] w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-info-surface border border-info-border">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									UNIV6001
+								</p>
+								<h1 id="title-matkul" class="text-info-main text-md">
+									Bahasa Inggris
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									2 SKS | Pilihan
+								</p>
+							</button>
+						</div>
+
+						<div class="absolute top-[460px]" style="left: calc(25% + 60px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-[105px] w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-[#F9F3FE] border border-[#D3A5FF]">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									UNIV6001
+								</p>
+								<h1 id="title-matkul" class="text-[#9B51E0] text-md">
+									Estetika
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									2 SKS | Wajib
+								</p>
+							</button>
+						</div>
+						<!-- END JADWAL SELASA -->
+
+						<!-- JADWAL KAMIS -->
+						<div class="absolute bottom-0" style="left: calc(60% + 60px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-40 w-44 flex flex-col space-y-1 items-start justify-center shadow rounded-md text-start bg-info-surface border border-info-border">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									UNIV6001
+								</p>
+								<h1 id="title-matkul" class="text-info-main text-md">
+									Nirmana 2 Dimensi
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									3 SKS | Wajib
+								</p>
+							</button>
+						</div>
+						<!-- END JADWAL KAMIS -->
+
+						<!-- JADWAL JUMAT -->
+						<div class="absolute top-[150px]" style="left: calc(80% + 20px)">
+							<button
+								id="dkv16007"
+								class="p-2 h-[105px] w-full max-w-44 flex flex-col space-y-1 items-start shadow rounded-md text-start bg-success-surface border border-success-border">
+								<p id="kode-matkul" class="text-xs text-gray-600 font-medium">
+									DKVI6007
+								</p>
+								<h1 id="title-matkul" class="text-success-main text-md">
+									Manajemen Inovasi
+								</h1>
+								<p id="sks-matkul" class="text-xs text-gray-600 font-medium">
+									2 SKS | Wajib
+								</p>
+							</button>
+						</div>
+						<!-- END JADWAL JUMAT -->
+					</div>
+				</div>
+				<!-- AKHIR KALENDER -->
+			</div>
+
+			<div
+				id="modal"
+				class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+				<div class="bg-white p-5 w-full max-w-[600px] rounded-xl relative">
+					<h2
+						class="text-md font-semibold mb-4 text-[#252525]"
+						id="modal-title">
+						Detail Mata Kuliah
+					</h2>
+					<div id="modal-content">
+						<!-- Konten detail mata kuliah akan ditambahkan melalui JavaScript -->
+					</div>
+					<button id="close-modal" class="absolute top-4 right-4 text-gray-600">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6 text-[#424242]">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M6 18 18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- POP UP JADWAL ULANG -->
+		<div
+			id="content-modal-jadwal-ulang"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 fixed hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[800px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="flex justify-between">
+					<div class="flex flex-col">
+						<h1 class="text-xl font-bold">
+							Atur Ulang Jadwal Perkuliahan Pengenalan Teknologi Open Source
+							IF22B
+						</h1>
+						<p class="text-gray-700">
+							Masukkan data nilai mahasiswa dengan format excel
+						</p>
+					</div>
+					<div
+						id="close-modal-jadwal-ulang"
+						class="top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+
+				<form class="text-xs flex flex-col gap-4">
+					<div class="flex *:w-full gap-4">
+						<div class="flex flex-col *:w-full gap-1">
+							<p>Metode</p>
+							<select class="px-3 py-2 rounded-lg border" name="" id="">
+								<option value="">Tatap Muka</option>
+								<option value="">Daring</option>
+							</select>
+						</div>
+
+						<div class="flex flex-col *:w-full gap-1">
+							<p>Pertemuan</p>
+							<select class="px-3 py-2 rounded-lg border" name="" id="">
+								<option value="">Pertemuan Ke-1</option>
+								<option value="">Pertemuan Ke-2</option>
+								<option value="">Pertemuan Ke-3</option>
+								<option value="">Pertemuan Ke-4</option>
+								<option value="">Pertemuan Ke-5</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="flex gap-4 items-center">
+						<div class="flex flex-col w-full *:w-full gap-1">
+							<p>Dari Tanggal</p>
+							<select class="px-3 py-2 rounded-lg border" name="" id="">
+								<option value="">Kamis, 11 Januari 2022</option>
+							</select>
+						</div>
+
+						<hr class="w-4" />
+
+						<div class="flex flex-col w-full *:w-full gap-1">
+							<p>Menjadi Tanggal</p>
+							<select class="px-3 py-2 rounded-lg border" name="" id="">
+								<option value="">Jumat, 12 Januari 2022</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="flex gap-4 items-center">
+						<div class="flex flex-col w-full *:w-full gap-1">
+							<p>Dari Jam Pelajaran</p>
+							<select class="px-3 py-2 rounded-lg border" name="" id="">
+								<option value="">Ke - 1 (07.00 - 7.40)</option>
+							</select>
+						</div>
+
+						<hr class="w-4" />
+
+						<div class="flex flex-col w-full *:w-full gap-1">
+							<p>Sampai Jam Pelajaran</p>
+							<select class="px-3 py-2 rounded-lg border" name="" id="">
+								<option value="">Ke - 5 (11.00-12.00)</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="flex flex-col">
+						<p>Ruangan Tersedia</p>
+						<div class="flex flex-col gap-2">
+							<div class="flex gap-2 bg-gray-50 p-2 rounded-md">
+								<input
+									class="accent-green-700 w-5"
+									type="checkbox"
+									name=""
+									id="" />
+								<label class="text-sm font-bold" for="">R.4.03</label>
+							</div>
+							<div class="flex gap-2 bg-gray-50 p-2 rounded-md">
+								<input
+									class="accent-green-700 w-5"
+									type="checkbox"
+									name=""
+									id="" />
+								<label class="text-sm font-bold" for="">R.4.04</label>
+							</div>
+							<div class="flex gap-2 bg-gray-50 p-2 rounded-md">
+								<input
+									class="accent-green-700 w-5"
+									type="checkbox"
+									name=""
+									id="" />
+								<label class="text-sm font-bold" for="">R.4.05</label>
+							</div>
+							<div class="flex gap-2 bg-gray-50 p-2 rounded-md">
+								<input
+									class="accent-green-700 w-5"
+									type="checkbox"
+									name=""
+									id="" />
+								<label class="text-sm font-bold" for="">R.6.12</label>
+							</div>
+							<div class="flex gap-2 bg-gray-50 p-2 rounded-md">
+								<input
+									class="accent-green-700 w-5"
+									type="checkbox"
+									name=""
+									id="" />
+								<label class="text-sm font-bold" for=""
+									>Laboratorium Informatika</label
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn *:px-4 *:py-2 *:rounded-lg flex justify-end gap-4">
+						<button class="bg-white text-danger-main border border-danger-main">
+							Batalkan
+						</button>
+						<button
+							class="bg-primary-main text-white flex gap-3 justify-center items-center">
+							<svg
+								width="21"
+								height="20"
+								viewBox="0 0 21 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.45711 10.2929C8.06658 9.90237 7.43342 9.90237 7.04289 10.2929C6.65237 10.6834 6.65237 11.3166 7.04289 11.7071L10.0429 14.7071C10.4334 15.0976 11.0666 15.0976 11.4571 14.7071L14.4571 11.7071C14.8476 11.3166 14.8476 10.6834 14.4571 10.2929C14.0666 9.90237 13.4334 9.90237 13.0429 10.2929L11.75 11.5858L11.75 6H16.75C17.8546 6 18.75 6.89543 18.75 8V15C18.75 16.1046 17.8546 17 16.75 17H4.75C3.64543 17 2.75 16.1046 2.75 15V8C2.75 6.89543 3.64543 6 4.75 6H9.75L9.75 11.5858L8.45711 10.2929Z"
+									fill="white" />
+								<path
+									d="M9.75 4C9.75 3.44772 10.1977 3 10.75 3C11.3023 3 11.75 3.44772 11.75 4L11.75 6H9.75L9.75 4Z"
+									fill="white" />
+							</svg>
+							Simpan
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- AKHIR POP UP JADWAL ULANG -->
+
+		<script src="src/js/sidebar.js"></script>
+		<script src="src/js/perkuliahan.js"></script>
+		<script src="src/js/navigasi.js"></script>
+	</body>
+</html>

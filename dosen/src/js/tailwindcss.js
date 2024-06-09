@@ -41,6 +41,13 @@ tailwind.config = {
 				"info-hover": "#114cd6",
 				"info-pressed": "#11317d",
 
+				// Info
+				"purple-main": "#9b51e0",
+				"purple-surface": "#f9f3fe",
+				"purple-border": "#d3a5ff",
+				"purple-hover": "#8757ef",
+				"purple-pressed": "#5e2bca",
+
 				// Gray
 				gray: {
 					100: "#d0d0d0",

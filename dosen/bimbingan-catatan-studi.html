@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- CDN Tailwind -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet" />
+
+		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
+
+		<!-- config tailwinds -->
+		<script src="src/js/tailwindcss.js"></script>
+		<title>Catatan Studi</title>
+
+		<link rel="stylesheet" href="src/css/global.css" />
+
+		<style>
+			.hadir {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #57af81;
+				border: 1px solid #57af81;
+				font-weight: 600;
+			}
+			.hadir.active {
+				border-radius: 6px;
+				background-color: #57af81;
+				color: white;
+				font-weight: 600;
+			}
+			.izin {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #3267e3;
+				border: 1px solid #3267e3;
+				font-weight: 600;
+			}
+			.izin.active {
+				border-radius: 6px;
+				background-color: #3267e3;
+				color: white;
+				font-weight: 600;
+			}
+			.sakit {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #cd7b2e;
+				border: 1px solid #cd7b2e;
+				font-weight: 600;
+			}
+			.sakit.active {
+				border-radius: 6px;
+				background-color: #cd7b2e;
+				color: white;
+				font-weight: 600;
+			}
+			.alfa {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #cb3a31;
+				border: 1px solid #cb3a31;
+				font-weight: 600;
+			}
+			.alfa.active {
+				border-radius: 6px;
+				background-color: #cb3a31;
+				color: white;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+	<body class="flex bg-success-surface text-sm gap-8">
+		<!-- SIDEBAR -->
+		<aside class="w-1/4 h-full py-14 bg-white flex flex-col gap-12">
+			<img class="px-12 w-3/4" src="src/img/logo.svg" alt="" />
+			<div class="menu pl-12 flex flex-col gap-5">
+				<!-- MENU UTAMA -->
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">MENU UTAMA</p>
+						<hr class="border-gray-400" />
+					</div>
+
+					<div>
+						<button
+							id="dashboard"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L2.29289 9.29289C1.90237 9.68342 1.90237 10.3166 2.29289 10.7071C2.68342 11.0976 3.31658 11.0976 3.70711 10.7071L4 10.4142V17C4 17.5523 4.44772 18 5 18H7C7.55228 18 8 17.5523 8 17V15C8 14.4477 8.44772 14 9 14H11C11.5523 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H15C15.5523 18 16 17.5523 16 17V10.4142L16.2929 10.7071C16.6834 11.0976 17.3166 11.0976 17.7071 10.7071C18.0976 10.3166 18.0976 9.68342 17.7071 9.29289L10.7071 2.29289Z"
+										fill="#808284" />
+								</svg>
+								<p class="text-gray-600">Dashboard</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+
+						<button id="profile" class="flex w-full items-center">
+							<div class="flex justify-between w-full items-center p-3">
+								<span class="flex gap-3 items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="#808284"
+										class="w-6 h-6">
+										<path
+											fill-rule="evenodd"
+											d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+											clip-rule="evenodd" />
+									</svg>
+									<p class="text-gray-600">Profile</p>
+								</span>
+
+								<svg
+									id="icon-profile"
+									class="w-5 h-5 transition-all rotate-180"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M5.29289 12.7071C5.68342 13.0976 6.31658 13.0976 6.70711 12.7071L10 9.41421L13.2929 12.7071C13.6834 13.0976 14.3166 13.0976 14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L10.7071 7.29289C10.3166 6.90237 9.68342 6.90237 9.29289 7.29289L5.29289 11.2929C4.90237 11.6834 4.90237 12.3166 5.29289 12.7071Z"
+										fill="#A3A6A8" />
+								</svg>
+							</div>
+						</button>
+
+						<!-- Dropdown Profile -->
+						<ul
+							id="dropdown-profile"
+							class="text-gray-600 *:cursor-pointer hidden">
+							<!-- Data Diri -->
+							<li
+								id="data-diri"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Data Diri</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+							</li>
+
+							<!-- Gaji -->
+							<li
+								id="gaji"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Gaji</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg py-3 invisible"></div>
+							</li>
+						</ul>
+						<!-- Akhir Dropdown Profile -->
+
+						<!-- Riwayat Pengajaran -->
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10.3939 2.08085C10.1424 1.97305 9.85763 1.97305 9.60608 2.08085L2.60608 5.08085C2.2384 5.23843 2 5.59997 2 6C2 6.40003 2.2384 6.76157 2.60608 6.91915L5.25037 8.05241C5.34653 7.94347 5.46706 7.85473 5.60608 7.79515L9.60608 6.08087C10.1137 5.86331 10.7016 6.09846 10.9191 6.60609C11.1367 7.11372 10.9015 7.7016 10.3939 7.91916L7.66668 9.08797L9.60608 9.91915C9.85763 10.027 10.1424 10.027 10.3939 9.91915L17.3939 6.91915C17.7616 6.76157 18 6.40003 18 6C18 5.59997 17.7616 5.23843 17.3939 5.08085L10.3939 2.08085Z"
+										fill="#808284" />
+									<path
+										d="M3.31004 9.39673L5 10.121V14.2226C4.65723 14.1449 4.30705 14.0867 3.95071 14.0494C3.48094 14.0001 3.1097 13.6289 3.06044 13.1591C3.02046 12.7778 3 12.391 3 11.9998C3 11.1033 3.10741 10.2315 3.31004 9.39673Z"
+										fill="#808284" />
+									<path
+										d="M9.29996 16.5725C8.62708 15.9129 7.85167 15.3584 7 14.9351V10.9781L8.81824 11.7574C9.57289 12.0808 10.4271 12.0808 11.1818 11.7574L16.69 9.39673C16.8926 10.2315 17 11.1033 17 11.9998C17 12.391 16.9795 12.7778 16.9396 13.1591C16.8903 13.6289 16.5191 14.0001 16.0493 14.0494C13.9765 14.2667 12.1124 15.188 10.7 16.5725C10.3112 16.9537 9.68881 16.9537 9.29996 16.5725Z"
+										fill="#808284" />
+									<path
+										d="M6 18C6.55228 18 7 17.5523 7 17V14.9351C6.37136 14.6227 5.70117 14.3817 5 14.2226V17C5 17.5523 5.44772 18 6 18Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Lapor Lanjut Studi</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR MENU UTAMA -->
+
+				<!-- AKADEMIK -->
+				<div class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">AKADEMIK</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button
+							id="perkuliahan"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M9 4.80423C7.9428 4.28906 6.75516 4 5.5 4C4.24484 4 3.0572 4.28906 2 4.80423V14.8042C3.0572 14.2891 4.24484 14 5.5 14C7.1686 14 8.71789 14.5108 10 15.3847C11.2821 14.5108 12.8314 14 14.5 14C15.7552 14 16.9428 14.2891 18 14.8042V4.80423C16.9428 4.28906 15.7552 4 14.5 4C13.2448 4 12.0572 4.28906 11 4.80423V12C11 12.5523 10.5523 13 10 13C9.44772 13 9 12.5523 9 12V4.80423Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Perkuliahan</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+						</button>
+
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Kalender Akademik</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+
+						<button id="bimbingan" class="flex w-full items-center">
+							<div class="flex justify-between w-full items-center p-3">
+								<span class="flex gap-3 items-center">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9 6C9 7.65685 7.65685 9 6 9C4.34315 9 3 7.65685 3 6C3 4.34315 4.34315 3 6 3C7.65685 3 9 4.34315 9 6Z"
+											fill="#808284" />
+										<path
+											d="M17 6C17 7.65685 15.6569 9 14 9C12.3431 9 11 7.65685 11 6C11 4.34315 12.3431 3 14 3C15.6569 3 17 4.34315 17 6Z"
+											fill="#808284" />
+										<path
+											d="M12.9291 17C12.9758 16.6734 13 16.3395 13 16C13 14.3648 12.4393 12.8606 11.4998 11.6691C12.2352 11.2435 13.0892 11 14 11C16.7614 11 19 13.2386 19 16V17H12.9291Z"
+											fill="#808284" />
+										<path
+											d="M6 11C8.76142 11 11 13.2386 11 16V17H1V16C1 13.2386 3.23858 11 6 11Z"
+											fill="#808284" />
+									</svg>
+
+									<p class="text-gray-600">Bimbingan</p>
+								</span>
+
+								<svg
+									id="icon-bimbingan"
+									class="w-5 h-5 rotate-180 transition-all"
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M5.29289 12.7071C5.68342 13.0976 6.31658 13.0976 6.70711 12.7071L10 9.41421L13.2929 12.7071C13.6834 13.0976 14.3166 13.0976 14.7071 12.7071C15.0976 12.3166 15.0976 11.6834 14.7071 11.2929L10.7071 7.29289C10.3166 6.90237 9.68342 6.90237 9.29289 7.29289L5.29289 11.2929C4.90237 11.6834 4.90237 12.3166 5.29289 12.7071Z"
+										fill="#A3A6A8" />
+								</svg>
+							</div>
+						</button>
+
+						<!-- Dropdown Bimbingan -->
+						<ul id="dropdown-bimbingan" class="text-gray-600 *:cursor-pointer">
+							<!-- Catatan Studi -->
+							<li
+								id="catatan-studi"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#57af81" />
+									</svg>
+									<p class="text-primary-main">Catatan Studi</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg visible"></div>
+							</li>
+
+							<!-- Krs -->
+							<li id="krs" class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>KRS</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+							</li>
+
+							<!-- Tugas Akhir -->
+							<li
+								id="tugas-akhir"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Tugas Akhir</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+							</li>
+
+							<!-- Ujian Akhir -->
+							<li
+								id="ujian-akhir"
+								class="flex items-center justify-between gap-3 ml-8">
+								<div class="flex items-center gap-3">
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 20 20"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M3.33347 3.33337V10.8334C3.33347 11.7174 3.68466 12.5653 4.30978 13.1904C4.9349 13.8155 5.78275 14.1667 6.6668 14.1667H14.2385L12.1551 16.25L13.3335 17.4284L17.4285 13.3334L13.3335 9.23837L12.1551 10.4167L14.2385 12.5H6.6668C6.22477 12.5 5.80085 12.3244 5.48829 12.0119C5.17573 11.6993 5.00013 11.2754 5.00013 10.8334V3.33337H3.33347Z"
+											fill="#727272" />
+									</svg>
+									<p>Ujian Akhir</p>
+								</div>
+								<div
+									class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg invisible"></div>
+							</li>
+						</ul>
+						<!-- Akhir Dropdown Bimbingan -->
+
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM11 6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44772 9 6V10C9 10.2652 9.10536 10.5196 9.29289 10.7071L12.1213 13.5355C12.5118 13.9261 13.145 13.9261 13.5355 13.5355C13.9261 13.145 13.9261 12.5118 13.5355 12.1213L11 9.58579V6Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">Riwayat Pengajaran</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- AKHIR AKADEMIK -->
+
+				<!-- KPI DOSEN -->
+				<div id="kpi" class="menu-list flex flex-col gap-3">
+					<div class="head">
+						<p class="text-gray-600 font-semibold mb-2">KPI DOSEN</p>
+						<hr class="border-gray-400" />
+					</div>
+					<div>
+						<button class="flex justify-between w-full items-center">
+							<span class="flex pl-3 py-3 gap-3 items-center">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M6 6V5C6 3.34315 7.34315 2 9 2H11C12.6569 2 14 3.34315 14 5V6H16C17.1046 6 18 6.89543 18 8V11.5708C15.5096 12.4947 12.8149 12.9999 10 12.9999C7.18514 12.9999 4.49037 12.4947 2 11.5707V8C2 6.89543 2.89543 6 4 6H6ZM8 5C8 4.44772 8.44772 4 9 4H11C11.5523 4 12 4.44772 12 5V6H8V5ZM9 10C9 9.44772 9.44772 9 10 9H10.01C10.5623 9 11.01 9.44772 11.01 10C11.01 10.5523 10.5623 11 10.01 11H10C9.44772 11 9 10.5523 9 10Z"
+										fill="#808284" />
+									<path
+										d="M2 13.6923V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V13.6923C15.4872 14.5404 12.7964 14.9999 10 14.9999C7.20363 14.9999 4.51279 14.5404 2 13.6923Z"
+										fill="#808284" />
+								</svg>
+
+								<p class="text-gray-600">KPI Dosen</p>
+							</span>
+							<div
+								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
+						</button>
+					</div>
+				</div>
+				<!-- KPI DOSEN -->
+			</div>
+			<button
+				id="open-modal-keluar"
+				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="#CB3A31"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M3 3C2.44772 3 2 3.44772 2 4V16C2 16.5523 2.44772 17 3 17C3.55228 17 4 16.5523 4 16V4C4 3.44772 3.55228 3 3 3Z" />
+					<path
+						d="M13.2929 12.2929C12.9024 12.6834 12.9024 13.3166 13.2929 13.7071C13.6834 14.0976 14.3166 14.0976 14.7071 13.7071L17.7071 10.7071C17.8946 10.5196 18 10.2652 18 10C18 9.73478 17.8946 9.48043 17.7071 9.29289L14.7071 6.29289C14.3166 5.90237 13.6834 5.90237 13.2929 6.29289C12.9024 6.68342 12.9024 7.31658 13.2929 7.70711L14.5858 9L7 9C6.44771 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H14.5858L13.2929 12.2929Z" />
+				</svg>
+				Keluar
+			</button>
+		</aside>
+
+		<!-- POP UP KELUAR  -->
+		<div
+			id="content-modal-keluar"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="56"
+						height="56"
+						viewBox="0 0 56 56"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect width="56" height="56" rx="28" fill="#FFF4F2" />
+						<path
+							d="M34.6667 33.333L40 27.9997M40 27.9997L34.6667 22.6663M40 27.9997L21.3333 27.9997M29.3333 33.333V34.6663C29.3333 36.8755 27.5425 38.6663 25.3333 38.6663H20C17.7909 38.6663 16 36.8755 16 34.6663V21.333C16 19.1239 17.7909 17.333 20 17.333H25.3333C27.5425 17.333 29.3333 19.1239 29.3333 21.333V22.6663"
+							stroke="#CB3A31"
+							stroke-width="4"
+							stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+
+					<h1 class="my-3 text-xl font-bold text-danger-hover text-center">
+						Yakin ingin keluar akun?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Apabila Anda keluar dari akun, Anda diharuskan melakukan login ulang
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal-keluar"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">
+						Tidak, Tetap Gunakan Akun Ini
+					</button>
+					<button class="bg-white text-danger-main">
+						Ya, Keluar dari Akun Ini
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP KELUAR  -->
+		<!-- AKHIR SIDEBAR -->
+
+		<div class="container text-base my-12 mr-12 relative">
+			<div class="flex gap-2 items-center font-semibold mb-4 text-gray-700">
+				<a href="">Bimbingan</a>
+				<p>></p>
+				<a class="text-primary-main" href="bimbingan-catatan-studi.html">
+					Catatan Studi
+				</a>
+			</div>
+
+			<div class="bg-white p-4 rounded-xl flex flex-col gap-4">
+				<!-- HEAD -->
+				<div class="flex items-start justify-between">
+					<div class="flex flex-col gap-1">
+						<h1 class="font-semibold">Daftar Catatan Studi Mahasiswa Wali</h1>
+
+						<div class="flex flex-col gap-2">
+							<p class="text-gray-700 font-medium">
+								Teknik Informatika - IF20A
+							</p>
+						</div>
+					</div>
+					<button
+						class="text-sm flex items-center gap-2 py-2 px-4 rounded-lg bg-primary-main text-white font-medium">
+						Download
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M7.70711 10.2929C7.31658 9.90237 6.68342 9.90237 6.29289 10.2929C5.90237 10.6834 5.90237 11.3166 6.29289 11.7071L9.29289 14.7071C9.68342 15.0976 10.3166 15.0976 10.7071 14.7071L13.7071 11.7071C14.0976 11.3166 14.0976 10.6834 13.7071 10.2929C13.3166 9.90237 12.6834 9.90237 12.2929 10.2929L11 11.5858L11 6H16C17.1046 6 18 6.89543 18 8V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V8C2 6.89543 2.89543 6 4 6H9L9 11.5858L7.70711 10.2929Z"
+								fill="white" />
+							<path
+								d="M9 4C9 3.44772 9.44772 3 10 3C10.5523 3 11 3.44772 11 4L11 6H9L9 4Z"
+								fill="white" />
+						</svg>
+					</button>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex flex-col w-full gap-2">
+						<label class="text-gray-600 font-semibold" for="">Kelas</label>
+						<select class="px-3 py-2 border rounded-lg h-full" name="" id="">
+							<option value="" selected>Semua Kelas</option>
+						</select>
+					</div>
+					<div class="flex flex-col w-full gap-2">
+						<label class="text-gray-600 font-semibold" for="">Angkatan</label>
+						<select class="px-3 py-2 border rounded-lg h-full" name="" id="">
+							<option value="" selected>pilih pertemuan</option>
+							<option value="">pertemuan 1</option>
+							<option value="">pertemuan 2</option>
+							<option value="">pertemuan 3</option>
+							<option value="">pertemuan 4</option>
+							<option value="">pertemuan 5</option>
+							<option value="">pertemuan 6</option>
+							<option value="">pertemuan 7</option>
+							<option value="">pertemuan 8</option>
+							<option value="">pertemuan 9</option>
+							<option value="">pertemuan 10</option>
+							<option value="">pertemuan 11</option>
+							<option value="">pertemuan 12</option>
+							<option value="">pertemuan 13</option>
+							<option value="">pertemuan 14</option>
+						</select>
+					</div>
+					<div class="flex flex-col w-full gap-2">
+						<label class="text-gray-600 font-semibold" for="">Cari</label>
+						<div class="flex justify-between px-3 py-2 border rounded-lg">
+							<input
+								placeholder="Cari di sini..."
+								class="focus:outline-none"
+								type="text"
+								name=""
+								id="" />
+
+							<button>
+								<svg
+									width="20"
+									height="21"
+									viewBox="0 0 20 21"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										clip-rule="evenodd"
+										d="M8 4.5C5.79086 4.5 4 6.29086 4 8.5C4 10.7091 5.79086 12.5 8 12.5C10.2091 12.5 12 10.7091 12 8.5C12 6.29086 10.2091 4.5 8 4.5ZM2 8.5C2 5.18629 4.68629 2.5 8 2.5C11.3137 2.5 14 5.18629 14 8.5C14 9.79583 13.5892 10.9957 12.8907 11.9765L17.7071 16.7929C18.0976 17.1834 18.0976 17.8166 17.7071 18.2071C17.3166 18.5976 16.6834 18.5976 16.2929 18.2071L11.4765 13.3907C10.4957 14.0892 9.29583 14.5 8 14.5C4.68629 14.5 2 11.8137 2 8.5Z"
+										fill="#636363" />
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- AKHIR HEAD -->
+
+				<!-- TABLE -->
+				<div class="h-[500px] overflow-auto pr-2">
+					<table
+						class="w-full border border-separate border-spacing-0 rounded-xl">
+						<thead class="bg-primary-main text-white text-sm">
+							<th class="p-4 rounded-ss-xl">No</th>
+							<th class="p-4">Nama</th>
+							<th class="p-4">NIM</th>
+							<th class="p-4">Angkatan</th>
+							<th class="p-4 w-[100px]">Kelas</th>
+							<th class="p-4">Total SKS</th>
+							<th class="p-4">Status</th>
+							<th class="p-4 rounded-se-xl">Aksi</th>
+						</thead>
+						<tbody class="">
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-danger-surface text-danger-main border border-danger-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Tidak Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+							<tr
+								class="text-center *:p-4 text-sm odd:bg-white even:bg-success-surface rounded-b-xl">
+								<td class="rounded-bl-xl">1</td>
+								<td class="rounded-bl-xl text-start font-semibold">
+									Janis Kuvalis
+								</td>
+								<td class="rounded-bl-xl">200102002</td>
+								<td class="rounded-bl-xl">2020</td>
+								<td class="rounded-bl-xl">Teknik Informatika - IF20A</td>
+								<td class="rounded-bl-xl">22</td>
+								<td class="rounded-bl-xl">
+									<span
+										class="bg-success-surface text-success-main border border-success-border font-medium text-xs py-1.5 px-4 rounded-xl">
+										Aktif
+									</span>
+								</td>
+								<td
+									class="flex gap-6 justify-center rounded-b-xl *:py-1.5 *:px-4 *:rounded-lg">
+									<button
+										id="kontak"
+										class="bg-primary-main text-white flex items-center gap-1">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M2 3C2 2.44772 2.44772 2 3 2H5.15287C5.64171 2 6.0589 2.35341 6.13927 2.8356L6.87858 7.27147C6.95075 7.70451 6.73206 8.13397 6.3394 8.3303L4.79126 9.10437C5.90756 11.8783 8.12168 14.0924 10.8956 15.2087L11.6697 13.6606C11.866 13.2679 12.2955 13.0492 12.7285 13.1214L17.1644 13.8607C17.6466 13.9411 18 14.3583 18 14.8471V17C18 17.5523 17.5523 18 17 18H15C7.8203 18 2 12.1797 2 5V3Z"
+												fill="white" />
+										</svg>
+
+										Kontak
+									</button>
+									<button
+										id="jurnal-mhs"
+										class="flex gap-1 items-center border border-primary-main text-primary-main">
+										<svg
+											width="20"
+											height="20"
+											viewBox="0 0 20 20"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9 2C8.44772 2 8 2.44772 8 3C8 3.55228 8.44772 4 9 4H11C11.5523 4 12 3.55228 12 3C12 2.44772 11.5523 2 11 2H9Z"
+												fill="#57AF81" />
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4 5C4 3.89543 4.89543 3 6 3C6 4.65685 7.34315 6 9 6H11C12.6569 6 14 4.65685 14 3C15.1046 3 16 3.89543 16 5V16C16 17.1046 15.1046 18 14 18H6C4.89543 18 4 17.1046 4 16V5ZM7 9C6.44772 9 6 9.44772 6 10C6 10.5523 6.44772 11 7 11H7.01C7.56228 11 8.01 10.5523 8.01 10C8.01 9.44772 7.56228 9 7.01 9H7ZM10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H7.01C7.56228 15 8.01 14.5523 8.01 14C8.01 13.4477 7.56228 13 7.01 13H7ZM10 13C9.44772 13 9 13.4477 9 14C9 14.5523 9.44772 15 10 15H13C13.5523 15 14 14.5523 14 14C14 13.4477 13.5523 13 13 13H10Z"
+												fill="#57AF81" />
+										</svg>
+
+										Jurnal Mahasiswa
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- AKHIR TABLE -->
+			</div>
+
+			<!-- ALERT -->
+			<div
+				class="flex flex-col gap-3 *:p-4 *:gap-2 *:shadow-lg absolute top-0 w-full hidden">
+				<span
+					class="border border-primary-main bg-primary-surface text-primary-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+					KRS mahasiswa telah disetujui.
+				</span>
+
+				<span
+					class="border border-danger-main bg-danger-surface text-danger-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+							fill="#CB3A31" />
+					</svg>
+					Maaf, terjadi kesalahan. KRS mahasiswa gagal disetujui.
+				</span>
+
+				<span
+					class="border border-primary-main bg-primary-surface text-primary-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+							fill="#43936C" />
+					</svg>
+					KRS mahasiswa telah ditolak.
+				</span>
+
+				<span
+					class="border border-danger-main bg-danger-surface text-danger-main rounded-xl flex items-center w-full">
+					<svg
+						width="20"
+						height="20"
+						viewBox="0 0 20 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+							fill="#CB3A31" />
+					</svg>
+					Maaf, terjadi kesalahan. KRS mahasiswa gagal ditolak.
+				</span>
+			</div>
+			<!-- AKHIR ALERT -->
+		</div>
+
+		<!-- POP UP KELUAR  -->
+		<div
+			id="content-modal-kontak"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 fixed hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="text-sm flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[600px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="flex justify-between">
+					<h1 class="font-semibold">Kontak Mahasiswa</h1>
+
+					<div
+						data-modal="false"
+						id="close-modal-kontak"
+						class="cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="flex flex-col gap-4">
+					<div class="flex gap-4 text-gray-600">
+						<div class="flex flex-col gap-3">
+							<h1>Nama Lengkap</h1>
+							<h1>Kelas</h1>
+							<h1>NIM</h1>
+						</div>
+						<div class="flex flex-col gap-3">
+							<h1>:</h1>
+							<h1>:</h1>
+							<h1>:</h1>
+						</div>
+						<div class="flex flex-col gap-3">
+							<h1 class="font-semibold">Janis Kuvalis</h1>
+							<h1>Teknik Informatika - IF20A</h1>
+							<h1>200102002</h1>
+						</div>
+					</div>
+
+					<hr />
+
+					<table
+						class="w-full border border-separate border-spacing-0 rounded-xl">
+						<thead>
+							<tr>
+								<th
+									class="bg-gray-300 text-white text-start px-4 py-2 rounded-t-lg"
+									colspan="3">
+									No
+								</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr
+								class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+								<td>Email</td>
+								<td>:</td>
+								<td class="flex justify-end gap-3">
+									janiskuvalis@gmail.com
+
+									<div class="flex gap-2">
+										<svg
+											width="16"
+											height="17"
+											viewBox="0 0 16 17"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+												fill="#C1C5C8" />
+										</svg>
+
+										<svg
+											width="16"
+											height="17"
+											viewBox="0 0 16 17"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M1.60228 5.20606L7.99957 8.40471L14.3969 5.20602C14.3487 4.36574 13.652 3.69922 12.7996 3.69922H3.19961C2.34722 3.69922 1.65052 4.36576 1.60228 5.20606Z"
+												fill="#C1C5C8" />
+											<path
+												d="M14.3996 6.99354L7.99957 10.1936L1.59961 6.99358V11.6992C1.59961 12.5829 2.31595 13.2992 3.19961 13.2992H12.7996C13.6833 13.2992 14.3996 12.5829 14.3996 11.6992V6.99354Z"
+												fill="#C1C5C8" />
+										</svg>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+								<td>Nomor Handphone</td>
+								<td>:</td>
+								<td class="flex justify-end gap-3">
+									496-775-6348
+									<div class="flex gap-2">
+										<svg
+											width="16"
+											height="17"
+											viewBox="0 0 16 17"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+												fill="#C1C5C8" />
+										</svg>
+
+										<svg
+											width="16"
+											height="17"
+											viewBox="0 0 16 17"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M7.99836 2.17383C11.4505 2.17096 14.3286 5.05477 14.3286 8.50025C14.3286 11.9486 11.4505 14.8238 7.99836 14.8219C7.09116 14.8224 6.19441 14.6282 5.36864 14.2526L2.23552 14.819C2.15235 14.8343 2.06663 14.8271 1.98711 14.7984C1.9076 14.7697 1.83714 14.7203 1.78294 14.6554C1.72873 14.5905 1.69272 14.5124 1.67859 14.4291C1.66446 14.3457 1.67271 14.2601 1.70251 14.1809L2.60041 11.7948C1.99549 10.8019 1.67497 9.66194 1.67385 8.4993C1.67481 5.05382 4.55002 2.17574 7.99836 2.17383ZM11.1745 11.1873C10.4705 11.7566 9.38056 12.3316 8.33842 11.663C6.97246 10.7851 5.76315 9.63219 4.88625 8.26527C4.37139 7.46479 4.85569 6.18289 5.57974 5.40152C5.86822 5.08916 6.34392 5.13883 6.65819 5.4254L7.3192 6.0291C7.5198 6.2125 7.52744 6.53154 7.4023 6.77417C7.20457 7.15435 7.08804 7.66539 7.33257 8.04652C7.64015 8.52413 8.01842 8.99506 8.92206 9.26921C9.19525 9.35326 9.54582 9.31697 9.84385 9.19661C10.0932 9.09535 10.4093 9.09631 10.5937 9.29309L11.2089 9.94741C11.548 10.3085 11.5594 10.8759 11.1745 11.1873Z"
+												fill="#C1C5C8" />
+										</svg>
+									</div>
+								</td>
+							</tr>
+							<tr
+								class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+								<td>Telepon Rumah</td>
+								<td>:</td>
+								<td class="flex justify-end gap-3">
+									947-629-2071
+									<div class="flex gap-2">
+										<svg
+											width="16"
+											height="17"
+											viewBox="0 0 16 17"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+												fill="#C1C5C8" />
+										</svg>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<table
+					class="w-full border border-separate border-spacing-0 rounded-xl">
+					<thead>
+						<tr>
+							<th
+								class="bg-gray-300 text-white text-start px-4 py-2 rounded-t-lg"
+								colspan="3">
+								Kontak Wali
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Email</td>
+							<td>:</td>
+							<td class="flex justify-end gap-3">
+								janiskuvalis@gmail.com
+
+								<div class="flex gap-2">
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+											fill="#C1C5C8" />
+									</svg>
+
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M1.60228 5.20606L7.99957 8.40471L14.3969 5.20602C14.3487 4.36574 13.652 3.69922 12.7996 3.69922H3.19961C2.34722 3.69922 1.65052 4.36576 1.60228 5.20606Z"
+											fill="#C1C5C8" />
+										<path
+											d="M14.3996 6.99354L7.99957 10.1936L1.59961 6.99358V11.6992C1.59961 12.5829 2.31595 13.2992 3.19961 13.2992H12.7996C13.6833 13.2992 14.3996 12.5829 14.3996 11.6992V6.99354Z"
+											fill="#C1C5C8" />
+									</svg>
+								</div>
+							</td>
+						</tr>
+
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Status</td>
+							<td>:</td>
+							<td class="flex justify-end gap-3">Ayah</td>
+						</tr>
+
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Nomor Handphone</td>
+							<td>:</td>
+							<td class="flex justify-end gap-3">
+								209-555-8408
+								<div class="flex gap-2">
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+											fill="#C1C5C8" />
+									</svg>
+
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M7.99836 2.17383C11.4505 2.17096 14.3286 5.05477 14.3286 8.50025C14.3286 11.9486 11.4505 14.8238 7.99836 14.8219C7.09116 14.8224 6.19441 14.6282 5.36864 14.2526L2.23552 14.819C2.15235 14.8343 2.06663 14.8271 1.98711 14.7984C1.9076 14.7697 1.83714 14.7203 1.78294 14.6554C1.72873 14.5905 1.69272 14.5124 1.67859 14.4291C1.66446 14.3457 1.67271 14.2601 1.70251 14.1809L2.60041 11.7948C1.99549 10.8019 1.67497 9.66194 1.67385 8.4993C1.67481 5.05382 4.55002 2.17574 7.99836 2.17383ZM11.1745 11.1873C10.4705 11.7566 9.38056 12.3316 8.33842 11.663C6.97246 10.7851 5.76315 9.63219 4.88625 8.26527C4.37139 7.46479 4.85569 6.18289 5.57974 5.40152C5.86822 5.08916 6.34392 5.13883 6.65819 5.4254L7.3192 6.0291C7.5198 6.2125 7.52744 6.53154 7.4023 6.77417C7.20457 7.15435 7.08804 7.66539 7.33257 8.04652C7.64015 8.52413 8.01842 8.99506 8.92206 9.26921C9.19525 9.35326 9.54582 9.31697 9.84385 9.19661C10.0932 9.09535 10.4093 9.09631 10.5937 9.29309L11.2089 9.94741C11.548 10.3085 11.5594 10.8759 11.1745 11.1873Z"
+											fill="#C1C5C8" />
+									</svg>
+								</div>
+							</td>
+						</tr>
+
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Telepon Rumah</td>
+							<td>:</td>
+							<td class="flex justify-end gap-3 text-gray-600">
+								947-629-2071
+								<div class="flex gap-2">
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+											fill="#C1C5C8" />
+									</svg>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table
+					class="w-full border border-separate border-spacing-0 rounded-xl">
+					<thead>
+						<tr>
+							<th
+								class="bg-gray-300 text-white text-start px-4 py-2 rounded-t-lg"
+								colspan="3">
+								Alamat
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Alamat Kos</td>
+							<td>257 Fisher Islands, Cibaduyut, Bandung, Jawa Barat</td>
+							<td class="flex justify-end gap-3 text-gray-600">
+								<div class="flex gap-2 items-center">
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+											fill="#C1C5C8" />
+									</svg>
+
+									<svg
+										width="28"
+										height="28"
+										viewBox="0 0 28 28"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect width="28" height="28" rx="6" fill="#57AF81" />
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M9.05025 8.05025C11.7839 5.31658 16.2161 5.31658 18.9497 8.05025C21.6834 10.7839 21.6834 15.2161 18.9497 17.9497L14 22.8995L9.05025 17.9497C6.31658 15.2161 6.31658 10.7839 9.05025 8.05025ZM14 15C15.1046 15 16 14.1046 16 13C16 11.8954 15.1046 11 14 11C12.8954 11 12 11.8954 12 13C12 14.1046 12.8954 15 14 15Z"
+											fill="white" />
+									</svg>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Alamat Asal</td>
+							<td>5063 Nicolas Flats, Jatiasih, Kota Bekasi, Jawa Barat</td>
+							<td class="flex justify-end gap-3 text-gray-600">
+								<div class="flex gap-2 items-center">
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+											fill="#C1C5C8" />
+									</svg>
+
+									<svg
+										width="28"
+										height="28"
+										viewBox="0 0 28 28"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect width="28" height="28" rx="6" fill="#57AF81" />
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M9.05025 8.05025C11.7839 5.31658 16.2161 5.31658 18.9497 8.05025C21.6834 10.7839 21.6834 15.2161 18.9497 17.9497L14 22.8995L9.05025 17.9497C6.31658 15.2161 6.31658 10.7839 9.05025 8.05025ZM14 15C15.1046 15 16 14.1046 16 13C16 11.8954 15.1046 11 14 11C12.8954 11 12 11.8954 12 13C12 14.1046 12.8954 15 14 15Z"
+											fill="white" />
+									</svg>
+								</div>
+							</td>
+						</tr>
+						<tr
+							class="*:p-2 text-gray-600 odd:bg-white even:bg-success-surface">
+							<td>Alamat Orang tua</td>
+							<td>5063 Nicolas Flats, Jatiasih, Kota Bekasi, Jawa Barat</td>
+							<td class="flex justify-end gap-3 text-gray-600">
+								<div class="flex gap-2 items-center">
+									<svg
+										width="16"
+										height="17"
+										viewBox="0 0 16 17"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M9.99967 1.16797H2.66634C1.93301 1.16797 1.33301 1.76797 1.33301 2.5013V11.168C1.33301 11.5346 1.63301 11.8346 1.99967 11.8346C2.36634 11.8346 2.66634 11.5346 2.66634 11.168V3.16797C2.66634 2.8013 2.96634 2.5013 3.33301 2.5013H9.99967C10.3663 2.5013 10.6663 2.2013 10.6663 1.83464C10.6663 1.46797 10.3663 1.16797 9.99967 1.16797ZM10.393 4.22797L13.613 7.44797C13.8597 7.69464 13.9997 8.03464 13.9997 8.38797V14.5013C13.9997 15.2346 13.3997 15.8346 12.6663 15.8346H5.32634C4.59301 15.8346 3.99967 15.2346 3.99967 14.5013L4.00634 5.16797C4.00634 4.43464 4.59967 3.83464 5.33301 3.83464H9.44634C9.79967 3.83464 10.1397 3.97464 10.393 4.22797ZM9.99967 8.5013H12.9997L9.33301 4.83464V7.83464C9.33301 8.2013 9.63301 8.5013 9.99967 8.5013Z"
+											fill="#C1C5C8" />
+									</svg>
+
+									<svg
+										width="28"
+										height="28"
+										viewBox="0 0 28 28"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect width="28" height="28" rx="6" fill="#57AF81" />
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M9.05025 8.05025C11.7839 5.31658 16.2161 5.31658 18.9497 8.05025C21.6834 10.7839 21.6834 15.2161 18.9497 17.9497L14 22.8995L9.05025 17.9497C6.31658 15.2161 6.31658 10.7839 9.05025 8.05025ZM14 15C15.1046 15 16 14.1046 16 13C16 11.8954 15.1046 11 14 11C12.8954 11 12 11.8954 12 13C12 14.1046 12.8954 15 14 15Z"
+											fill="white" />
+									</svg>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">Tutup</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP KELUAR  -->
+
+		<script src="src/js/sidebar.js"></script>
+		<script src="src/js/navigasi.js"></script>
+
+		<script>
+			document.querySelectorAll("#kontak").forEach((kontak) => {
+				kontak.addEventListener("click", () => {
+					document
+						.getElementById("content-modal-kontak")
+						.classList.remove("hidden");
+					document.getElementById("content-modal-kontak").classList.add("flex");
+				});
+			});
+
+			document.querySelectorAll("#close-modal-kontak").forEach((close) => {
+				close.addEventListener("click", () => {
+					document
+						.getElementById("content-modal-kontak")
+						.classList.add("hidden");
+				});
+			});
+
+			document
+				.getElementById("jurnal-mhs")
+				.addEventListener("click", function () {
+					window.location.href = "./bimbingan-catatan-studi-jurnal.html";
+				});
+		</script>
+	</body>
+</html>

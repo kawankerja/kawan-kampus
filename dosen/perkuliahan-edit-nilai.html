@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- CDN Tailwind -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet" />
+
+		<link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon" />
+
+		<!-- config tailwinds -->
+		<script src="src/js/tailwindcss.js"></script>
+		<title>KRS</title>
+
+		<link rel="stylesheet" href="src/css/global.css" />
+
+		<style>
+			.hadir {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #57af81;
+				border: 1px solid #57af81;
+				font-weight: 600;
+			}
+			.hadir.active {
+				border-radius: 6px;
+				background-color: #57af81;
+				color: white;
+				font-weight: 600;
+			}
+			.izin {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #3267e3;
+				border: 1px solid #3267e3;
+				font-weight: 600;
+			}
+			.izin.active {
+				border-radius: 6px;
+				background-color: #3267e3;
+				color: white;
+				font-weight: 600;
+			}
+			.sakit {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #cd7b2e;
+				border: 1px solid #cd7b2e;
+				font-weight: 600;
+			}
+			.sakit.active {
+				border-radius: 6px;
+				background-color: #cd7b2e;
+				color: white;
+				font-weight: 600;
+			}
+			.alfa {
+				width: 28px;
+				height: 28px;
+				border-radius: 6px;
+				background-color: white;
+				color: #cb3a31;
+				border: 1px solid #cb3a31;
+				font-weight: 600;
+			}
+			.alfa.active {
+				border-radius: 6px;
+				background-color: #cb3a31;
+				color: white;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+	<body class="py-7 px-12">
+		<div class="flex flex-col gap-4 justify-center">
+			<div class="flex flex-col gap-2">
+				<a
+					href="perkuliahan-nilai.html"
+					class="flex gap-2 font-semibold text-gray-700">
+					<svg
+						width="20"
+						height="21"
+						viewBox="0 0 20 21"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM10.7071 8.20711C11.0976 7.81658 11.0976 7.18342 10.7071 6.79289C10.3166 6.40237 9.68342 6.40237 9.29289 6.79289L6.29289 9.79289C5.90237 10.1834 5.90237 10.8166 6.29289 11.2071L9.29289 14.2071C9.68342 14.5976 10.3166 14.5976 10.7071 14.2071C11.0976 13.8166 11.0976 13.1834 10.7071 12.7929L9.41421 11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5L9.41421 9.5L10.7071 8.20711Z"
+							fill="#57AF81" />
+					</svg>
+					Kembali ke Daftar Nilai
+				</a>
+
+				<div
+					class="flex items-center justify-between p-4 rounded-lg bg-[#ECF1F5]">
+					<div class="flex flex-col gap-2">
+						<p class="font-semibold">
+							Edit Nilai Pengenalan Teknologi Open Source IF22B
+						</p>
+						<div
+							class="flex gap-2 *:flex *:gap-1 *:items-center *:px-3 *:py-2 *:rounded-lg *:bg-white text-sm">
+							<button>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M6.00033 9.33366L2.66699 6.00033L6.00033 2.66699"
+										stroke="#252525"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path
+										d="M2.66699 6H9.66699C10.1485 6 10.6253 6.09484 11.0702 6.27911C11.515 6.46338 11.9192 6.73346 12.2597 7.07394C12.6002 7.41442 12.8703 7.81863 13.0546 8.26349C13.2388 8.70835 13.3337 9.18515 13.3337 9.66667C13.3337 10.1482 13.2388 10.625 13.0546 11.0698C12.8703 11.5147 12.6002 11.9189 12.2597 12.2594C11.9192 12.5999 11.515 12.87 11.0702 13.0542C10.6253 13.2385 10.1485 13.3333 9.66699 13.3333H7.33366"
+										stroke="#252525"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+
+								Undo
+							</button>
+							<button>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M9.99967 9.33366L13.333 6.00033L9.99967 2.66699"
+										stroke="#252525"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round" />
+									<path
+										d="M13.333 6H6.33301C5.85149 6 5.3747 6.09484 4.92983 6.27911C4.48497 6.46338 4.08076 6.73346 3.74028 7.07394C3.3998 7.41442 3.12972 7.81863 2.94545 8.26349C2.76118 8.70835 2.66634 9.18515 2.66634 9.66667C2.66634 10.1482 2.76118 10.625 2.94545 11.0698C3.12972 11.5147 3.3998 11.9189 3.74028 12.2594C4.08076 12.5999 4.48497 12.87 4.92983 13.0542C5.3747 13.2385 5.85149 13.3333 6.33301 13.3333H8.66634"
+										stroke="#252525"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+
+								Redo
+							</button>
+						</div>
+					</div>
+
+					<div class="flex rounded-lg *:py-2 *:px-4 gap-4 *:rounded-lg text-sm">
+						<button id="cancel" class="bg-white text-danger-main">
+							Batalkan
+						</button>
+						<button id="save" class="bg-primary-main flex text-white">
+							<svg
+								width="21"
+								height="21"
+								viewBox="0 0 21 21"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.45711 10.7929C8.06658 10.4024 7.43342 10.4024 7.04289 10.7929C6.65237 11.1834 6.65237 11.8166 7.04289 12.2071L10.0429 15.2071C10.4334 15.5976 11.0666 15.5976 11.4571 15.2071L14.4571 12.2071C14.8476 11.8166 14.8476 11.1834 14.4571 10.7929C14.0666 10.4024 13.4334 10.4024 13.0429 10.7929L11.75 12.0858L11.75 6.5H16.75C17.8546 6.5 18.75 7.39543 18.75 8.5V15.5C18.75 16.6046 17.8546 17.5 16.75 17.5H4.75C3.64543 17.5 2.75 16.6046 2.75 15.5V8.5C2.75 7.39543 3.64543 6.5 4.75 6.5H9.75L9.75 12.0858L8.45711 10.7929Z"
+									fill="white" />
+								<path
+									d="M9.75 4.5C9.75 3.94772 10.1977 3.5 10.75 3.5C11.3023 3.5 11.75 3.94772 11.75 4.5L11.75 6.5H9.75L9.75 4.5Z"
+									fill="white" />
+							</svg>
+							Simpan Nilai
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="h-[520px] w-[1436px] overflow-auto pr-2">
+				<table
+					class="border border-separate border-spacing-0 bg-[#ECF1F5] rounded-xl w-full shadow-lg">
+					<thead class="">
+						<th class="sticky p-4 w-[50px]">No</th>
+						<th class="sticky p-4 w-[100px] border-r">Nama</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								Tugas 1
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								Tugas 2
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								Tugas 3
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								Tugas 4
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								UTS
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								Tugas 5
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">
+							<div class="flex justify-center relative">
+								Tugas 6
+
+								<div
+									class="w-[24px] h-[40px] absolute -right-8 peer z-0 cursor-pointer"></div>
+
+								<button
+									class="w-[10px] absolute -right-4 invisible peer-hover:visible z-10">
+									<svg
+										width="20"
+										height="21"
+										viewBox="0 0 20 21"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M10 18.5C14.4183 18.5 18 14.9183 18 10.5C18 6.08172 14.4183 2.5 10 2.5C5.58172 2.5 2 6.08172 2 10.5C2 14.9183 5.58172 18.5 10 18.5ZM11 7.5C11 6.94772 10.5523 6.5 10 6.5C9.44772 6.5 9 6.94772 9 7.5V9.5H7C6.44772 9.5 6 9.94771 6 10.5C6 11.0523 6.44772 11.5 7 11.5H9V13.5C9 14.0523 9.44772 14.5 10 14.5C10.5523 14.5 11 14.0523 11 13.5V11.5H13C13.5523 11.5 14 11.0523 14 10.5C14 9.94772 13.5523 9.5 13 9.5H11V7.5Z"
+											fill="#7EBD9E" />
+									</svg>
+								</button>
+							</div>
+						</th>
+						<th class="p-4 w-[100px]">Tugas 8</th>
+					</thead>
+					<tbody class="">
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center">1</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center">2</td>
+							<td class="sticky border-r">Janice Mills</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center">3</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">4</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">5</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">6</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">7</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">8</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">9</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+						<tr class="*:p-4 odd:bg-white even:bg-[#F7F7F7]">
+							<td class="sticky text-center rounded-bl-xl">10</td>
+							<td class="sticky border-r">Janis Kuvalis</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+							<td>
+								<div class="flex justify-center">
+									<input
+										type="text"
+										class="w-[80px] text-center px-4 py-2 bg-[#ECF1F5] rounded-lg border focus:border focus:border-primary-main focus:outline-none"
+										value="90" />
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- POP UP SIMPAN  -->
+		<div
+			id="content-modal-simpan"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 fixed hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="56"
+						height="56"
+						viewBox="0 0 56 56"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect width="56" height="56" rx="28" fill="#F7F7F7" />
+						<path
+							d="M24.3316 28.4684C23.7067 27.8436 22.6937 27.8436 22.0688 28.4684C21.444 29.0933 21.444 30.1063 22.0688 30.7312L26.8688 35.5312C27.4937 36.156 28.5067 36.156 29.1316 35.5312L33.9316 30.7312C34.5564 30.1063 34.5564 29.0933 33.9316 28.4684C33.3067 27.8436 32.2937 27.8436 31.6688 28.4684L29.6002 30.5371L29.6002 21.5998H37.6002C39.3675 21.5998 40.8002 23.0325 40.8002 24.7998V35.9998C40.8002 37.7671 39.3675 39.1998 37.6002 39.1998H18.4002C16.6329 39.1998 15.2002 37.7671 15.2002 35.9998V24.7998C15.2002 23.0325 16.6329 21.5998 18.4002 21.5998H26.4002L26.4002 30.5371L24.3316 28.4684Z"
+							fill="#57AF81" />
+						<path
+							d="M26.4002 18.3998C26.4002 17.5161 27.1165 16.7998 28.0002 16.7998C28.8839 16.7998 29.6002 17.5161 29.6002 18.3998L29.6002 21.5998H26.4002L26.4002 18.3998Z"
+							fill="#57AF81" />
+					</svg>
+
+					<h1 class="my-3 text-xl font-bold text-primary-hover text-center">
+						Simpan Nilai yang Telah diedit?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Dengan mengklik tombol dibawah, Anda akan menyimpan nilai seluruh
+						Mahasiswa. Anda bisa mengedit kembali nilai yang telah diinput.
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal-simpan"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">Ya, Simpan Nilai</button>
+					<button class="bg-white text-danger-main">
+						Tidak, Saya ingin melanjutkan Edit Nilai
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP SIMPAN  -->
+
+		<!-- POP UP BATAL  -->
+		<div
+			id="content-modal-batal"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 fixed hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="56"
+						height="56"
+						viewBox="0 0 56 56"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect
+							x="0.390625"
+							y="0.5"
+							width="55.2195"
+							height="55.2195"
+							rx="27.6098"
+							fill="#FFF4F2" />
+						<path
+							d="M29.3011 24.2073H36.4555L29.3011 17.0528V24.2073ZM20.1954 15.1016H30.6019L38.4068 22.9064V38.5162C38.4068 39.2062 38.1327 39.8679 37.6448 40.3558C37.1569 40.8437 36.4951 41.1178 35.8051 41.1178H20.1954C19.5054 41.1178 18.8436 40.8437 18.3557 40.3558C17.8678 39.8679 17.5938 39.2062 17.5938 38.5162V17.7032C17.5938 16.2593 18.7515 15.1016 20.1954 15.1016ZM26.049 26.8089C22.797 26.8089 20.1954 29.4105 20.1954 32.6625C20.1954 35.9146 22.797 38.5162 26.049 38.5162C29.3011 38.5162 31.9027 35.9146 31.9027 32.6625C31.9027 29.4105 29.3011 26.8089 26.049 26.8089ZM26.049 28.7601C27.084 28.7601 28.0766 29.1712 28.8085 29.9031C29.5403 30.6349 29.9515 31.6275 29.9515 32.6625C29.9515 33.391 29.7564 34.0674 29.4051 34.6138L24.0978 29.3064C24.6442 28.9552 25.3206 28.7601 26.049 28.7601ZM22.1466 32.6625C22.1466 31.9341 22.3417 31.2577 22.6929 30.7113L28.0003 36.0186C27.4539 36.3699 26.7775 36.565 26.049 36.565C25.014 36.565 24.0214 36.1538 23.2896 35.422C22.5577 34.6901 22.1466 33.6975 22.1466 32.6625Z"
+							fill="#CB3A31" />
+					</svg>
+
+					<h1 class="my-3 text-xl font-bold text-danger-hover text-center">
+						Batalkan Edit Nilai?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Apabila Anda membatalkan edit nilai, nilai yang Anda input tidak
+						akan tersimpan.
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal-batal"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">
+						Tidak, Lanjutkan Proses Edit Nilai
+					</button>
+					<button class="bg-white text-danger-main">
+						Ya, Batalkan Edit Nilai
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP BATAL  -->
+
+		<!-- ALERT -->
+		<div
+			class="flex flex-col gap-3 *:p-4 *:gap-2 *:shadow-lg absolute w-[1038px] top-10 left-1/2 -translate-x-1/2 hidden">
+			<span
+				class="border border-primary-main bg-primary-surface text-primary-main rounded-xl flex items-center w-full">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+						d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289C13.3166 6.90237 12.6834 6.90237 12.2929 7.29289L9 10.5858L7.70711 9.29289C7.31658 8.90237 6.68342 8.90237 6.29289 9.29289C5.90237 9.68342 5.90237 10.3166 6.29289 10.7071L8.29289 12.7071C8.68342 13.0976 9.31658 13.0976 9.70711 12.7071L13.7071 8.70711Z"
+						fill="#43936C" />
+				</svg>
+				Selamat! Nilai berhasil disimpan.
+			</span>
+
+			<span
+				class="border border-danger-main bg-danger-surface text-danger-main rounded-xl flex items-center w-full">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+						d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM8.70711 7.29289C8.31658 6.90237 7.68342 6.90237 7.29289 7.29289C6.90237 7.68342 6.90237 8.31658 7.29289 8.70711L8.58579 10L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071C7.68342 13.0976 8.31658 13.0976 8.70711 12.7071L10 11.4142L11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071C13.0976 12.3166 13.0976 11.6834 12.7071 11.2929L11.4142 10L12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L10 8.58579L8.70711 7.29289Z"
+						fill="#CB3A31" />
+				</svg>
+				Maaf, terjadi kesalahan. Nilai gagal disimpan, mohon coba beberapa saat
+				lagi.
+			</span>
+		</div>
+		<!-- AKHIR ALERT -->
+
+		<script>
+			document.getElementById("save").addEventListener("click", function () {
+				document
+					.getElementById("content-modal-simpan")
+					.classList.remove("hidden");
+			});
+			document
+				.getElementById("close-modal-simpan")
+				.addEventListener("click", function () {
+					document
+						.getElementById("content-modal-simpan")
+						.classList.add("hidden");
+				});
+
+			document.getElementById("cancel").addEventListener("click", function () {
+				document
+					.getElementById("content-modal-batal")
+					.classList.remove("hidden");
+			});
+			document
+				.getElementById("close-modal-batal")
+				.addEventListener("click", function () {
+					document
+						.getElementById("content-modal-batal")
+						.classList.add("hidden");
+				});
+		</script>
+	</body>
+</html>

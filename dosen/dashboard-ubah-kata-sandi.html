@@ -34,7 +34,9 @@
 					</div>
 
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="dashboard"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -90,7 +92,9 @@
 							id="dropdown-profile"
 							class="text-gray-600 hidden *:cursor-pointer">
 							<!-- Data Diri -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="data-diri"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -109,7 +113,9 @@
 							</li>
 
 							<!-- Gaji -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="gaji"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -168,7 +174,9 @@
 						<hr class="border-gray-400" />
 					</div>
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="perkuliahan"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -187,7 +195,9 @@
 								class="px-1 h-12 bg-primary-main rounded-ss-lg rounded-es-lg hidden"></div>
 						</button>
 
-						<button class="flex justify-between w-full items-center">
+						<button
+							id="kalender"
+							class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -256,7 +266,9 @@
 							id="dropdown-bimbingan"
 							class="text-gray-600 hidden *:cursor-pointer">
 							<!-- Catatan Studi -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="catatan-studi"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -275,7 +287,9 @@
 							</li>
 
 							<!-- Krs -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="krs"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -294,7 +308,9 @@
 							</li>
 
 							<!-- Tugas Akhir -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="tugas-akhir"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -313,7 +329,9 @@
 							</li>
 
 							<!-- Ujian Akhir -->
-							<li class="flex items-center justify-between gap-3 ml-8 py-3">
+							<li
+								id="ujian-akhir"
+								class="flex items-center justify-between gap-3 ml-8 py-3">
 								<div class="flex items-center gap-3">
 									<svg
 										width="20"
@@ -364,7 +382,7 @@
 						<hr class="border-gray-400" />
 					</div>
 					<div>
-						<button class="flex justify-between w-full items-center">
+						<button id="kpi" class="flex justify-between w-full items-center">
 							<span class="flex pl-3 py-3 gap-3 items-center">
 								<svg
 									width="20"
@@ -392,6 +410,7 @@
 				<!-- KPI DOSEN -->
 			</div>
 			<button
+				id="open-modal-keluar"
 				class="flex px-12 py-3 bg-red-50 w-full gap-3 text-red-700 items-center font-medium">
 				<svg
 					width="20"
@@ -407,6 +426,65 @@
 				Keluar
 			</button>
 		</aside>
+		<!-- POP UP KELUAR  -->
+		<div
+			id="content-modal-keluar"
+			class="bg-[#00000050] w-[100%] h-[100%] z-[100] overflow-auto top-0 left-0 hidden">
+			<!-- CONTENT MODAL SIMPAN DATA -->
+			<div
+				class="flex-col gap-4 bg-white p-4 rounded-lg h-fit w-[552px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-200 flex">
+				<div class="content relative flex flex-col justify-center items-center">
+					<svg
+						width="56"
+						height="56"
+						viewBox="0 0 56 56"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<rect width="56" height="56" rx="28" fill="#FFF4F2" />
+						<path
+							d="M34.6667 33.333L40 27.9997M40 27.9997L34.6667 22.6663M40 27.9997L21.3333 27.9997M29.3333 33.333V34.6663C29.3333 36.8755 27.5425 38.6663 25.3333 38.6663H20C17.7909 38.6663 16 36.8755 16 34.6663V21.333C16 19.1239 17.7909 17.333 20 17.333H25.3333C27.5425 17.333 29.3333 19.1239 29.3333 21.333V22.6663"
+							stroke="#CB3A31"
+							stroke-width="4"
+							stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+
+					<h1 class="my-3 text-xl font-bold text-danger-hover text-center">
+						Yakin ingin keluar akun?
+					</h1>
+					<p class="text-gray-700 text-center">
+						Apabila Anda keluar dari akun, Anda diharuskan melakukan login ulang
+					</p>
+
+					<div
+						data-modal="false"
+						id="close-modal-keluar"
+						class="absolute top-0 right-0 cursor-pointer">
+						<svg
+							width="20"
+							height="21"
+							viewBox="0 0 20 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M4.29289 4.79289C4.68342 4.40237 5.31658 4.40237 5.70711 4.79289L10 9.08579L14.2929 4.79289C14.6834 4.40237 15.3166 4.40237 15.7071 4.79289C16.0976 5.18342 16.0976 5.81658 15.7071 6.20711L11.4142 10.5L15.7071 14.7929C16.0976 15.1834 16.0976 15.8166 15.7071 16.2071C15.3166 16.5976 14.6834 16.5976 14.2929 16.2071L10 11.9142L5.70711 16.2071C5.31658 16.5976 4.68342 16.5976 4.29289 16.2071C3.90237 15.8166 3.90237 15.1834 4.29289 14.7929L8.58579 10.5L4.29289 6.20711C3.90237 5.81658 3.90237 5.18342 4.29289 4.79289Z"
+								fill="#424242" />
+						</svg>
+					</div>
+				</div>
+				<div class="btn *:px-4 *:py-2 *:rounded-lg *:w-full">
+					<button class="bg-primary-main text-white">
+						Tidak, Tetap Gunakan Akun Ini
+					</button>
+					<button class="bg-white text-danger-main">
+						Ya, Keluar dari Akun Ini
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- AKHIR POP UP KELUAR  -->
 		<!-- AKHIR SIDEBAR -->
 
 		<!-- MAIN CONTENT -->
@@ -1088,5 +1166,6 @@
 		</script>
 
 		<script src="src/js/sidebar.js"></script>
+		<script src="src/js/navigasi.js"></script>
 	</body>
 </html>
