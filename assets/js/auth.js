@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			} else if (user.role === "mahasiswa") {
 				window.location.href = "mahasiswa/dashboard.html";
 			} else if (user.role === "dosen") {
-				window.location.href = "dosen/dashboard.html";
+				window.location.href = "dosen/dashboard-announcement-carrousel.html";
 			}
 		} else {
 			errorMessage.textContent = "Email atau password salah";
